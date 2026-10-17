@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reality of India 26 — News Post Studio</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--ink:#172033;--muted:#697386;--line:#e2e6ed;--red:#d82f3d;--red-dark:#b91f2d;--shadow:0 12px 32px #1720330b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.topinner{max-width:1440px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:22px;font-weight:900;letter-spacing:-.8px}.brand span{color:var(--red)}.tagline{font-size:12px;color:var(--muted);margin-top:2px}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:10px 14px;font-weight:700;font-size:13px}.btn:hover{filter:brightness(.97)}.btn.primary{background:var(--red);border-color:var(--red);color:#fff}.btn.primary:hover{background:var(--red-dark)}
+main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template-columns:minmax(620px,1.7fr) minmax(280px,.85fr);gap:12px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px;min-width:0}.panel h2{font-size:14px;margin:0 0 11px;letter-spacing:-.2px}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.tool-block{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:12px}.tool-block h2{margin-top:0}.step{color:var(--red);font-size:11px;font-weight:850;letter-spacing:1px;display:block;margin-bottom:5px}
+.field{margin-bottom:6px}.field label{display:block;font-size:12px;font-weight:750;margin-bottom:6px;color:#424c60}.field input,.field textarea,.field select{width:100%;border:1px solid #dce1e9;border-radius:7px;padding:6px 8px;background:#fff;color:#172033;outline:none;font-size:12px}.field input:focus,.field textarea:focus,.field select:focus{border-color:#dc5963;box-shadow:0 0 0 3px #d82f3d12}.field textarea{resize:vertical;min-height:42px}.field .small{font-size:11px;color:var(--muted);margin-top:5px}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}.step1-grid{display:grid;gap:8px}.step1-pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,.38fr);gap:12px;align-items:center}.step1-pair>.field{margin:0}.step1-tool{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:9px 11px}.step1-tool .field{margin:0}.step1-tool .field label{margin-bottom:4px}.image-size-panel{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:10px;margin:10px 0 6px}.image-size-panel > label{margin-bottom:8px}.image-size-panel .field{margin-bottom:0}.rule{height:1px;background:var(--line);margin:12px 0}
+.image-step-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.image-step-pair>.tool-block{min-width:0}.image-step-pair .rule{display:none}
+.story-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}.story-card{border:1px solid #d8dee8;border-radius:12px;padding:12px;background:linear-gradient(155deg,#fff,#f7f9fc);box-shadow:0 4px 14px #1720330a;min-width:0}.story-card-head{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;font-weight:800;margin:-2px -2px 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}.story-card-head span{color:var(--red);font-size:11px;letter-spacing:.5px;text-transform:uppercase}.story-card .field{margin-bottom:7px}.story-card textarea{min-height:45px}.story-card .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}.story-card .mini-label{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-weight:700;margin-bottom:3px}.story-card input[type=range]{width:100%}.story-card .fact-fields{border-top:1px solid var(--line);padding-top:8px;margin-top:8px}.story-card .section-layout{font-weight:700}.story-card .editor-subhead{font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--red);font-weight:850;margin:10px 0 6px}.story-text-sizes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:2px 0 9px;padding:8px;background:#f0f3f8;border-radius:8px}.story-text-sizes label{display:block;font-size:10px;color:#424c60;font-weight:750;margin-bottom:3px}.story-text-sizes .size-value{float:right;color:var(--muted)}.story-text-sizes input{width:100%;margin:0}.step5-section{padding:12px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(135deg,#fbfcfe,#f1f4f9)}.step5-section>h2{margin-bottom:5px}.step5-intro{color:var(--muted);font-size:11px;margin:0 0 10px}.step6-controls{display:grid;grid-template-columns:1fr 1fr;gap:10px}.step6-control{padding:10px;border:1px solid #e0e5ed;border-radius:10px;background:#fff}.step6-control>label{font-size:11px;text-transform:uppercase;letter-spacing:.45px;color:#566174}.step6-select-wrap{position:relative}.step6-select-wrap:after{content:'▾';position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#596579;pointer-events:none}.step6-select-wrap select{appearance:none;min-height:40px;padding:9px 34px 9px 11px;border:1px solid #cfd6e1;border-radius:8px;background:linear-gradient(#fff,#f7f9fc);font-weight:700}.step6-select-wrap select:focus{border-color:var(--red);box-shadow:0 0 0 3px #d82f3d12}.step6-subcontrol{margin-top:9px}.step6-help{display:block;margin-top:6px;font-size:10px;color:var(--muted)}.step6-add{width:100%;min-height:40px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:8px}.step6-add-mark{font-size:18px;line-height:1}.step6-add-count{margin-left:auto;padding:3px 7px;border-radius:20px;background:#ffffff30;font-size:10px;white-space:nowrap}.step6-add:disabled{opacity:.55;cursor:not-allowed;filter:none}.fact-stamp{font:bold 13px Arial,sans-serif;letter-spacing:.5px}.fact-stamp.ok{color:#167447}.fact-stamp.review{color:#a34b00}.fact-stamp.unchecked{color:#5d6675}
+.image-text-tools{margin-top:12px}.image-text-tools .two{align-items:start}.image-text-position{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#step1.panel{padding:9px}#step1>h2{margin-bottom:6px}.step1-grid{gap:5px}.step1-pair{grid-template-columns:minmax(0,1fr) minmax(160px,.34fr);gap:8px}.step1-pair>.field label{font-size:11px;margin-bottom:3px}#step1 .field input:not([type=range]),#step1 .field textarea,#step1 .field select{padding:5px 7px;font-size:11px}#step1 .field textarea{min-height:34px;line-height:1.3}#headline{height:42px}#subtitle{height:36px}#body{height:48px}.step1-tool{padding:6px 8px}.step1-tool .field label{font-size:10px;margin-bottom:2px}.step1-tool input[type=range]{padding:0;height:14px}
+.style-group{margin:10px 0 14px}.style-group-title{font-size:12px;margin:0 0 7px;color:#566174;font-weight:850;letter-spacing:.35px;text-transform:uppercase}.styles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:5px}.style{background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px;text-align:left;color:var(--ink);font-size:11px}.style.active{border:2px solid var(--red);padding:7px;background:#fffafa}.thumb{height:34px;border-radius:5px;margin-bottom:5px;padding:4px;display:flex;flex-direction:column;gap:3px;overflow:hidden}.style b{display:block;font-size:11px}.style small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.upload{border:1px dashed #cbd2dd;border-radius:11px;background:#fafbfc;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer}.upload:hover{border-color:var(--red)}.upload-icon{font-size:25px}.upload strong{display:block;font-size:13px}.upload span{font-size:11px;color:var(--muted)}input[type=file]{display:none}
+.gallery{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.gallery-item{position:relative;width:68px;height:68px}.thumbimg{width:68px;height:68px;object-fit:cover;border:2px solid transparent;border-radius:9px;cursor:pointer;background:#eee}.thumbimg.active{border-color:var(--red);box-shadow:0 0 0 2px #d82f3d22}.gallery-remove{position:absolute;top:-6px;right:-6px;width:21px;height:21px;padding:0;border:1px solid #fff;border-radius:50%;background:#d52d35;color:#fff;font-size:16px;font-weight:800;line-height:18px;cursor:pointer;box-shadow:0 1px 4px #0004}.gallery-remove:hover{background:#a91d25}.controlrow{display:flex;align-items:center;gap:10px}.controlrow input[type=range]{flex:1;min-width:0}.previewhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:9px}.previewhead h2{margin:0;font-size:16px}.status{font-size:11px;color:var(--muted);margin-top:3px}.previewarea{border:1px solid var(--line);border-radius:14px;padding:10px;background:linear-gradient(135deg,#eef1f6,#f8f9fb);display:flex;justify-content:center;align-items:center;min-height:0}.canvas-holder{width:min(100%,760px);max-height:calc(100vh - 220px);display:flex;align-items:center;justify-content:center}canvas{width:100%;height:auto;max-height:calc(100vh - 220px);display:block;background:white;object-fit:contain;box-shadow:0 10px 32px #11182720}.downloads{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.notice{font-size:11px;color:var(--muted);margin-top:10px;min-height:17px}.tips{margin-top:14px;font-size:12px;color:var(--muted);line-height:1.8}.footer{max-width:1440px;margin:0 auto;padding:0 24px 22px;color:#858d9b;font-size:11px}
+/* Compact editing workspace: only the left tool panel scrolls; preview stays pinned. */
+@media (min-width:901px){
+  main{align-items:start;grid-template-columns:minmax(620px,1.7fr) minmax(280px,.85fr);gap:12px}
+  main>section.panel{position:sticky;top:72px;max-height:calc(100vh - 82px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c5ccd7 transparent}
+  main>section.panel::-webkit-scrollbar{width:7px}
+  main>section.panel::-webkit-scrollbar-thumb{background:#c5ccd7;border-radius:10px}
+  main>section:not(.panel){position:sticky;top:72px;align-self:start;min-width:0}
+  .previewarea{max-height:calc(100vh - 210px);overflow-y:auto;align-items:flex-start}
+  .canvas-holder{width:min(100%,520px);max-height:none}
+  canvas{max-height:none}
+  .tips{padding:9px}
+  .panel h2{margin-bottom:7px}
+  .rule{margin:8px 0}
+  .upload{padding:9px}
+  .story-card{padding:8px}
+  .story-card textarea{min-height:36px}
+}
+
+@media(max-width:1100px){main{grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr)}}
+@media(max-width:600px){.step1-pair{grid-template-columns:1fr;gap:2px}.step1-tool{padding:7px 9px}}
+@media(max-width:600px){.story-list{grid-template-columns:1fr}.story-add-row{align-items:stretch;flex-direction:column}.story-add-row #addStory{width:100%!important}}
+@media(max-width:700px){.image-step-pair{grid-template-columns:1fr}}
+@media(max-width:600px){.step6-controls{grid-template-columns:1fr}}
+@media(max-width:600px){.image-text-position{grid-template-columns:1fr}}
+@media(max-width:900px){main{grid-template-columns:1fr;padding:14px}.topinner{padding:12px 15px}.top-actions .btn{padding:9px 10px}.panel{padding:13px}main>section.panel,main>section:not(.panel){position:static;max-height:none;overflow:visible}.tool-grid{grid-template-columns:1fr}.previewarea{padding:10px}.canvas-holder{width:min(100%,600px);max-height:none}canvas{max-height:none}}
+@media(max-width:460px){.brand{font-size:19px}.tagline{max-width:180px}.top-actions .btn{font-size:11px}.two{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr}.styles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.text-color-setting{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:3px}.text-color-setting label{font-size:10px;font-weight:700;color:#424c60}.text-color-setting input[type=color]{width:32px;height:23px;padding:2px;border:1px solid #cfd6e1;border-radius:5px;background:#fff;cursor:pointer}
+.mode-tabs{display:flex;gap:6px;align-items:center}.mode-tab{border:1px solid var(--line);background:#f5f6f8;color:var(--ink);border-radius:9px;padding:8px 13px;font-size:12px;font-weight:800}.mode-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}.video-preview{width:100%;max-height:320px;background:#07111c;border-radius:8px;margin-top:10px}.video-status{font-size:11px;color:var(--muted);margin-top:6px}.video-mode #downloadPng,.video-mode #downloadJpg,.video-mode #downloadPoster,.poster-mode #downloadVideo,.poster-mode #downloadPng,.poster-mode #downloadJpg{display:none!important}.video-mode #downloadVideo{display:inline-flex!important}.poster-mode #downloadPoster{display:inline-flex!important}.poster-mode .style-group,.poster-mode #step5,.poster-mode #chooseStyleHeading,.poster-mode #storyDetailsGrid,.poster-mode #editorWorkspacePanel,.poster-mode .image-step-pair,.poster-mode #step9,.poster-mode #step1>.rule,.poster-mode #step1>.tool-grid{display:none!important}.poster-mode #posterControls:not([hidden]){display:grid!important}#posterControls[hidden],#downloadPoster{display:none}.poster-editor{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:8px 0 14px}.poster-editor>.tool-block{min-width:0}.poster-editor .field{margin-bottom:8px}.poster-editor .field input[type=color]{width:100%;height:34px;padding:2px;border:1px solid #dce1e9;border-radius:7px;background:#fff}.poster-editor textarea{min-height:64px}.poster-mode #posterLayout{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.poster-design-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin:8px 0 12px}.poster-design-card{min-width:0;padding:7px;border:1px solid var(--line);border-radius:9px;background:#fff;text-align:left;color:var(--ink)}.poster-design-card.active{border:2px solid var(--red);padding:6px;box-shadow:0 0 0 2px #d82f3d18}.poster-design-card:focus-visible{outline:3px solid #d82f3d66;outline-offset:2px}.poster-design-card>span:last-child{display:block;margin-top:5px;font-size:10px;font-weight:800;line-height:1.2}.poster-design-thumb{display:block;width:100%;box-sizing:border-box;height:70px;position:relative;overflow:hidden;border-radius:5px;padding:8px;background:linear-gradient(145deg,#142844,#273e5c)}.poster-design-thumb:before{content:"";position:absolute;inset:0 auto 0 0;width:27%;background:#f4c95d;clip-path:polygon(0 0,100% 0,0 55%)}.poster-design-thumb:after{content:"";position:absolute;left:10%;right:10%;top:31%;height:11%;border-radius:3px;background:#ffffffdd;box-shadow:0 15px 0 -2px #ffffff80,0 29px 0 -3px #f4c95d}.poster-design-thumb i{position:absolute;right:10%;top:13%;width:33%;height:48%;border-radius:45% 45% 35% 35%;background:linear-gradient(140deg,#d8e3ed,#73859b);border:2px solid #ffffffaa}.poster-design-thumb em{position:absolute;left:10%;right:10%;bottom:9%;height:9%;border-radius:8px;background:#e64b4b}.poster-design-thumb[data-design="candidate"]{background:linear-gradient(90deg,#142844 0 55%,#364862 55%)}.poster-design-thumb[data-design="manifesto"],.poster-design-thumb[data-design="vintage"],.poster-design-thumb[data-design="bulletin"]{background:linear-gradient(135deg,#f7f0df,#d9c8a5)}.poster-design-thumb[data-design="manifesto"]:before,.poster-design-thumb[data-design="vintage"]:before,.poster-design-thumb[data-design="bulletin"]:before{width:auto;inset:6px;border:2px solid #a63d2e;background:transparent;clip-path:none}.poster-design-thumb[data-design="meeting"],.poster-design-thumb[data-design="townhall"]{background:linear-gradient(0deg,#c83832 0 28%,#182540 28%)}.poster-design-thumb[data-design="community"],.poster-design-thumb[data-design="grassroots"]{background:linear-gradient(135deg,#174f46,#66a58a)}.poster-design-thumb[data-design="election"]{background:linear-gradient(0deg,#fff 0 20%,#1562a0 20% 76%,#ed9c2f 76%)}.poster-design-thumb[data-design="geometric"]{background:linear-gradient(135deg,#241744 0 48%,#e94b70 48% 73%,#ffc94f 73%)}.poster-design-thumb[data-design="youth"]{background:linear-gradient(135deg,#512aa1,#db40b2 56%,#ff9a3d)}.poster-design-thumb[data-design="collage"]{background:linear-gradient(135deg,#15374e,#287e91)}.poster-design-thumb[data-design="collage"] i{width:30%;height:32%;right:9%;top:12%;border-radius:3px;box-shadow:-22px 25px 0 #d2a25d,0 26px 0 #6895b1}.poster-design-thumb[data-design="grassroots"]:after{background:#fff;box-shadow:0 15px 0 -2px #fff,0 29px 0 -3px #f4c95d}.poster-design-thumb[data-design="splitCampaign"]{background:linear-gradient(90deg,#d0d0d0 0 47%,#bf4c49 47%)}.poster-design-thumb[data-design="splitCampaign"]:before{inset:48% auto 0 0;width:48%;clip-path:none;border-radius:50% 50% 0 0;background:#bf4c49}.poster-design-thumb[data-design="splitCampaign"]:after{left:58%;right:8%;top:24%;height:7%;background:#fff;box-shadow:0 12px 0 1px #ffffffaa,0 25px 0 2px #fff}.poster-design-thumb[data-design="splitCampaign"] i{left:16%;right:auto;top:35%;width:42%;height:65%;border-radius:48% 48% 8% 8%;background:linear-gradient(110deg,#263653,#71809a)}
+.video-export-spinner{width:15px;height:15px;border:2px solid #ffffff70;border-top-color:#fff;border-radius:50%;display:inline-block;animation:video-spin .75s linear infinite;vertical-align:-3px;margin-right:7px}@keyframes video-spin{to{transform:rotate(360deg)}}#videoRenderProgress{display:block;width:100%;height:7px;margin-top:8px;accent-color:var(--red)}#videoRenderProgress[hidden],#videoDownloadSpinner[hidden]{display:none!important}#downloadVideo:disabled{cursor:progress;opacity:.8}
+@media(max-width:720px){.topinner{flex-wrap:wrap}.mode-tabs{order:3;width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="topinner">
+  <div><div class="brand">Reality <span>of India</span> 26</div><div class="tagline">Stories from across India. Voices from every community.</div></div>
+  <div class="mode-tabs" role="tablist" aria-label="Post type"><button type="button" id="imageModeTab" class="mode-tab active" role="tab" aria-selected="true">POST IMAGE</button><button type="button" id="videoModeTab" class="mode-tab" role="tab" aria-selected="false">POST VIDEO</button><button type="button" id="posterModeTab" class="mode-tab" role="tab" aria-selected="false">POSTER</button></div>
+  <div class="top-actions"><button class="btn" id="resetBtn">Reset sample</button><button class="btn primary" id="topDownload">↓ Download PNG</button></div>
+</div></header>
+<main>
+<section class="panel" id="step1">
+  <h2><span class="step">STEP 01</span>Story details</h2>
+  <div class="step1-grid" id="storyDetailsGrid">
+    <div class="step1-pair"><div class="field"><label for="paper">Publication name</label><input id="paper" maxlength="55" value="REALITY OF INDIA 26"></div><div class="step1-tool"><div class="field"><label for="paperSize">Publication name size <span id="paperSizeValue">100%</span></label><input id="paperSize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="paperColor">Text color</label><input id="paperColor" type="color" value="#656565"></div></div></div>
+    <div class="step1-pair"><div class="field"><label for="category">News category</label><select id="category"><option>NATIONAL NEWS</option><option>POLITICS &amp; GOVERNANCE</option><option>STATES &amp; CITIES</option><option>ECONOMY &amp; BUSINESS</option><option>AGRICULTURE &amp; RURAL INDIA</option><option>EDUCATION</option><option>HEALTH</option><option>JOBS &amp; CAREERS</option><option>SCIENCE &amp; TECHNOLOGY</option><option>ENVIRONMENT &amp; CLIMATE</option><option>CULTURE &amp; HERITAGE</option><option>SPORTS</option><option>ENTERTAINMENT</option><option>PEOPLE &amp; COMMUNITIES</option><option>BREAKING NEWS</option><option>FACT CHECK</option></select></div><div class="step1-tool"><div class="field"><label for="categorySize">News category size <span id="categorySizeValue">100%</span></label><input id="categorySize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="categoryColor">Text color</label><input id="categoryColor" type="color" value="#d52d35"></div></div></div>
+    <div class="step1-pair"><div class="field"><label for="date">Date / location</label><input id="date" maxlength="55" value="15 OCT 2026 | INDIA"></div><div class="step1-tool"><div class="field"><label for="dateSize">Date / location size <span id="dateSizeValue">100%</span></label><input id="dateSize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="dateColor">Text color</label><input id="dateColor" type="color" value="#656565"></div></div></div>
+    <div class="step1-pair"><div class="field"><label for="headline">Main headline</label><textarea id="headline" maxlength="180" rows="3">India's Stories, Told from the Ground</textarea></div><div class="step1-tool"><div class="field"><label for="headlineSize">Headline text size <span id="headlineSizeValue">100%</span></label><input id="headlineSize" type="range" min="60" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="headlineColor">Text color</label><input id="headlineColor" type="color" value="#171717"></div></div></div>
+    <div class="step1-pair"><div class="field"><label for="subtitle">Subtitle</label><textarea id="subtitle" maxlength="220" rows="2">People, places and perspectives shaping the nation</textarea></div><div class="step1-tool"><div class="field"><label for="subtitleSize">Subtitle text size <span id="subtitleSizeValue">100%</span></label><input id="subtitleSize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="subtitleColor">Text color</label><input id="subtitleColor" type="color" value="#656565"></div></div></div>
+    <div class="step1-pair"><div class="field"><label for="body">News article / description</label><textarea id="body" maxlength="1800" rows="5">Across India, every community has stories worth hearing. Reality of India 26 brings together local perspectives, public issues and everyday experiences from across the country. Add verified reporting, useful context and voices from the people closest to each story before publishing.</textarea></div><div class="step1-tool"><div class="field"><label for="bodySize">Article text size <span id="bodySizeValue">100%</span></label><input id="bodySize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="bodyColor">Text color</label><input id="bodyColor" type="color" value="#171717"></div></div></div>
+    <div class="step1-pair"><div class="field"><label for="byline">Reporter / footer (optional)</label><input id="byline" maxlength="100" placeholder="By [Reporter Name] | Reality of India 26"></div><div class="step1-tool"><div class="field"><label for="bylineSize">Reporter / footer size <span id="bylineSizeValue">100%</span></label><input id="bylineSize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="bylineColor">Text color</label><input id="bylineColor" type="color" value="#656565"></div></div></div>
+  </div>
+  <div id="posterControls" class="poster-editor" hidden>
+    <div class="tool-block">
+      <h2><span class="step">POSTER CONTENT</span>Political campaign poster</h2>
+      <p class="step5-intro">Create a campaign, candidate, rally, or public-meeting poster. These fields and designs are independent of the newspaper editor.</p>
+      <div class="field"><label for="posterLayout">Poster design</label><select id="posterLayout"><option value="rally">Campaign rally</option><option value="candidate">Candidate spotlight</option><option value="splitCampaign">Split campaign portrait</option><option value="manifesto">People-first manifesto</option><option value="meeting">Public meeting</option><option value="community">Community connection</option><option value="election">Election day</option><option value="geometric">Geometric campaign</option><option value="vintage">Vintage civic poster</option><option value="youth">Youth movement</option><option value="collage">Community photo collage</option><option value="townhall">Town hall invitation</option><option value="grassroots">Grassroots movement</option><option value="bulletin">Civic bulletin</option></select><div class="poster-design-grid" id="posterDesignGrid" role="group" aria-label="Choose a poster design"></div></div>
+      <div class="two">
+        <div class="field"><label for="posterCampaign">Campaign / organization</label><input id="posterCampaign" maxlength="70" value="PEOPLE FIRST CAMPAIGN"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="posterCandidate">Candidate / speaker name</label><input id="posterCandidate" maxlength="70" value="YOUR CANDIDATE NAME"></div>
+        <div class="field"><label for="posterRole">Role / designation</label><input id="posterRole" maxlength="70" placeholder="Candidate for local council"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="posterConstituency">Constituency / community</label><input id="posterConstituency" maxlength="80" placeholder="Constituency or community"></div>
+        <div class="field"><label for="posterDate">Date and time</label><input id="posterDate" maxlength="80" placeholder="Sunday · 4:00 PM"></div>
+      </div>
+      <div class="field"><label for="posterSlogan">Campaign slogan / main message</label><textarea id="posterSlogan" maxlength="220" rows="3" placeholder="A stronger future, built together"></textarea></div>
+      <div class="field"><label for="posterPromises">Priorities / event details</label><textarea id="posterPromises" maxlength="500" rows="3" placeholder="Share the key priorities, agenda or event information"></textarea></div>
+      <div class="two">
+        <div class="field"><label for="posterVenue">Venue / contact details</label><input id="posterVenue" maxlength="110" placeholder="Venue, website or contact"></div>
+        <div class="field"><label for="posterCallToAction">Call to action</label><input id="posterCallToAction" maxlength="80" value="JOIN THE CONVERSATION"></div>
+      </div>
+      <div class="field"><label for="posterDisclaimer">Paid-for / publisher disclosure</label><input id="posterDisclaimer" maxlength="120" placeholder="Published by [name/address] · Add required local disclosures"></div>
+    </div>
+    <div class="tool-block">
+      <h2><span class="step">POSTER STYLE</span>Photo and colors</h2>
+      <div class="field"><label for="posterPhotoInput">Poster photos (up to 6, separate from news photos)</label><input id="posterPhotoInput" type="file" accept="image/*" multiple style="display:block;width:100%"><div id="posterPhotoStatus" class="small" role="status">No poster photos selected. Select thumbnails to include them in the poster.</div><div id="posterGallery" class="gallery" aria-label="Poster photo options"></div></div>
+      <div class="two">
+        <div class="field"><label for="posterBackground">Background color</label><input id="posterBackground" type="color" value="#11243a"></div>
+        <div class="field"><label for="posterAccent">Campaign accent color</label><input id="posterAccent" type="color" value="#f3c64e"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="posterTextColor">Poster text color</label><input id="posterTextColor" type="color" value="#ffffff"></div>
+        <div class="field"><label for="posterPhotoPosition">Photo framing</label><select id="posterPhotoPosition"><option value="cover">Fill frame</option><option value="contain">Fit whole photo</option></select></div>
+      </div>
+      <div class="field"><label for="posterImageLayout">Photo arrangement</label><select id="posterImageLayout"><option value="hero">Wide hero</option><option value="collage">Overlapping collage</option><option value="grid">Photo grid</option><option value="strip">Horizontal strip</option><option value="portrait">Portrait spotlight</option></select></div>
+      <div class="field"><label for="posterPhotoZoom">Poster photo zoom <span id="posterPhotoZoomValue">100%</span></label><input id="posterPhotoZoom" type="range" min="100" max="250" step="5" value="100"></div>
+    </div>
+  </div>
+  <div class="rule"></div>
+  <div class="tool-grid">
+    <div class="tool-block" id="imageUploadPanel">
+      <h2 id="imageUploadTitle"><span class="step">STEP 02</span>Upload your photograph</h2>
+      <label class="upload" for="photo"><span class="upload-icon">📷</span><span><strong id="uploadTitle">Choose a news photo</strong><span id="uploadSub">JPG, PNG or WebP · up to 15 MB</span></span></label>
+      <input id="photo" type="file" accept="image/*" multiple>
+      <div id="gallery" class="gallery" aria-label="Uploaded image options"></div>
+      <div class="field"><label for="imageLayout">Photo layout</label><select id="imageLayout"><option value="single">Single photo</option><option value="side">Two side-by-side</option><option value="stack">Two stacked</option><option value="stack3">Three stacked</option><option value="grid">Photo grid (up to 4)</option><option value="strip">Three-photo strip</option></select></div>
+      <select id="fit" hidden><option value="cover">Fill frame</option><option value="contain">Fit entire photo</option></select>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px"><span id="photoStatus" class="status">No photo selected — sample placeholder shown.</span><button class="btn" id="removePhoto" style="padding:7px 10px">Remove all</button></div>
+    </div>
+    <div class="tool-block" id="videoUploadPanel" hidden>
+      <h2><span class="step">STEP 02</span>Select your video</h2>
+      <div class="field"><label for="videoFile">Upload video with optional audio</label><input id="videoFile" type="file" accept="video/*" style="display:block;width:100%"></div>
+      <div class="field"><label for="videoFrameRate">Export frame rate</label><select id="videoFrameRate"><option value="30">30 fps · recommended for social apps</option><option value="60">60 fps</option></select><div class="small">For the broadest WhatsApp/Facebook compatibility, use Full HD and 30 fps. 4K and 60 fps may be rejected or converted by some apps.</div></div>
+      <video id="sourceVideo" class="video-preview" controls playsinline preload="metadata" hidden></video>
+      <div id="videoStatus" class="video-status" role="status">Select a video to preview and create a video post.</div>
+      <progress id="videoRenderProgress" max="100" value="0" aria-label="Video export progress" hidden></progress>
+      <div class="step6-help">Your video stays on this device. Use a video with an audio track for sound in the exported post.</div>
+    </div>
+    <div class="tool-block" id="editorWorkspacePanel">
+      <h2 id="editorWorkspaceTitle"><span class="step">STEP 03</span>IMAGE WORKSPACE · Preview image editor</h2>
+      <div class="field" hidden><label for="editorTarget">Image selected for editing</label><select id="editorTarget"><option value="main">Main story photo</option></select></div>
+      <div class="field"><label for="editorImageSelect">Replace selected image</label><select id="editorImageSelect"><option value="-1">No uploaded image</option></select></div>
+      <div class="notice" id="editorHint">Click a photo in the live preview to select it for editing.</div>
+    </div>
+  </div>
+  <div class="rule"></div>
+  <div class="tool-block">
+    <h2><span class="step">STEP 04</span>Selected image section tools</h2>
+    <div class="image-size-panel">
+      <label><strong>Image section size and placement</strong></label>
+      <div class="two">
+        <div class="field"><label for="sectionWidth">Width <span id="sectionWidthValue">100%</span></label><input id="sectionWidth" type="range" min="20" max="120" step="1" value="100"><div class="small">Up to the full newspaper width.</div></div>
+        <div class="field"><label for="sectionHeight">Height <span id="sectionHeightValue">100%</span></label><input id="sectionHeight" type="range" min="20" max="250" step="5" value="100"></div>
+      </div>
+      <div class="two" style="margin-top:8px">
+        <div class="field"><label for="sectionX">Move section left / right <span id="sectionXValue">0</span></label><input id="sectionX" type="range" min="-100" max="100" value="0"></div>
+        <div class="field"><label for="sectionY">Move section up / down <span id="sectionYValue">0</span></label><input id="sectionY" type="range" min="-100" max="100" value="0"></div>
+      </div>
+    </div>
+      <div class="two"><div class="field"><label for="editorFit">Fit / crop mode</label><select id="editorFit"><option value="cover">Fill frame</option><option value="contain">Fit entire image</option></select></div><div class="field"><label for="editorZoom">Zoom <span id="editorZoomValue">100%</span></label><input id="editorZoom" type="range" min="50" max="300" step="5" value="100"></div></div>
+      <div class="field"><label for="editorPanX">Move left / right <span id="editorPanXValue">0</span></label><input id="editorPanX" type="range" min="-100" max="100" value="0"></div>
+      <div class="field"><label for="editorPanY">Move up / down <span id="editorPanYValue">0</span></label><input id="editorPanY" type="range" min="-100" max="100" value="0"></div>
+      <div class="two"><button class="btn" type="button" id="editorResetCrop">Reset crop</button><button class="btn" type="button" id="editorApplyMain">Select main image</button></div>
+  </div>
+  <div class="rule"></div>
+  <div class="step5-section" id="step5">
+    <h2><span class="step">STEP 07</span>Multiple news items</h2>
+    <p class="step5-intro">Add up to two extra stories. Adjust each story's text size and image layout independently.</p>
+    <div class="step6-controls">
+      <div class="field step6-control"><label for="postMode">Post composition</label><div class="step6-select-wrap"><select id="postMode"><option value="single">Single main story</option><option value="multi">Multiple stories in one post</option></select></div><div class="step6-subcontrol"><label for="storyArrangement">Extra story arrangement</label><div class="step6-select-wrap"><select id="storyArrangement"><option value="side">Side by side</option><option value="rows">Separate rows</option></select></div></div><span class="step6-help">Choose whether extra stories share a row or stack vertically.</span></div>
+      <div class="field step6-control"><label>Story sections</label><button class="btn primary step6-add" type="button" id="addStory"><span class="step6-add-mark" aria-hidden="true">+</span><span class="add-story-label">Add story section</span><span class="step6-add-count" id="storyCount">0 / 2</span></button><span class="step6-help">Add up to two stories below the main story.</span></div>
+    </div>
+    <div id="storyList" class="story-list"></div>
+    <div class="field" style="margin-top:10px"><label><input id="factCheckToggle" type="checkbox" style="display:inline;width:auto;margin-right:6px"> Include optional fact-check panel on the post</label><div class="small">Manual verification aid only — this app does not independently verify claims. Review reliable sources before publishing.</div></div>
+  </div>
+  <div class="rule"></div>
+  <h2 id="chooseStyleHeading"><span class="step">STEP 08</span>Choose your newspaper style</h2>
+  <div class="style-group">
+    <h3 class="style-group-title">Newspaper Styles</h3>
+    <div class="styles" id="styles">
+    <button class="style active" data-style="breaking"><div class="thumb" style="background:#fff"><div style="background:#d52d35;color:#fff;font-size:7px;padding:3px;font-weight:900">BREAKING</div><div style="background:#111;height:8px;width:95%"></div><div style="background:#ddd;height:12px"></div></div><b>Breaking News</b><small>Bold & urgent</small></button>
+    <button class="style" data-style="classic"><div class="thumb" style="background:#f7f0df;border:1px solid #b6a78a"><div style="font-family:Georgia;font-size:9px;text-align:center;border-bottom:1px solid #333">THE JOURNAL</div><div style="background:#333;height:9px"></div><div style="background:#c8bfae;height:12px"></div></div><b>Classic Print</b><small>Vintage editorial</small></button>
+    <button class="style" data-style="modern"><div class="thumb" style="background:#101b32"><div style="background:#50e0bf;height:3px;width:40%"></div><div style="background:#fff;height:10px;width:95%"></div><div style="background:#50e0bf;height:12px"></div></div><b>Modern News</b><small>Clean & digital</small></button>
+    <button class="style" data-style="politics"><div class="thumb" style="background:#f8f8f8"><div style="background:#173d75;height:6px"></div><div style="background:#b92832;height:4px;width:65%"></div><div style="background:#222;height:11px"></div><div style="background:#ddd;height:8px"></div></div><b>Political</b><small>Strong & formal</small></button>
+    <button class="style" data-style="minimal"><div class="thumb" style="background:#fff;border:1px solid #ddd"><div style="background:#111;height:2px"></div><div style="background:#111;height:10px;width:82%"></div><div style="background:#ddd;height:16px"></div></div><b>Minimal</b><small>Elegant & simple</small></button>
+    <button class="style" data-style="regional"><div class="thumb" style="background:#fff4e6"><div style="background:#ef7627;height:5px"></div><div style="background:#a42626;height:10px"></div><div style="background:#ffd99b;height:12px"></div></div><b>Regional</b><small>Warm local news</small></button>
+    <button class="style" data-style="conversation"><div class="thumb" style="background:#f0f5ff"><div style="background:#2673d9;border-radius:8px 8px 8px 1px;height:11px;width:75%"></div><div style="background:#d7e8ff;border-radius:8px;height:9px;width:82%;align-self:flex-end"></div><div style="background:#2673d9;height:3px;width:35%"></div></div><b>Conversation</b><small>Chat-style story</small></button>
+    <button class="style" data-style="interview"><div class="thumb" style="background:#f6f0e8"><div style="background:#8b3e26;height:6px;width:35%"></div><div style="background:#333;height:10px;width:85%"></div><div style="background:#ddd;height:12px"></div></div><b>Interview</b><small>Q&A format</small></button>
+    <button class="style" data-style="quote"><div class="thumb" style="background:#1d2534"><div style="color:#f4ca65;font-size:20px;line-height:18px">“</div><div style="background:#fff;height:8px;width:90%"></div><div style="background:#f4ca65;height:3px;width:40%"></div></div><b>Quote Card</b><small>Statement spotlight</small></button>
+    <button class="style" data-style="photostory"><div class="thumb" style="background:#e9f3f0"><div style="background:#247e6a;height:4px"></div><div style="background:#c4d8d2;height:24px"></div><div style="background:#222;height:7px;width:85%"></div></div><b>Photo Story</b><small>Image-led layout</small></button>
+    <button class="style" data-style="ledger"><div class="thumb" style="background:#f1ead8;border:1px solid #9e8a61"><div style="font-family:Georgia;font-size:8px;text-align:center;color:#315044">THE LEDGER</div><div style="height:2px;background:#315044"></div><div style="height:10px;background:#315044"></div><div style="height:8px;background:#d4c9ae"></div></div><b>The Ledger</b><small>Refined green & cream</small></button>
+    <button class="style" data-style="bulletin"><div class="thumb" style="background:#fff3c4;border:1px solid #e4c853"><div style="background:#222;color:#ffe36b;font-size:7px;font-weight:900;padding:2px">CITY BULLETIN</div><div style="background:#d64a2c;height:4px;width:60%"></div><div style="background:#29251f;height:10px"></div><div style="background:#f0c83f;height:8px"></div></div><b>City Bulletin</b><small>Bold civic notice</small></button>
+    <button class="style" data-style="midnight"><div class="thumb" style="background:#111827;border:1px solid #4f647c"><div style="height:3px;background:#55d6c2;width:40%"></div><div style="color:#fff;font-size:8px;font-weight:900">NIGHT EDITION</div><div style="height:10px;background:#334155"></div><div style="height:3px;background:#55d6c2;width:65%"></div></div><b>Night Edition</b><small>After-hours report</small></button>
+    <button class="style" data-style="darkEdition"><div class="thumb" style="background:#090d18;border:1px solid #34415a"><div style="height:3px;background:#f4c95d"></div><div style="color:#f4c95d;font-size:8px;font-family:Georgia;font-weight:900;text-align:center">THE DARK EDITION</div><div style="height:9px;background:#dce3ee"></div><div style="height:8px;background:#273247"></div></div><b>Dark Edition</b><small>Full dark newspaper</small></button>
+    </div>
+  </div>
+  <div class="style-group">
+    <h3 class="style-group-title">Social Media Post Styles</h3>
+    <div class="styles" id="socialStyles">
+    <button class="style" data-style="socialFeed"><div class="thumb" style="background:#fff;border:1px solid #ddd"><div style="height:8px;color:#a33dc1;font-size:7px;font-weight:900">●  REALITY OF INDIA 26</div><div style="height:15px;background:#f0e8fa;border-radius:4px"></div><div style="height:7px;background:#222"></div></div><b>Social Feed</b><small>Square feed post</small></button>
+    <button class="style" data-style="socialStory"><div class="thumb" style="background:#21143d;border:1px solid #8c42b7"><div style="height:4px;background:#ef6b4c"></div><div style="height:17px;background:linear-gradient(90deg,#6938a5,#e05276);border-radius:4px"></div><div style="height:7px;background:#fff;width:85%"></div></div><b>Social Story</b><small>Vertical story card</small></button>
+    <button class="style" data-style="socialCard"><div class="thumb" style="background:#e7f7f2;border:1px solid #afd9cb"><div style="height:5px;background:#167d69;width:45%"></div><div style="height:11px;background:#193a33"></div><div style="height:14px;background:#b7e2d6;border-radius:4px"></div><div style="height:5px;background:#167d69"></div></div><b>Community Card</b><small>Shareable local update</small></button>
+    <button class="style" data-style="socialQuote"><div class="thumb" style="background:#17202e;border:1px solid #f4c95d"><div style="color:#f4c95d;font:bold 20px Georgia;line-height:18px">“</div><div style="height:7px;background:#fff;width:90%"></div><div style="height:5px;background:#f4c95d;width:50%"></div></div><b>Quote Spotlight</b><small>Big quote, bold color</small></button>
+    <button class="style" data-style="socialPop"><div class="thumb" style="background:#ffdf5d;border:1px solid #f06b4c"><div style="height:6px;background:#ee5b48;width:38%;transform:skew(-12deg)"></div><div style="height:13px;background:#222;border-radius:3px"></div><div style="height:8px;background:#fff;width:78%"></div></div><b>Color Pop</b><small>Bright, energetic post</small></button>
+    <button class="style" data-style="socialMosaic"><div class="thumb" style="background:#dfe8ff;border:1px solid #adbee8"><div style="height:7px;background:#5865c7;width:48%"></div><div style="height:14px;background:linear-gradient(135deg,#92b6ff,#e6a9c9);border-radius:4px"></div><div style="height:6px;background:#242b4d;width:84%"></div></div><b>Photo Mosaic</b><small>Layered visual card</small></button>
+    <button class="style" data-style="socialInfographic"><div class="thumb" style="background:#061624;border:1px solid #3d5461"><div style="height:6px;background:linear-gradient(90deg,#f7941d 0 33%,#fff 33% 66%,#168b4b 66%)"></div><div style="height:12px;background:#ffe51a;width:70%;transform:skew(-8deg)"></div><div style="height:8px;background:#dc2626;width:58%"></div><div style="height:10px;background:#d7e1e9"></div></div><b>India Explainer</b><small>Bold infographic story</small></button>
+    </div>
+  </div>
+  <div class="rule"></div>
+  <h2><span class="step">STEP 09</span>Export settings</h2>
+  <div class="two">
+    <div class="field"><label for="ratio">Post format</label><select id="ratio"><option value="portrait">Portrait · 4:5</option><option value="story">Story · 9:16</option><option value="square">Square · 1:1</option><option value="landscape">Landscape · 16:9</option><option value="custom">Custom dimensions</option></select></div>
+    <div class="field"><label for="exportQuality">Export resolution</label><select id="exportQuality"><option value="high">High resolution</option><option value="fullhd">Full HD · 1920 px</option><option value="4k">4K UHD · 3840 px</option></select></div>
+  </div>
+  <div class="two" id="customDimensions" style="display:none"><div class="field"><label for="customW">Width (px)</label><input id="customW" type="number" min="300" max="3000" value="1000"></div><div class="field"><label for="customH">Height (px)</label><input id="customH" type="number" min="300" max="3000" value="1250"></div></div>
+  <button class="btn" id="refresh" style="width:100%">↻ Refresh preview</button>
+  <div class="rule"></div>
+  <div class="tool-block image-text-tools" id="step9">
+    <h2><span class="step">STEP 06</span>Text on image</h2>
+    <p class="step5-intro">Add a separate text overlay to the main photo or any extra-story image.</p>
+    <div class="field"><label for="imageTextTarget">Select image</label><select id="imageTextTarget"><option value="main">Main story image</option></select></div>
+    <div class="field"><label for="imageOverlayText">Text to place on image</label><textarea id="imageOverlayText" maxlength="240" rows="2" placeholder="Type your image text"></textarea></div>
+    <div class="two">
+      <div class="field"><label for="imageOverlaySize">Text size <span id="imageOverlaySizeValue">10%</span></label><input id="imageOverlaySize" type="range" min="4" max="24" step="1" value="10"></div>
+      <div class="field"><label for="imageOverlayAlign">Text alignment</label><select id="imageOverlayAlign"><option value="center">Center</option><option value="left">Left</option><option value="right">Right</option></select></div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="imageOverlayColor">Text color</label><input id="imageOverlayColor" type="color" value="#ffffff"></div>
+      <div class="field"><label for="imageOverlayBackgroundColor">Text background color</label><input id="imageOverlayBackgroundColor" type="color" value="#111827"></div>
+    </div>
+    <div class="image-text-position">
+      <div class="field"><label for="imageOverlayX">Horizontal position <span id="imageOverlayXValue">50%</span></label><input id="imageOverlayX" type="range" min="0" max="100" value="50"></div>
+      <div class="field"><label for="imageOverlayY">Vertical position <span id="imageOverlayYValue">80%</span></label><input id="imageOverlayY" type="range" min="0" max="100" value="80"></div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="imageOverlayBackground">Text background style</label><select id="imageOverlayBackground"><option value="none">No background</option><option value="solid">Solid label</option><option value="translucent">Soft translucent box</option><option value="highlight">Highlight strip</option><option value="pill">Rounded pill</option></select></div>
+      <div class="field"><label for="imageOverlayFont">Text style</label><select id="imageOverlayFont"><option value="Arial, Helvetica, sans-serif">Clean sans</option><option value="Georgia, 'Times New Roman', serif">Editorial serif</option><option value="'Trebuchet MS', Arial, sans-serif">Rounded sans</option><option value="'Courier New', monospace">Typewriter</option><option value="Impact, 'Arial Narrow', sans-serif">Headline display</option><option value="system-ui, -apple-system, 'Segoe UI', sans-serif">System sans</option><option value="'Palatino Linotype', Palatino, Georgia, serif">Classic book serif</option><option value="'Arial Black', Impact, sans-serif">Heavy display</option><option value="'Noto Sans Devanagari', 'Nirmala UI', Mangal, 'Kohinoor Devanagari', sans-serif">Hindi · Devanagari sans</option><option value="'Noto Serif Devanagari', 'Kokila', 'Aparajita', 'Kohinoor Devanagari', serif">Hindi · Devanagari serif</option><option value="'Noto Sans Devanagari', Mangal, 'Nirmala UI', sans-serif">Hindi · bold headline</option></select></div>
+      <div class="field"><label for="imageOverlayWeight">Text weight</label><select id="imageOverlayWeight"><option value="bold">Bold</option><option value="normal">Regular</option></select></div>
+    </div>
+    <div class="step6-help">Overlay text is rendered directly at your selected export dimensions for crisp, high-resolution output.</div>
+  </div>
+</section>
+<section>
+  <div class="previewhead"><div><h2 id="previewLabel">Live newspaper preview</h2><div class="status">Edit the content or style — the design updates automatically.</div></div><span class="status">High-resolution export</span></div>
+  <div class="previewarea"><div class="canvas-holder"><canvas id="canvas" width="1000" height="1250" aria-label="Newspaper post preview" title="Click an image to edit it" style="cursor:crosshair"></canvas></div></div>
+  <div class="downloads"><button class="btn primary" id="downloadPng">↓ Download PNG</button><button class="btn" id="downloadJpg">↓ Download JPG</button><button class="btn primary" id="downloadPoster">↓ Download Poster PNG</button><button class="btn primary" id="downloadVideo" style="display:none"><span id="videoDownloadSpinner" class="video-export-spinner" aria-hidden="true" hidden></span><span id="downloadVideoLabel">↓ Download Video (MP4)</span></button></div>
+  <div class="notice" id="message" role="status">Ready to customize. Your images stay on your device.</div>
+  <div class="panel tips"><strong style="color:var(--ink)">Publishing tips</strong><br>• Keep headlines short and easy to read.<br>• Use clear, high-resolution photos you have permission to publish.<br>• Verify names, dates, locations and facts before sharing.<br>• Use your own publication name, and identify illustrative mockups clearly.</div>
+</section>
+</main>
+<div class="footer">Reality of India 26 · Multi-story public posts · Per-story photo controls · Optional fact-check checklist · Custom dimensions · Browser-based studio · Click photos in the preview to select them for editing. Your content is processed locally and is not uploaded.</div>
+<script>
+(() => {
+ const $=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d');
+ let photo=null,photos=[],selectedPhotoIndex=0,photoCounter=0,posterPhotos=[],selectedPosterPhotoIds=[],posterPhotoCounter=0,style='breaking',renderTimer=null,zoom=1,panX=0,panY=0,storyItems=[],storyCounter=0,activeEditorTarget='main',activeImageTextTarget='main',previewImageRegions=[],mainImageWidthPct=100,mainImageHeightPct=100,mainImageOffsetX=0,mainImageOffsetY=0,postType='image',videoUrl='',videoRaf=0,videoAudioContext=null,videoAudioSource=null,videoAudioDestination=null,videoExportScale=1;
+ const sourceVideo=$('sourceVideo');
+ const defaultImageText=()=>({text:'',size:10,align:'center',color:'#ffffff',backgroundColor:'#111827',x:50,y:80,background:'none',fontFamily:'Arial, Helvetica, sans-serif',weight:'bold'});
+ let mainImageText=defaultImageText();
+ const defaults={paper:'REALITY OF INDIA 26',category:'NATIONAL NEWS',date:'15 OCT 2026 | INDIA',headline:"India's Stories, Told from the Ground",subtitle:'People, places and perspectives shaping the nation',body:'Across India, every community has stories worth hearing. Reality of India 26 brings together local perspectives, public issues and everyday experiences from across the country. Add verified reporting, useful context and voices from the people closest to each story before publishing.',byline:''};
+ const themes={
+  breaking:{bg:'#fff',ink:'#171717',accent:'#d52d35',muted:'#656565',serif:false},
+  classic:{bg:'#f7f0df',ink:'#211c17',accent:'#7f2922',muted:'#65594a',serif:true},
+  modern:{bg:'#101b32',ink:'#fff',accent:'#50e0bf',muted:'#b8c6d8',serif:false},
+  politics:{bg:'#fff',ink:'#151a24',accent:'#b92832',muted:'#606a79',serif:false},
+  minimal:{bg:'#fff',ink:'#171717',accent:'#242424',muted:'#777',serif:true},
+  regional:{bg:'#fff4e6',ink:'#40251c',accent:'#b52e23',muted:'#815b45',serif:false},
+  conversation:{bg:'#f0f5ff',ink:'#17243b',accent:'#2673d9',muted:'#536780',serif:false},
+  interview:{bg:'#f6f0e8',ink:'#29221d',accent:'#8b3e26',muted:'#76685c',serif:true},
+  quote:{bg:'#1d2534',ink:'#fff',accent:'#f4ca65',muted:'#d2d9e4',serif:true},
+  photostory:{bg:'#e9f3f0',ink:'#18352f',accent:'#247e6a',muted:'#52746c',serif:false},
+  ledger:{bg:'#f1ead8',ink:'#252b26',accent:'#315044',muted:'#716b5c',serif:true},
+  bulletin:{bg:'#fff3c4',ink:'#29251f',accent:'#d64a2c',muted:'#665b41',serif:false},
+  midnight:{bg:'#111827',ink:'#f5f7fb',accent:'#55d6c2',muted:'#a8b5c7',serif:false},
+  darkEdition:{bg:'#090d18',ink:'#f3f5f8',accent:'#f4c95d',muted:'#bdc6d4',serif:true},
+  socialFeed:{bg:'#fff',ink:'#202124',accent:'#a33dc1',muted:'#616875',serif:false},
+  socialStory:{bg:'#21143d',ink:'#fff',accent:'#ff765e',muted:'#eadbf7',serif:false},
+  socialCard:{bg:'#e7f7f2',ink:'#193a33',accent:'#167d69',muted:'#52756d',serif:false},
+  socialQuote:{bg:'#17202e',ink:'#f8f4e9',accent:'#f4c95d',muted:'#b7c1d0',serif:true},
+  socialPop:{bg:'#ffdf5d',ink:'#211f1c',accent:'#ee5b48',muted:'#554a38',serif:false},
+  socialMosaic:{bg:'#dfe8ff',ink:'#242b4d',accent:'#5865c7',muted:'#59658e',serif:false},
+  socialInfographic:{bg:'#061624',ink:'#fff',accent:'#ffe51a',muted:'#d7e1e9',serif:false}
+ };
+ const val=id=>$(id).value.trim();
+ const isSocialStyle=()=>style.startsWith('social');
+ const textColorOverrides={paper:null,category:null,date:null,headline:null,subtitle:null,body:null,byline:null};
+ const textColorDefaults=()=>{const t=themes[style],infographic=style==='socialInfographic';return {paper:isSocialStyle()?t.ink:t.muted,category:style==='breaking'?'#ffffff':style==='bulletin'?'#29251f':style==='modern'?t.ink:t.accent,date:t.muted,headline:infographic?'#080d12':t.ink,subtitle:infographic?'#ffffff':t.muted,body:infographic?'#f5f7fa':t.ink,byline:t.muted}};
+ const textColor=(id,fallback)=>textColorOverrides[id]||fallback;
+ function syncTextColorControls(){
+   const defaults=textColorDefaults();
+   Object.keys(textColorOverrides).forEach(id=>{$(id+'Color').value=textColorOverrides[id]||defaults[id]});
+ }
+ function syncStyleFields(){
+   const social=isSocialStyle()||postType==='poster';
+   ['category','date'].forEach(id=>{const pair=$(id).closest('.step1-pair');pair.hidden=social;pair.style.display=social?'none':''});
+   $('headline').closest('.step1-pair').querySelector('label').textContent=postType==='poster'?'Poster headline':social?'Post headline':'Main headline';
+   $('body').closest('.step1-pair').querySelector('label').textContent=postType==='poster'?'Poster description':social?'Caption / post text':'News article / description';
+   $('subtitle').closest('.step1-pair').querySelector('label').textContent=postType==='poster'?'Supporting message':social?'Supporting text':'Subtitle';
+   syncTextColorControls();
+ }
+ const textScale=id=>(Number($(id).value)||100)/100;
+ const sectionSizeTools=$('sectionWidth').closest('.tool-block');
+ const movementTools=document.createElement('div');
+ movementTools.className='tool-block';
+ movementTools.innerHTML='<h2><span class="step">STEP 05</span>Image movement and zoom tools</h2>';
+ movementTools.append($('editorFit').parentElement,$('editorPanX').parentElement,$('editorPanY').parentElement,$('editorResetCrop').parentElement);
+ const imageStepPair=document.createElement('div');
+ imageStepPair.className='image-step-pair';
+ sectionSizeTools.parentElement.insertBefore(imageStepPair,sectionSizeTools);
+ imageStepPair.append(sectionSizeTools,movementTools);
+ imageStepPair.after($('step9'));
+ function wrap(text,w,font){ctx.font=font;const lines=[];for(const para of String(text||'').split('\n')){if(!para){lines.push('');continue}let line='';for(const word of para.split(/\s+/)){let test=line?line+' '+word:word;if(ctx.measureText(test).width>w&&line){lines.push(line);line=word}else line=test}if(line)lines.push(line)}return lines}
+ function textBlock(text,x,y,w,font,color,lh,max){ctx.font=font;ctx.fillStyle=color;ctx.textBaseline='top';let lines=wrap(text,w,font);const n=Math.min(lines.length,max||lines.length);for(let i=0;i<n;i++){let line=lines[i];if(i===n-1&&lines.length>n){while(line&&ctx.measureText(line+'…').width>w)line=line.slice(0,-1);line+='…'}ctx.fillText(line,x,y+i*lh)}return y+n*lh}
+ function imageFit(img,x,y,w,h,fit,px=panX,py=panY,z=zoom){if(!img)return;const sourceW=img.videoWidth||img.naturalWidth||img.width,sourceH=img.videoHeight||img.naturalHeight||img.height;if(!sourceW||!sourceH)return;ctx.save();ctx.fillStyle='#e8e8e8';ctx.fillRect(x,y,w,h);const base=(fit==='contain'?Math.min(w/sourceW,h/sourceH):Math.max(w/sourceW,h/sourceH));const scale=base*z,dw=sourceW*scale,dh=sourceH*scale;const ox=(w-dw)/2+(w-dw)*px/100,oy=(h-dh)/2+(h-dh)*py/100;ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();ctx.drawImage(img,x+ox,y+oy,dw,dh);ctx.restore()}
+ function drawPhotoLayout(x,y,w,h){
+   const fit=val('fit'),layout=val('imageLayout')||'single',items=photos.length&&selectedPhotoIndex>=0?[photos[selectedPhotoIndex],...photos.filter((o,i)=>i!==selectedPhotoIndex)]:[];
+   x += mainImageOffsetX; y += mainImageOffsetY;
+   if(postType==='video'){
+     if(videoUrl&&sourceVideo.readyState>=2){imageFit(sourceVideo,x,y,w,h,fit,panX,panY,zoom);drawImageOverlay('video',x,y,w,h)}else placeholder(x,y,w,h);
+     previewImageRegions.push({x,y,w,h,target:'video',photoIndex:-1});return;
+   }
+   if(!items.length){placeholder(x,y,w,h);previewImageRegions.push({x,y,w,h,target:'main',photoIndex:-1});return}
+   const gap=8*Math.min(canvas.width/1000,canvas.height/1250);let boxes=[];
+   if(layout==='side'&&items.length>1)boxes=[[x,y,(w-gap)/2,h],[x+(w+gap)/2,y,(w-gap)/2,h]];
+   else if((layout==='stack'||layout==='stack3')&&items.length>1){const n=Math.min(layout==='stack3'?3:2,items.length),boxH=(h-gap*(n-1))/n;for(let i=0;i<n;i++)boxes.push([x,y+i*(boxH+gap),w,boxH])}
+   else if(layout==='strip'&&items.length>1){const n=Math.min(3,items.length);for(let i=0;i<n;i++)boxes.push([x+i*(w+gap)/n,y,(w-gap*(n-1))/n,h])}
+   else if(layout==='grid'&&items.length>1){const n=Math.min(4,items.length);if(n===2)boxes=[[x,y,(w-gap)/2,h],[x+(w+gap)/2,y,(w-gap)/2,h]];else for(let i=0;i<n;i++)boxes.push([x+(i%2)*(w+gap)/2,y+Math.floor(i/2)*(h+gap)/2,(w-gap)/2,(h-gap)/2])}
+   else boxes=[[x,y,w,h]];
+   boxes.forEach((b,i)=>{const item=items[i%items.length],idx=photos.indexOf(item),imageTarget='photo:'+item.id;imageFit(item.img,...b,fit,item.panX||0,item.panY||0,(item.zoom||100)/100);drawImageOverlay(imageTarget,...b);previewImageRegions.push({x:b[0],y:b[1],w:b[2],h:b[3],target:'main',photoIndex:idx});if(boxes.length>1){ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.strokeRect(...b)}})
+ }
+ function placeholder(x,y,w,h){ctx.fillStyle='#e9e9e9';ctx.fillRect(x,y,w,h);ctx.fillStyle='#c6c6c6';ctx.beginPath();ctx.arc(x+w/2,y+h*.36,Math.min(w,h)*.12,0,Math.PI*2);ctx.fill();ctx.fillRect(x+w*.2,y+h*.54,w*.6,h*.25);ctx.fillStyle='#555';ctx.textAlign='center';ctx.font='bold 16px Arial';ctx.fillText('YOUR NEWS PHOTO',x+w/2,y+h*.88);ctx.textAlign='left'}
+ function drawImageOverlay(target,x,y,w,h){
+   const settings=target==='main'?mainImageText:target.startsWith('photo:')?photos.find(item=>'photo:'+item.id===target)?.imageText:storyItems.find(item=>'story:'+item.id===target)?.imageText;
+   if(!settings||!settings.text.trim())return;
+   ctx.save();ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();
+   const fontSize=Math.max(10,Math.min(w,h)*settings.size/100),lineHeight=fontSize*1.18,maxWidth=w*.88;
+   ctx.font=settings.weight+' '+fontSize+'px '+settings.fontFamily;
+   const lines=wrap(settings.text,maxWidth,ctx.font),maxLines=Math.max(1,Math.floor((h-8)/lineHeight));
+   const visibleLines=lines.slice(0,maxLines),blockHeight=visibleLines.length*lineHeight;
+   const anchorX=x+w*settings.x/100,anchorY=y+h*settings.y/100;
+   const textX=settings.align==='left'?Math.max(x+4,anchorX):settings.align==='right'?Math.min(x+w-4,anchorX):Math.max(x+4,Math.min(x+w-4,anchorX));
+   const top=Math.max(y+4,Math.min(y+h-blockHeight-4,anchorY-blockHeight/2));
+   ctx.textAlign=settings.align;ctx.textBaseline='top';ctx.fillStyle=settings.color;
+   visibleLines.forEach((line,index)=>{
+     const lineY=top+index*lineHeight;
+     if(settings.background!=='none'){
+       const textWidth=ctx.measureText(line).width,pad=fontSize*(settings.background==='highlight'?.12:.3),boxHeight=lineHeight;
+       const left=settings.align==='left'?textX-pad:settings.align==='right'?textX-textWidth-pad:textX-textWidth/2-pad;
+       const boxY=lineY-fontSize*.08,boxWidth=textWidth+pad*2,radius=settings.background==='pill'?boxHeight/2:settings.background==='highlight'?fontSize*.08:fontSize*.16;
+       ctx.fillStyle=settings.backgroundColor;ctx.globalAlpha=settings.background==='translucent'?.58:1;ctx.beginPath();ctx.roundRect(left,boxY,boxWidth,boxHeight,radius);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle=settings.color;
+     }
+     ctx.fillText(line,textX,lineY,maxWidth);
+   });
+   ctx.restore();
+ }
+ function esc(str){return String(str||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ function photoOptions(selected){return '<option value="-1" '+(selected<0?'selected':'')+'>No photo / placeholder</option>'+photos.map((p,i)=>'<option value="'+i+'" '+(i===selected?'selected':'')+'>'+esc(p.name)+'</option>').join('')}
+ function getImageTextSettings(target){if(target==='main'||target==='video')return mainImageText;if(target.startsWith('photo:'))return photos.find(item=>'photo:'+item.id===target)?.imageText||null;const item=storyItems.find(story=>'story:'+story.id===target);return item?item.imageText:null}
+ function refreshImageTextTargets(){
+   const select=$('imageTextTarget'),previous=activeImageTextTarget;
+   select.innerHTML=(photos.length?'': '<option value="main">Main story image</option>')+(videoUrl?'<option value="video">Video frame</option>':'')+photos.map((item,index)=>'<option value="photo:'+item.id+'">Main story image '+(index+1)+': '+esc(item.name)+'</option>').join('')+storyItems.map((item,index)=>'<option value="story:'+item.id+'">Extra story '+(index+1)+' image</option>').join('');
+   const valid=previous==='main'?!photos.length:previous==='video'?Boolean(videoUrl):previous.startsWith('photo:')?photos.some(item=>'photo:'+item.id===previous):storyItems.some(item=>'story:'+item.id===previous);
+   if(!valid)activeImageTextTarget=videoUrl?'video':photos.length?'photo:'+photos[Math.max(0,selectedPhotoIndex)]?.id:'main';
+   select.value=activeImageTextTarget;loadImageTextControls();
+ }
+ function loadImageTextControls(){
+   const settings=getImageTextSettings(activeImageTextTarget)||defaultImageText();
+   $('imageOverlayText').value=settings.text;$('imageOverlaySize').value=settings.size;$('imageOverlaySizeValue').textContent=settings.size+'%';
+   $('imageOverlayAlign').value=settings.align;$('imageOverlayColor').value=settings.color;$('imageOverlayBackgroundColor').value=settings.backgroundColor;
+   $('imageOverlayX').value=settings.x;$('imageOverlayXValue').textContent=settings.x+'%';$('imageOverlayY').value=settings.y;$('imageOverlayYValue').textContent=settings.y+'%';
+   $('imageOverlayBackground').value=settings.background;$('imageOverlayFont').value=settings.fontFamily;$('imageOverlayWeight').value=settings.weight;
+ }
+ function updateImageTextSettings(){
+   const settings=getImageTextSettings(activeImageTextTarget);if(!settings)return;
+   settings.text=$('imageOverlayText').value;settings.size=Number($('imageOverlaySize').value);settings.align=$('imageOverlayAlign').value;
+   settings.color=$('imageOverlayColor').value;settings.backgroundColor=$('imageOverlayBackgroundColor').value;
+   settings.x=Number($('imageOverlayX').value);settings.y=Number($('imageOverlayY').value);
+   settings.background=$('imageOverlayBackground').value;settings.fontFamily=$('imageOverlayFont').value;settings.weight=$('imageOverlayWeight').value;
+   $('imageOverlaySizeValue').textContent=settings.size+'%';$('imageOverlayXValue').textContent=settings.x+'%';$('imageOverlayYValue').textContent=settings.y+'%';
+   schedule();
+ }
+ function addStory(data={}){
+   if(storyItems.length>=2){setMessage('A post can contain up to 3 stories total, including the main story.');return}
+   const item={id:++storyCounter,title:data.title||'Additional local update',body:data.body||'Add a short description of this news item.',photoIndex:Number.isInteger(data.photoIndex)?data.photoIndex:-1,zoom:100,panX:0,panY:0,offsetX:0,offsetY:0,source:'',layout:'left',imageWidth:38,imageHeight:100,titleSize:100,bodySize:100,imageText:defaultImageText(),...data};
+   storyItems.push(item);$('postMode').value='multi';renderStoryEditors();loadEditorTarget();schedule();
+ }
+ function renderStoryEditors(){
+   const host=$('storyList');host.innerHTML='';host.style.display=$('postMode').value==='multi'?'grid':'none';$('addStory').disabled=storyItems.length>=2;$('addStory').querySelector('.add-story-label').textContent=storyItems.length>=2?'Maximum reached':'Add story section';$('storyCount').textContent=storyItems.length+' / 2';
+   storyItems.forEach((item,index)=>{
+     const card=document.createElement('div');card.className='story-card';card.innerHTML=`<div class="story-card-head"><span>Extra story ${index+1}</span><button type="button" class="btn remove-story" style="padding:4px 7px" aria-label="Remove story section">Remove</button></div>
+     <div class="field"><label>Headline</label><textarea class="story-title" maxlength="150" rows="2">${esc(item.title)}</textarea></div>
+     <div class="field"><label>News article / description</label><textarea class="story-body" maxlength="800" rows="3">${esc(item.body)}</textarea></div>
+     <div class="story-text-sizes"><div><label>Headline size <span class="size-value title-size-value">${item.titleSize}%</span></label><input class="story-title-size" type="range" min="60" max="300" step="5" value="${item.titleSize}"></div><div><label>Article size <span class="size-value body-size-value">${item.bodySize}%</span></label><input class="story-body-size" type="range" min="70" max="400" step="5" value="${item.bodySize}"></div></div>
+     <div class="field"><label>Section layout — image and text position</label><select class="section-layout"><option value="left" ${item.layout==='left'?'selected':''}>Image left · text right</option><option value="right" ${item.layout==='right'?'selected':''}>Text left · image right</option><option value="top" ${item.layout==='top'?'selected':''}>Image above text</option><option value="bottom" ${item.layout==='bottom'?'selected':''}>Image below text</option></select></div>
+     <div class="mini-grid"><div><div class="mini-label"><span>Image section width</span><span class="iwval">${item.imageWidth}%</span></div><input class="story-image-width" type="range" min="20" max="100" step="1" value="${item.imageWidth}"></div><div><div class="mini-label"><span>Image section height</span><span class="ihval">${item.imageHeight}%</span></div><input class="story-image-height" type="range" min="20" max="100" step="1" value="${item.imageHeight}"></div></div>
+     <div class="editor-subhead">Image editor</div><div class="field"><label>Choose image for this section</label><select class="story-photo">${photoOptions(item.photoIndex)}</select></div>
+     <div class="mini-grid"><div><div class="mini-label"><span>Image zoom</span><span class="zval">${item.zoom}%</span></div><input class="story-zoom" type="range" min="50" max="250" step="5" value="${item.zoom}"></div><div><div class="mini-label"><span>Horizontal crop</span><span class="xval">${item.panX}</span></div><input class="story-x" type="range" min="-100" max="100" value="${item.panX}"></div><div><div class="mini-label"><span>Vertical crop</span><span class="yval">${item.panY}</span></div><input class="story-y" type="range" min="-100" max="100" value="${item.panY}"></div></div>
+     <div class="field fact-fields"><label>Source / verification note (optional)</label><input class="story-source" maxlength="180" value="${esc(item.source)}" placeholder="Official notice, link, document, interview…"></div>`;
+     card.querySelector('.remove-story').addEventListener('click',()=>{storyItems=storyItems.filter(x=>x.id!==item.id);renderStoryEditors();loadEditorTarget();schedule()});
+     card.querySelector('.story-title').addEventListener('input',e=>{item.title=e.target.value;schedule()});card.querySelector('.story-body').addEventListener('input',e=>{item.body=e.target.value;schedule()});
+     card.querySelector('.story-title-size').addEventListener('input',e=>{item.titleSize=Number(e.target.value);card.querySelector('.title-size-value').textContent=item.titleSize+'%';schedule()});card.querySelector('.story-body-size').addEventListener('input',e=>{item.bodySize=Number(e.target.value);card.querySelector('.body-size-value').textContent=item.bodySize+'%';schedule()});
+     card.querySelector('.story-photo').addEventListener('change',e=>{item.photoIndex=Number(e.target.value);if(activeEditorTarget==='story:'+item.id)loadEditorTarget();schedule()});card.querySelector('.section-layout').addEventListener('change',e=>{item.layout=e.target.value;schedule()});
+     card.querySelector('.story-image-width').addEventListener('input',e=>{item.imageWidth=Number(e.target.value);card.querySelector('.iwval').textContent=item.imageWidth+'%';schedule()});card.querySelector('.story-image-height').addEventListener('input',e=>{item.imageHeight=Number(e.target.value);card.querySelector('.ihval').textContent=item.imageHeight+'%';schedule()});
+     card.querySelector('.story-zoom').addEventListener('input',e=>{item.zoom=Number(e.target.value);card.querySelector('.zval').textContent=item.zoom+'%';schedule()});
+     card.querySelector('.story-x').addEventListener('input',e=>{item.panX=Number(e.target.value);card.querySelector('.xval').textContent=item.panX;schedule()});card.querySelector('.story-y').addEventListener('input',e=>{item.panY=Number(e.target.value);card.querySelector('.yval').textContent=item.panY;schedule()});
+     card.querySelector('.story-source').addEventListener('input',e=>{item.source=e.target.value;schedule()});host.appendChild(card);
+   });
+   refreshImageTextTargets();
+ }
+ function refreshStoryPhotoOptions(){if(storyItems.length)renderStoryEditors();loadEditorTarget()}
+ function drawAdditionalStories(x,y,w,Hleft,s,t,serif){
+   if($('postMode').value!=='multi'||!storyItems.length||Hleft<70*s)return y;
+   const gap=12*s,stackRows=val('storyArrangement')==='rows',cols=storyItems.length===1||stackRows?1:2,colW=(w-gap*(cols-1))/cols;
+   const rowCount=Math.ceil(storyItems.length/cols),availableCardHeight=(Hleft-gap*(rowCount-1))/rowCount;
+   const cardH=Math.max(45*s,Math.min(230*s,availableCardHeight));
+   storyItems.forEach((item,i)=>{
+     const xx=x+(i%cols)*(colW+gap),yy=y+Math.floor(i/cols)*(cardH+gap);
+     ctx.save();ctx.beginPath();ctx.rect(xx,yy,colW,cardH);ctx.clip();
+     ctx.fillStyle=style==='modern'?'#1a2944':(style==='quote'?'#283448':t.bg);ctx.fillRect(xx,yy,colW,cardH);
+     const pad=8*s,innerX=xx+pad,innerY=yy+pad,innerW=colW-2*pad,innerH=cardH-2*pad;
+     const img=item.photoIndex>=0?photos[item.photoIndex]?.img:null;
+     const layout=item.layout||'left';let tx=innerX,ty=innerY,tw=innerW,th=innerH;
+     const offsetX=Number(item.offsetX||0),offsetY=Number(item.offsetY||0);
+     if(layout==='left'||layout==='right'){
+       const iw=Math.min(innerW*.68,Math.max(innerW*.20,innerW*(Number(item.imageWidth||38)/100))),ih=Math.min(innerH,Math.max(innerH*.25,innerH*(Number(item.imageHeight||100)/100))),imageY=innerY+(innerH-ih)/2+offsetY,gapX=7*s,textW=Math.max(innerW*.18,innerW-iw-gapX);
+       const imageX=layout==='left'?innerX+offsetX:innerX+innerW-iw+offsetX;
+       if(img){imageFit(img,imageX,imageY,iw,ih,'cover',item.panX,item.panY,item.zoom/100);drawImageOverlay('story:'+item.id,imageX,imageY,iw,ih)}else placeholder(imageX,imageY,iw,ih);previewImageRegions.push({x:imageX,y:imageY,w:iw,h:ih,target:'story:'+item.id,photoIndex:item.photoIndex});
+       tx=layout==='left'?Math.min(innerX+iw+gapX+offsetX,innerX+innerW-textW+offsetX):innerX+offsetX;tw=textW;
+     }else{
+       const iw=Math.min(innerW,Math.max(innerW*.25,innerW*(Number(item.imageWidth||100)/100))),ih=Math.min(innerH*.62,Math.max(innerH*.18,innerH*(Number(item.imageHeight||44)/100)*.44)),imageX=innerX+(innerW-iw)/2+offsetX,imageY=(layout==='top'?innerY:innerY+innerH-ih)+offsetY;
+       if(img){imageFit(img,imageX,imageY,iw,ih,'cover',item.panX,item.panY,item.zoom/100);drawImageOverlay('story:'+item.id,imageX,imageY,iw,ih)}else placeholder(imageX,imageY,iw,ih);previewImageRegions.push({x:imageX,y:imageY,w:iw,h:ih,target:'story:'+item.id,photoIndex:item.photoIndex});
+       if(layout==='top'){ty=innerY+ih+7*s+offsetY;th=Math.max(20*s,innerY+innerH-ty)}else{ty=innerY+offsetY;th=Math.max(20*s,imageY-7*s-innerY)}
+     }
+     const titleFs=(layout==='left'||layout==='right'?13:14)*s*(Number(item.titleSize)||100)/100;
+     let cy=textBlock(item.title||'News update',tx,ty,tw,'bold '+titleFs+'px '+serif,t.ink,titleFs*1.12,3)+4*s;
+     const bodyFs=(layout==='left'||layout==='right'?9.5:10.5)*s*(Number(item.bodySize)||100)/100;
+     const bodyMax=Math.max(1,Math.floor((ty+th-cy-4*s)/(bodyFs*1.28)));
+     textBlock(item.body||'',tx,cy,tw,bodyFs+'px '+serif,t.ink,bodyFs*1.28,bodyMax);
+     ctx.restore();
+   });
+   return y+cardH+gap;
+ }
+ function drawBrushBanner(x,y,w,h,color,scale){
+   ctx.fillStyle=color;ctx.beginPath();
+   const steps=12;
+   for(let i=0;i<=steps;i++){const xx=x+w*i/steps,yy=y+(i%2?-.045:.045)*h;ctx.lineTo(xx,yy)}
+   for(let i=steps;i>=0;i--){const xx=x+w*i/steps,yy=y+h+(i%2?.045:-.045)*h;ctx.lineTo(xx,yy)}
+   ctx.closePath();ctx.fill();
+   ctx.fillRect(x+5*scale,y+h*.16,w-10*scale,h*.68);
+ }
+ function drawSocialInfographic(W,H,s,p,wide,t,serif){
+   ctx.fillStyle='#061624';ctx.fillRect(0,0,W,H);
+   ctx.fillStyle='#f7941d';ctx.fillRect(p,p,wide/3,5*s);
+   ctx.fillStyle='#fff';ctx.fillRect(p+wide/3,p,wide/3,5*s);
+   ctx.fillStyle='#168b4b';ctx.fillRect(p+2*wide/3,p,wide/3,5*s);
+   const mastheadY=p+18*s,mastFont=29*s;
+   ctx.textAlign='center';ctx.textBaseline='top';ctx.font='900 '+mastFont+'px Arial';
+   const name=(val('paper')||'REALITY OF INDIA 26').toUpperCase();
+   ctx.fillStyle=textColor('paper','#fff');ctx.fillText(name,W/2,mastheadY,wide);
+   ctx.fillStyle='#c5d2dd';ctx.font='bold '+11*s+'px Arial';ctx.fillText('FACTS  |  NEWS  |  ANALYSIS',W/2,mastheadY+36*s);
+   ctx.textAlign='left';
+   let y=mastheadY+61*s;
+   const gap=18*s,leftW=wide*.51,rightX=p+wide*.535,rightW=wide*.465,heroH=Math.min(510*s,Math.max(390*s,H*.34)),headlineX=p+5*s;
+   const headlineFont=48*s*textScale('headlineSize');
+   let titleLines=wrap(val('headline')||'Your headline goes here',leftW-24*s,'900 '+headlineFont+'px Arial');
+   const titleSize=headlineFont;
+   const titleHeight=Math.max(86*s,titleLines.length*titleSize*1.05+24*s);
+   drawBrushBanner(headlineX,y,leftW,titleHeight,'#ffe51a',s);
+   textBlock(val('headline')||'Your headline goes here',headlineX+14*s,y+12*s,leftW-28*s,'900 '+titleSize+'px Arial',textColor('headline','#080d12'),titleSize*1.05,titleLines.length);
+   let leftY=y+titleHeight+14*s;
+   const subtitle=val('subtitle');
+   if(subtitle){
+     const subtitleFont=20*s*textScale('subtitleSize'),subtitleLines=wrap(subtitle,leftW-28*s,'bold '+subtitleFont+'px Arial');
+     const subtitleHeight=Math.max(52*s,subtitleLines.length*subtitleFont*1.15+17*s);
+     drawBrushBanner(headlineX,leftY,leftW*.94,subtitleHeight,'#d51e2b',s);
+     textBlock(subtitle,headlineX+13*s,leftY+8*s,leftW*.94-26*s,'bold '+subtitleFont+'px Arial',textColor('subtitle','#fff'),subtitleFont*1.15,subtitleLines.length);
+   }
+   const photo=selectedPhotoIndex>=0?photos[selectedPhotoIndex]:null,useVideo=postType==='video'&&videoUrl&&sourceVideo.readyState>=2,heroMedia=useVideo?sourceVideo:postType==='video'?null:photo?.img;
+   ctx.save();ctx.beginPath();ctx.roundRect(rightX,y,rightW,heroH,12*s);ctx.clip();
+   if(heroMedia){imageFit(heroMedia,rightX,y,rightW,heroH,val('fit')||'cover',useVideo?panX:(photo?.panX||0),useVideo?panY:(photo?.panY||0),useVideo?zoom:(photo?.zoom||100)/100);drawImageOverlay(useVideo?'video':'photo:'+photo.id,rightX,y,rightW,heroH)}
+   else placeholder(rightX,y,rightW,heroH);
+   ctx.restore();
+   previewImageRegions.push({x:rightX,y,w:rightW,h:heroH,target:postType==='video'?'video':'main',photoIndex:selectedPhotoIndex});
+   y+=heroH+22*s;
+   const bodyText=val('body');
+   const sentences=bodyText.split(/(?<=[.!?।])\s+|\n+/).map(part=>part.trim()).filter(Boolean);
+   const blocks=[];
+   if(sentences.length){
+     const blockCount=Math.min(4,sentences.length);
+     let sentenceIndex=0;
+     for(let blockIndex=0;blockIndex<blockCount;blockIndex++){
+       const blocksLeft=blockCount-blockIndex,remaining=sentences.length-sentenceIndex,targetLength=remaining/blocksLeft;
+       let parts=[],length=0;
+       while(sentenceIndex<sentences.length&&(blockIndex===blockCount-1||length<targetLength||parts.length===0&&remaining>=blocksLeft)){
+         const part=sentences[sentenceIndex++];parts.push(part);length+=part.length;
+         if(length>=targetLength&&parts.length>0)break;
+       }
+       blocks.push(parts.join(' '));
+     }
+   }
+   ctx.fillStyle='#ffe51a';ctx.font='900 '+20*s+'px Arial';ctx.fillText('KEY DETAILS',p,y+3*s);
+   ctx.fillStyle='#d8e2eb';ctx.fillRect(p+133*s,y+12*s,wide-133*s,2*s);y+=36*s;
+   const columns=blocks.length>1?2:1,cardGap=12*s,cardW=(wide-cardGap*(columns-1))/columns,bodyFont=17*s*textScale('bodySize'),lineHeight=bodyFont*1.35;
+   const cardLines=blocks.map(text=>wrap(text,cardW-48*s,bodyFont+'px Arial'));
+   const rowHeights=[];
+   for(let i=0;i<blocks.length;i+=columns){
+     const maxLines=Math.max(...cardLines.slice(i,i+columns).map(lines=>lines.length));
+     rowHeights.push(Math.max(88*s,maxLines*lineHeight+32*s));
+   }
+   let blockIndex=0;
+   rowHeights.forEach((cardH,row)=>{
+     for(let col=0;col<columns&&blockIndex<blocks.length;col++,blockIndex++){
+       const x=p+col*(cardW+cardGap),cardY=y;
+       ctx.fillStyle='#10283a';ctx.beginPath();ctx.roundRect(x,cardY,cardW,cardH,9*s);ctx.fill();
+       ctx.fillStyle=blockIndex%2?'#f7941d':'#ffe51a';ctx.beginPath();ctx.arc(x+20*s,cardY+21*s,12*s,0,Math.PI*2);ctx.fill();
+       ctx.fillStyle='#061624';ctx.textAlign='center';ctx.font='900 '+10*s+'px Arial';ctx.fillText(String(blockIndex+1).padStart(2,'0'),x+20*s,cardY+16*s);
+       ctx.textAlign='left';textBlock(blocks[blockIndex],x+40*s,cardY+13*s,cardW-52*s,bodyFont+'px Arial',textColor('body','#f5f7fa'),lineHeight,cardLines[blockIndex].length);
+     }
+     y+=cardH+cardGap;
+   });
+   if(!blocks.length)y+=12*s;
+   if($('postMode').value==='multi'&&storyItems.length){
+     const availableStories=Math.max(0,H-p-150*s-y);
+     if(availableStories>60*s){ctx.fillStyle='#ffe51a';ctx.fillRect(p,y,wide,3*s);y+=12*s;y=drawAdditionalStories(p,y,wide,availableStories,s,t,serif)}
+   }
+   const calloutH=52*s,calloutY=Math.min(y+8*s,H-p-calloutH-57*s);
+   drawBrushBanner(p,calloutY,wide,calloutH,'#ffe51a',s);
+   ctx.fillStyle='#061624';ctx.font='900 '+Math.min(19*s,wide/35)+'px Arial';ctx.textAlign='center';ctx.fillText('UNDERSTAND THE STORY  ·  SHARE WITH CARE',W/2,calloutY+16*s,wide-20*s);
+   const footerY=H-p-33*s;ctx.fillStyle='#fff';ctx.font='900 '+20*s+'px Arial';ctx.fillText(name,W/2,footerY-11*s,wide);ctx.fillStyle='#f7941d';ctx.fillRect(p,footerY+17*s,wide/3,4*s);ctx.fillStyle='#fff';ctx.fillRect(p+wide/3,footerY+17*s,wide/3,4*s);ctx.fillStyle='#168b4b';ctx.fillRect(p+2*wide/3,footerY+17*s,wide/3,4*s);
+   ctx.textAlign='left';ctx.textBaseline='top';
+ }
+ function getSelectedPosterPhotos(){return posterPhotos.filter(item=>selectedPosterPhotoIds.includes(item.id))}
+ function drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,eventLine,slogan,cta,disclaimer,photos){
+   ctx.fillStyle=background;ctx.fillRect(0,0,W,H);
+   ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(W*.48,0);ctx.lineTo(W*.965,0);ctx.lineTo(W*.965,H*.27);ctx.quadraticCurveTo(W*.965,H*.42,W*.76,H*.43);ctx.lineTo(W*.48,H*.43);ctx.closePath();ctx.fill();
+   ctx.beginPath();ctx.ellipse(W*.28,H*.78,W*.29,H*.24,-.12,0,Math.PI*2);ctx.fill();
+   const photo=photos[0],photoX=W*.035,photoY=H*.205,photoW=W*.67,photoH=H*.795;
+   if(photo){
+     ctx.save();ctx.filter='blur('+Math.max(5,14*s)+'px)';
+     imageFit(photo.img,photoX-12*s,photoY-12*s,photoW+24*s,photoH+24*s,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     ctx.restore();
+     ctx.save();ctx.beginPath();ctx.moveTo(photoX,photoY+photoW*.24);ctx.quadraticCurveTo(photoX,photoY,photoX+photoW*.25,photoY);ctx.lineTo(photoX+photoW*.75,photoY);ctx.quadraticCurveTo(photoX+photoW,photoY,photoX+photoW,photoY+photoW*.24);ctx.lineTo(photoX+photoW,photoY+photoH);ctx.lineTo(photoX,photoY+photoH);ctx.closePath();ctx.clip();
+     imageFit(photo.img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);ctx.restore();
+     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(photo)});
+   }else{
+     ctx.fillStyle='#ffffff25';ctx.beginPath();ctx.ellipse(W*.35,H*.64,W*.2,H*.29,0,0,Math.PI*2);ctx.fill();
+   }
+   const left=W*.55,right=W*.94,textWidth=right-left;
+   ctx.textBaseline='top';ctx.textAlign='left';
+   if(campaign){ctx.fillStyle=background==='#d0d0d0'?'#292929':ink;ctx.font='500 '+Math.round(17*s)+'px Arial';textBlock(campaign,left*.07,H*.045,W*.29,'500 '+Math.round(17*s)+'px Arial',background==='#d0d0d0'?'#292929':ink,Math.round(21*s),2)}
+   let y=H*.075;
+   ctx.fillStyle=ink;ctx.font='500 '+Math.round(22*s)+'px Arial';
+   y=textBlock(role||'Vote for a Better Future',left,y,textWidth,'500 '+Math.round(22*s)+'px Arial',ink,Math.round(28*s),2)+Math.round(8*s);
+   ctx.font='900 '+Math.round(58*s)+'px Arial';
+   y=textBlock(candidate||'YOUR CANDIDATE NAME',left,y,textWidth,'900 '+Math.round(58*s)+'px Arial',ink,Math.round(59*s),3)+Math.round(8*s);
+   if(eventLine){ctx.font='500 '+Math.round(26*s)+'px Arial';y=textBlock(eventLine,left,y,textWidth,'500 '+Math.round(26*s)+'px Arial',ink,Math.round(31*s),2)+Math.round(15*s)}
+   const numberY=Math.max(y+Math.round(10*s),H*.245);
+   ctx.fillStyle=ink;ctx.font='900 '+Math.round(126*s)+'px Arial';ctx.fillText('01',left,numberY,textWidth*.43);
+   const badgeText=constituency||cta||'Progress And Develop';
+   const badgeX=left+textWidth*.47,badgeY=numberY+Math.round(22*s),badgeW=textWidth*.52;
+   textBlock(badgeText,badgeX,badgeY,badgeW,'900 '+Math.round(24*s)+'px Arial',ink,Math.round(27*s),3);
+   const message=slogan||cta;
+   if(message){
+     const messageX=W*.06,messageY=H*.81,messageW=W*.54,font=Math.round(27*s);
+     const lines=wrap(message,messageW,'900 '+font+'px Arial').slice(0,3),lineHeight=Math.round(32*s);
+     ctx.fillStyle='#111827a8';ctx.beginPath();ctx.roundRect(messageX-10*s,messageY-8*s,messageW+18*s,lines.length*lineHeight+16*s,8*s);ctx.fill();
+     textBlock(message,messageX,messageY,messageW,'900 '+font+'px Arial','#fff',lineHeight,3);
+   }
+   if(disclaimer){ctx.fillStyle=background==='#d0d0d0'?'#333333':ink;ctx.font=Math.round(12*s)+'px Arial';ctx.textAlign='right';ctx.fillText(disclaimer,W*.96,H*.97,W*.6);ctx.textAlign='left'}
+   ctx.textBaseline='top';
+ }
+ function drawPosterPhotoArrangement(W,H,s,p,wide,photos,imageHeight,top=p){
+   if(!photos.length||!imageHeight)return p;
+   const layout=val('posterImageLayout'),gap=8*s,baseY=top,regions=[];
+   const draw=(item,index,x,y,w,h,radius=8*s)=>{
+     ctx.save();ctx.filter='blur('+Math.max(5,10*s)+'px)';ctx.beginPath();ctx.roundRect(x-8*s,y-8*s,w+16*s,h+16*s,radius+8*s);ctx.clip();
+     imageFit(item.img,x-8*s,y-8*s,w+16*s,h+16*s,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     ctx.restore();
+     ctx.save();ctx.beginPath();ctx.roundRect(x,y,w,h,radius);ctx.clip();
+     imageFit(item.img,x,y,w,h,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     ctx.restore();regions.push({x,y,w,h,target:'posterPhoto',photoIndex:index});
+   };
+   if(layout==='hero'){
+     draw(photos[0],0,0,top,wide,imageHeight);
+   }else if(layout==='strip'){
+     const count=Math.min(photos.length,6),itemW=(wide-gap*(count-1))/count;
+     for(let i=0;i<count;i++)draw(photos[i],i,p+i*(itemW+gap),top,itemW,imageHeight,4*s);
+   }else if(layout==='portrait'){
+     const itemW=Math.min(wide*.42,360*s),itemH=imageHeight,itemX=p+(wide-itemW)/2;
+     draw(photos[0],0,itemX,top,itemW,itemH,18*s);
+   }else if(layout==='collage'){
+     const count=Math.min(photos.length,5),leadW=wide*.61,smallGap=7*s,smallW=wide-leadW-smallGap,cellH=(imageHeight-smallGap*3)/4;
+     draw(photos[0],0,p,top,leadW,imageHeight,10*s);
+     for(let i=1;i<count;i++)draw(photos[i],i,p+leadW+smallGap,top+(i-1)*(cellH+smallGap),smallW,cellH,8*s);
+   }else{
+     const count=Math.min(photos.length,6),columns=count>4?3:2,rows=Math.ceil(count/columns),cellW=(wide-gap*(columns-1))/columns,cellH=(imageHeight-gap*(rows-1))/rows;
+     for(let i=0;i<count;i++)draw(photos[i],i,p+(i%columns)*(cellW+gap),top+Math.floor(i/columns)*(cellH+gap),cellW,cellH,8*s);
+   }
+   regions.forEach(region=>previewImageRegions.push(region));
+   return baseY+imageHeight+18*s;
+ }
+ function drawPoster(W,H,s,p,wide){
+   const layout=val('posterLayout'),palette={
+     rally:{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff20'},
+     candidate:{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff22'},
+     splitCampaign:{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff20'},
+     manifesto:{ink:'#172b22',muted:'#51665a',shape:'#ffffff90'},
+     meeting:{ink:'#fff',muted:'#e2dff1',shape:'#ffffff20'},
+     community:{ink:'#fff',muted:'#e5e7eb',shape:'#ffffff22'},
+     election:{ink:'#fff',muted:'#e7edf4',shape:'#ffffff24'},
+     geometric:{ink:'#fff',muted:'#e0e7ff',shape:'#ffffff1c'},
+     vintage:{ink:'#34271c',muted:'#665747',shape:'#ffffff70'},
+     youth:{ink:'#fff',muted:'#e6e4ff',shape:'#ffffff1c'},
+     collage:{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff20'},
+     townhall:{ink:'#fff',muted:'#e6e9f2',shape:'#ffffff20'},
+     grassroots:{ink:'#fff',muted:'#e5f0e7',shape:'#ffffff20'},
+     bulletin:{ink:'#182033',muted:'#566174',shape:'#ffffff90'}
+   }[layout]||{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff20'};
+   const background=val('posterBackground'),accent=val('posterAccent'),ink=val('posterTextColor');
+   const campaign=val('posterCampaign'),candidate=val('posterCandidate'),role=val('posterRole');
+   const constituency=val('posterConstituency'),slogan=val('posterSlogan'),details=val('posterPromises');
+   const eventLine=[val('posterDate'),val('posterVenue')].filter(Boolean).join('  ·  ');
+   const cta=val('posterCallToAction'),disclaimer=val('posterDisclaimer');
+   const selectedPhotos=getSelectedPosterPhotos(),hasPhoto=selectedPhotos.length>0;
+   if(layout==='splitCampaign'){
+     drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,eventLine,slogan,cta,disclaimer,selectedPhotos);
+     return;
+   }
+   const fontFamily=layout==='manifesto'||layout==='vintage'?'Georgia, serif':'Arial, sans-serif';
+   const posterGradient=ctx.createLinearGradient(0,0,W,H);
+   posterGradient.addColorStop(0,background);posterGradient.addColorStop(1,layout==='youth'?accent:background);
+   ctx.fillStyle=layout==='youth'?posterGradient:background;ctx.fillRect(0,0,W,H);
+   if(layout==='rally'){
+     ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(W*.12,0);ctx.lineTo(0,H*.18);ctx.closePath();ctx.fill();
+     ctx.fillStyle=palette.shape;ctx.beginPath();ctx.moveTo(W,0);ctx.lineTo(W,H*.32);ctx.lineTo(W*.84,H*.22);ctx.closePath();ctx.fill();
+   }else if(layout==='candidate'){
+     ctx.fillStyle=accent;ctx.fillRect(0,0,W,12*s);
+     ctx.fillStyle=palette.shape;ctx.beginPath();ctx.arc(W-p*.25,p*.2,p*.85,0,Math.PI*2);ctx.fill();
+   }else if(layout==='manifesto'){
+     ctx.fillStyle=accent;ctx.fillRect(0,0,W,16*s);
+     ctx.strokeStyle=accent;ctx.lineWidth=2*s;ctx.strokeRect(p*.55,p*.55,W-p*1.1,H-p*1.1);
+   }else if(layout==='meeting'){
+     ctx.fillStyle=accent;ctx.fillRect(0,H*.69,W,H*.31);
+     ctx.fillStyle=palette.shape;ctx.beginPath();ctx.arc(W*.9,H*.13,wide*.32,0,Math.PI*2);ctx.fill();
+   }else if(layout==='community'){
+     ctx.fillStyle=accent;ctx.beginPath();ctx.arc(W*.12,H*.13,wide*.19,0,Math.PI*2);ctx.fill();
+     ctx.fillStyle=palette.shape;ctx.beginPath();ctx.arc(W*.91,H*.74,wide*.26,0,Math.PI*2);ctx.fill();
+   }else if(layout==='election'){
+     ctx.fillStyle=accent;ctx.fillRect(0,0,W,H*.13);ctx.fillStyle=palette.shape;ctx.fillRect(0,H*.87,W,H*.13);
+   }else if(layout==='geometric'){
+     ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(W*.7,0);ctx.lineTo(W,0);ctx.lineTo(W,H*.4);ctx.closePath();ctx.fill();
+     ctx.fillStyle=palette.shape;ctx.beginPath();ctx.moveTo(0,H*.73);ctx.lineTo(W*.24,H);ctx.lineTo(0,H);ctx.closePath();ctx.fill();
+   }else if(layout==='vintage'){
+     ctx.fillStyle=accent;ctx.fillRect(p*.55,p*.55,W-p*1.1,H-p*1.1);
+     ctx.fillStyle=background;ctx.fillRect(p*.78,p*.78,W-p*1.56,H-p*1.56);
+     ctx.fillStyle=accent;ctx.fillRect(p*.9,p*.9,W-p*1.8,H-p*1.8);
+   }else if(layout==='youth'){
+     ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(0,H*.16);ctx.lineTo(W*.36,0);ctx.lineTo(W*.22,H*.33);ctx.closePath();ctx.fill();
+   }else if(layout==='townhall'){
+     ctx.fillStyle=accent;ctx.fillRect(0,H*.76,W,H*.24);
+     for(let i=0;i<5;i++){ctx.fillStyle=palette.shape;ctx.beginPath();ctx.arc(p+i*wide/4,H*.2,18*s,0,Math.PI*2);ctx.fill()}
+   }else if(layout==='grassroots'){
+     ctx.fillStyle=accent;ctx.beginPath();ctx.arc(W*.5,H*.5,wide*.49,0,Math.PI*2);ctx.fill();
+     ctx.fillStyle=background;ctx.beginPath();ctx.arc(W*.5,H*.5,wide*.43,0,Math.PI*2);ctx.fill();
+   }else if(layout==='bulletin'){
+     ctx.fillStyle=accent;ctx.fillRect(p*.55,p*.55,W-p*1.1,H-p*1.1);
+     ctx.fillStyle=palette.shape;ctx.fillRect(p,H*.14,W-p*2,H*.72);
+   }else{
+     ctx.fillStyle=accent;ctx.fillRect(0,0,W,10*s);
+   }
+   const compact=layout==='candidate';
+   let y=p+(layout==='candidate'?18:layout==='manifesto'||layout==='vintage'?28:36)*s;
+   const imageHeight=hasPhoto?Math.min(H*(compact?.34:.30),360*s):0;
+   if(hasPhoto&&layout==='candidate'){
+     const photoW=Math.min(W*.36,330*s),photoX=W-p-photoW,photoY=y+30*s,photoH=imageHeight;
+     imageFit(selectedPhotos[0].img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     ctx.strokeStyle=accent;ctx.lineWidth=7*s;ctx.strokeRect(photoX,photoY,photoW,photoH);
+     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(selectedPhotos[0])});
+   }else if(hasPhoto){
+     y=drawPosterPhotoArrangement(W,H,s,p,wide,selectedPhotos,imageHeight);
+     if(layout==='rally'||layout==='collage'||layout==='community'||layout==='youth'){
+       const shade=ctx.createLinearGradient(0,p+imageHeight*.55,0,p+imageHeight);
+       shade.addColorStop(0,background+'00');shade.addColorStop(1,background);
+       ctx.fillStyle=shade;ctx.fillRect(0,p+imageHeight*.55,W,imageHeight*.45);
+     }
+   }
+   if(campaign){
+     ctx.fillStyle=accent;ctx.font='900 '+15*s+'px Arial';ctx.fillText(campaign.toUpperCase(),p,y,wide);
+     y+=31*s;
+   }
+   if(layout==='quote'||layout==='vintage'){ctx.fillStyle=accent;ctx.font='900 '+48*s+'px Georgia';ctx.fillText(layout==='quote'?'“':'★',p,y-8*s);y+=35*s}
+   const nameFont=(compact?45:51)*s;
+   if(candidate){y=textBlock(candidate,p,y,compact&&hasPhoto?W-p*2-Math.min(W*.36,330*s)-22*s:wide,'900 '+nameFont+'px '+fontFamily,ink,nameFont*1.08,3)+5*s}
+   if(role){ctx.fillStyle=accent;ctx.font='bold '+18*s+'px Arial';ctx.fillText(role.toUpperCase(),p,y,wide);y+=27*s}
+   if(constituency){ctx.fillStyle=palette.muted;ctx.font='bold '+16*s+'px Arial';ctx.fillText(constituency.toUpperCase(),p,y,wide);y+=29*s}
+   if(layout==='candidate'&&hasPhoto)y=Math.max(y,p+18*s+30*s+imageHeight+12*s);
+   if(layout==='candidate'&&selectedPhotos.length>1)y=drawPosterPhotoArrangement(W,H,s,p,wide,selectedPhotos.slice(1),Math.min(130*s,180*s),y);
+   const sloganFont=(layout==='manifesto'?38:layout==='quote'?39:43)*s;
+   if(slogan){
+     if(layout==='meeting'){ctx.fillStyle=ink;ctx.fillRect(p,y,wide,Math.max(8*s,3*s))}
+     y=textBlock(slogan,p,y+(layout==='meeting'?16*s:0),wide,'900 '+sloganFont+'px '+fontFamily,ink,sloganFont*1.08,5)+15*s;
+   }
+   if(layout==='manifesto'&&details){
+     const points=details.split(/\n|[;•]+/).map(text=>text.trim()).filter(Boolean).slice(0,5);
+     points.forEach((point,index)=>{
+       ctx.fillStyle=accent;ctx.beginPath();ctx.arc(p+12*s,y+11*s,7*s,0,Math.PI*2);ctx.fill();
+       ctx.fillStyle=ink;ctx.font='bold '+19*s+'px Arial';
+       y=textBlock(point,p+32*s,y,wide-32*s,'bold '+19*s+'px Arial',ink,26*s,3)+12*s;
+     });
+   }else if(details){
+     ctx.fillStyle=palette.shape;ctx.beginPath();ctx.roundRect(p,y,wide,Math.min(160*s,Math.max(58*s,wrap(details,wide-32*s,'bold '+18*s+'px Arial').length*25*s+28*s)),12*s);ctx.fill();
+     ctx.fillStyle=layout==='meeting'?'#ffffff':palette.muted;
+     ctx.font='bold '+18*s+'px Arial';
+     y=textBlock(details,p+16*s,y+14*s,wide-32*s,'bold '+18*s+'px Arial',layout==='meeting'?'#ffffff':palette.muted,25*s,5)+22*s;
+   }
+   if(eventLine){
+     ctx.fillStyle=layout==='meeting'?'#ffffff':ink;ctx.font='bold '+16*s+'px Arial';
+     y=textBlock(eventLine,p,y,wide,'bold '+16*s+'px Arial',layout==='meeting'?'#ffffff':ink,23*s,2)+17*s;
+   }
+   const footerY=H-p-(disclaimer?38*s:16*s);
+   if(cta){
+     const ctaH=50*s,ctaY=Math.min(y,footerY-ctaH-14*s);
+     ctx.fillStyle=accent;ctx.beginPath();ctx.roundRect(p,ctaY,wide,ctaH,layout==='meeting'?8*s:ctaH/2);ctx.fill();
+     ctx.fillStyle=background;ctx.font='900 '+17*s+'px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(cta.toUpperCase(),W/2,ctaY+ctaH/2,wide-24*s);ctx.textAlign='left';ctx.textBaseline='top';
+   }
+   if(disclaimer){ctx.fillStyle=layout==='meeting'?'#ffffff':palette.muted;ctx.font='10px Arial';ctx.textAlign='center';ctx.fillText(disclaimer,W/2,H-p-12*s,wide);ctx.textAlign='left'}
+ }
+ function render(exportScale=1){
+  previewImageRegions=[];
+  const dimensions={portrait:[1000,1250],story:[900,1600],square:[1000,1000],landscape:[1600,900],custom:[Math.max(300,Math.min(3000,Number(val('customW'))||1000)),Math.max(300,Math.min(3000,Number(val('customH'))||1250))]},[baseW,baseH]=dimensions[val('ratio')]||dimensions.portrait;
+  const baseScale=Math.min(baseW/1000,baseH/1250),basePadding=54*baseScale,baseWidth=baseW-2*basePadding;
+  const baseSerif=themes[style].serif?'Georgia, serif':'Arial, Helvetica, sans-serif';
+  const articleFontSize=(style==='classic'?19:18)*baseScale*textScale('bodySize'),articleLineHeight=articleFontSize*1.45;
+  const articleLineCount=wrap(val('body'),baseWidth,articleFontSize+'px '+baseSerif).length;
+  const baseHeadlineSize=(style==='breaking'?61:style==='classic'?57:style==='modern'?54:(style==='socialFeed'?55:style==='socialStory'?58:style==='socialCard'?53:style==='darkEdition'?56:52))*baseScale;
+  const scaledHeadlineSize=baseHeadlineSize*textScale('headlineSize');
+  const headlineText=val('headline')||'Your headline goes here';
+  const baselineHeadlineLines=wrap(headlineText,baseWidth,'900 '+baseHeadlineSize+'px '+baseSerif).length;
+  const scaledHeadlineLines=wrap(headlineText,baseWidth,'900 '+scaledHeadlineSize+'px '+baseSerif).length;
+  const subtitleText=val('subtitle'),baseSubtitleSize=22*baseScale,scaledSubtitleSize=baseSubtitleSize*textScale('subtitleSize');
+  const baselineSubtitleLines=subtitleText?wrap(subtitleText,baseWidth,'600 '+baseSubtitleSize+'px '+baseSerif).length:0;
+  const scaledSubtitleLines=subtitleText?wrap(subtitleText,baseWidth,'600 '+scaledSubtitleSize+'px '+baseSerif).length:0;
+  const headerTextReserve=Math.max(0,scaledHeadlineLines*scaledHeadlineSize*1.05-baselineHeadlineLines*baseHeadlineSize*1.05)
+    +Math.max(0,scaledSubtitleLines*scaledSubtitleSize*1.32-baselineSubtitleLines*baseSubtitleSize*1.32)
+    +Math.max(0,20*baseScale*(textScale('paperSize')-1)*1.7)
+    +Math.max(0,17*baseScale*(textScale('categorySize')-1)*1.8)
+    +Math.max(0,13*baseScale*(textScale('dateSize')-1)*1.8);
+  const posterLayoutHeight=postType==='poster'?(()=>{
+    const hasPosterPhoto=selectedPosterPhotoIds.length>0;
+    const posterNameWidth=val('posterLayout')==='candidate'&&hasPosterPhoto?baseWidth*.58:baseWidth;
+    const posterLines=(text,font,width)=>text?wrap(text,width,font*baseScale+'px '+(val('posterLayout')==='manifesto'?'Georgia':'Arial')).length:0;
+    const detailLines=val('posterLayout')==='manifesto'
+      ?val('posterPromises').split(/\n|[;•]+/).map(text=>text.trim()).filter(Boolean).slice(0,5).reduce((sum,text)=>sum+posterLines(text,19,baseWidth-32*baseScale),0)
+      :posterLines(val('posterPromises'),18,baseWidth-32*baseScale);
+    const imageHeight=hasPosterPhoto?Math.min(baseH*(val('posterLayout')==='candidate'?.34:.30),360*baseScale):0;
+    return Math.ceil(200*baseScale+imageHeight
+      +posterLines(val('posterCandidate'),51,posterNameWidth)*51*baseScale*1.08
+      +posterLines(val('posterSlogan'),43,baseWidth)*43*baseScale*1.08
+      +detailLines*25*baseScale+100*baseScale
+      +(val('posterRole')?30*baseScale:0)+(val('posterConstituency')?31*baseScale:0)
+      +(val('posterDate')||val('posterVenue')?48*baseScale:0)+(val('posterCallToAction')?72*baseScale:0)
+      +(val('posterDisclaimer')?42*baseScale:0));
+  })():0;
+  const activeStoryCount=$('postMode').value==='multi'?storyItems.length:0;
+  const storyRows=$('storyArrangement').value==='rows'?activeStoryCount:(activeStoryCount>1?1:activeStoryCount);
+  const storyHeight=storyRows?storyRows*230*baseScale+Math.max(0,storyRows-1)*12*baseScale:0;
+  const requiredHeight=Math.ceil((articleLineCount*articleLineHeight+storyHeight+700*baseScale+headerTextReserve)/.62);
+  const contentHeight=Math.max(baseH,Math.min(8000,postType==='poster'?Math.max(requiredHeight,posterLayoutHeight):requiredHeight));
+  const W=Math.round(baseW*exportScale),H=Math.round(contentHeight*exportScale);
+  $('customDimensions').style.display=val('ratio')==='custom'?'grid':'none';
+  if(canvas.width!==W)canvas.width=W;if(canvas.height!==H)canvas.height=H;const t=themes[style],s=Math.min(W/1000,H/1250),p=54*s,wide=W-2*p,serif=t.serif?'Georgia, serif':'Arial, Helvetica, sans-serif';
+  if(postType==='poster'){drawPoster(W,H,s,p,wide);return}
+  if(style==='socialInfographic'){drawSocialInfographic(W,H,s,p,wide,t,serif);return}
+  if(style==='socialStory'||style==='socialMosaic'){const gradient=ctx.createLinearGradient(0,0,W,H);gradient.addColorStop(0,style==='socialMosaic'?'#344c9b':'#271447');gradient.addColorStop(.52,style==='socialMosaic'?'#8265c9':'#682e83');gradient.addColorStop(1,style==='socialMosaic'?'#e4a3c3':'#d84d6f');ctx.fillStyle=gradient}else ctx.fillStyle=t.bg;
+  ctx.fillRect(0,0,W,H);ctx.fillStyle=t.ink;ctx.textBaseline='top';ctx.fillStyle=t.accent;ctx.fillRect(p,p,wide,7*s);
+  let y=p+20*s;
+  if(!isSocialStyle()){
+    const paperFont=20*s*textScale('paperSize');ctx.font='bold '+paperFont+'px '+serif;ctx.fillStyle=textColor('paper',t.muted);ctx.textAlign='center';ctx.fillText((val('paper')||'REALITY OF INDIA 26').toUpperCase().slice(0,55),W/2,y,wide);ctx.textAlign='left';y+=Math.max(34*s,paperFont*1.7);
+  }
+  if(isSocialStyle()){
+    ctx.fillStyle=t.accent;ctx.beginPath();ctx.arc(p+7*s,y+7*s,7*s,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle=textColor('paper',t.ink);ctx.font='bold '+11*s+'px Arial';ctx.fillText((val('paper')||'REALITY OF INDIA 26').toUpperCase(),p+20*s,y);
+    ctx.fillStyle=t.muted;ctx.font='bold '+9*s+'px Arial';ctx.fillText('@REALITYOFINDIA26  ·  INDIA',p+20*s,y+13*s);y+=34*s;
+    if(style==='socialQuote'){
+      ctx.fillStyle=t.accent;ctx.font='900 '+52*s+'px Georgia';ctx.fillText('“',p,y-3*s);
+      ctx.fillStyle=t.muted;ctx.font='bold '+10*s+'px Arial';ctx.fillText('A THOUGHT TO SHARE',p+40*s,y+10*s);y+=46*s;
+    }else if(style==='socialPop'){
+      ctx.fillStyle=t.accent;ctx.beginPath();ctx.roundRect(p,y,wide,34*s,17*s);ctx.fill();
+      ctx.fillStyle='#fff';ctx.font='900 '+12*s+'px Arial';ctx.fillText('THE BIG IDEA',p+14*s,y+10*s);
+      ctx.fillStyle=t.ink;ctx.beginPath();ctx.arc(W-p-13*s,y+17*s,5*s,0,Math.PI*2);ctx.fill();y+=47*s;
+    }else if(style==='socialMosaic'){
+      const tile=22*s,gap=5*s;
+      [t.accent,'#ffffff','#ffd166'].forEach((color,index)=>{ctx.fillStyle=color;ctx.beginPath();ctx.roundRect(p+index*(tile+gap),y,tile,tile,5*s);ctx.fill()});
+      ctx.fillStyle='#fff';ctx.font='bold '+11*s+'px Arial';ctx.fillText('MOMENTS THAT MATTER',p+3*(tile+gap)+4*s,y+5*s);y+=36*s;
+    }
+  }
+  if(!isSocialStyle()){ctx.strokeStyle=t.ink;ctx.lineWidth=1.5*s;ctx.beginPath();ctx.moveTo(p,y);ctx.lineTo(W-p,y);ctx.stroke();y+=14*s;}
+  const cat=(val('category')||'LATEST NEWS').toUpperCase();
+  if(!isSocialStyle()){
+  if(style==='conversation'){ctx.fillStyle=t.accent;ctx.beginPath();ctx.roundRect(p,y,wide,34*s,10*s);ctx.fill();ctx.fillStyle='#fff';ctx.font='bold '+16*s+'px Arial';ctx.fillText('THE STORY · IN CONVERSATION',p+14*s,y+8*s);y+=47*s}
+  else if(style==='quote'){ctx.fillStyle=t.accent;ctx.font='bold '+34*s+'px Georgia';ctx.fillText('“',p,y-3*s);ctx.fillStyle=textColor('category',t.accent);ctx.font='bold '+15*s*textScale('categorySize')+'px Arial';ctx.fillText(cat,p+35*s,y+7*s);y+=37*s}
+  else if(style==='interview'){ctx.fillStyle=t.accent;ctx.font='bold '+15*s+'px Arial';ctx.fillText('IN FOCUS  /  Q&A',p,y+3*s);y+=30*s}
+  else if(style==='photostory'){ctx.fillStyle=t.accent;ctx.fillRect(p,y,wide,5*s);y+=15*s}
+  else if(style==='ledger'){ctx.fillStyle=t.accent;ctx.font='italic bold '+13*s+'px Georgia';ctx.fillText('THE LEDGER  ·  EST. TODAY',p,y+2*s);ctx.strokeStyle=t.accent;ctx.lineWidth=1*s;ctx.beginPath();ctx.moveTo(p,y+23*s);ctx.lineTo(W-p,y+23*s);ctx.stroke();y+=34*s}
+  else if(style==='bulletin'){ctx.fillStyle='#29251f';ctx.fillRect(p,y,wide,34*s);ctx.fillStyle='#ffe36b';ctx.font='bold '+14*s+'px Arial';ctx.fillText('CITY BULLETIN  /  COMMUNITY DESK',p+12*s,y+9*s);y+=46*s}
+  else if(style==='midnight'){ctx.fillStyle=t.accent;ctx.fillRect(p,y,5*s,31*s);ctx.fillStyle=t.ink;ctx.font='bold '+14*s+'px Arial';ctx.fillText('NIGHT EDITION  ·  LATE UPDATE',p+14*s,y+7*s);y+=41*s}
+  else if(style==='darkEdition'){ctx.fillStyle=t.accent;ctx.font='italic bold '+14*s+'px Georgia';ctx.textAlign='center';ctx.fillText('THE DARK EDITION  ·  INDIA',W/2,y+2*s);ctx.textAlign='left';y+=32*s}
+  else if(style==='socialFeed'){ctx.fillStyle=t.accent;ctx.font='bold '+10*s+'px Arial';ctx.fillText('LATEST UPDATE',p,y+3*s);y+=25*s}
+  else if(style==='socialStory'){ctx.fillStyle='#ffffff';ctx.globalAlpha=.9;ctx.beginPath();ctx.roundRect(p,y,wide,31*s,12*s);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle='#49215f';ctx.font='bold '+13*s+'px Arial';ctx.fillText('YOUR DAILY INDIA UPDATE',p+12*s,y+7*s);y+=42*s}
+  else if(style==='socialCard'){ctx.fillStyle=t.accent;ctx.font='bold '+11*s+'px Arial';ctx.fillText('COMMUNITY UPDATE',p,y+3*s);y+=27*s}
+  if(style==='conversation'){ctx.fillStyle=t.muted;ctx.font='bold '+13*s+'px Arial';ctx.fillText('LATEST UPDATE',p,y);y+=25*s}
+  else if(style==='breaking'){const catFont=17*s*textScale('categorySize'),catH=Math.max(36*s,catFont*1.7);ctx.fillStyle=t.accent;ctx.fillRect(p,y,wide,catH);ctx.fillStyle=textColor('category','#fff');ctx.font='bold '+catFont+'px Arial';ctx.fillText(cat,p+12*s,y+(catH-catFont)/2);y+=catH+13*s}
+  else if(style==='modern'){const catFont=16*s*textScale('categorySize'),catH=Math.max(28*s,catFont*1.75);ctx.fillStyle=t.accent;ctx.fillRect(p,y,8*s,catH);ctx.fillStyle=textColor('category',t.ink);ctx.font='bold '+catFont+'px Arial';ctx.fillText(cat,p+19*s,y+(catH-catFont)/2);y+=catH+12*s}
+  else if(style==='classic'){const catFont=15*s*textScale('categorySize'),catH=Math.max(30*s,catFont*1.8);ctx.strokeStyle=t.accent;ctx.strokeRect(p,y,wide,catH);ctx.fillStyle=textColor('category',t.accent);ctx.font='bold '+catFont+'px Georgia';ctx.textAlign='center';ctx.fillText(cat,W/2,y+(catH-catFont)/2);ctx.textAlign='left';y+=catH+13*s}
+  else if(style==='ledger'){const catFont=15*s*textScale('categorySize');ctx.fillStyle=textColor('category',t.accent);ctx.font='bold '+catFont+'px Georgia';ctx.fillText(cat,p,y);y+=Math.max(29*s,catFont*1.8)}
+  else if(style==='bulletin'){const catFont=16*s*textScale('categorySize'),catH=Math.max(34*s,catFont*1.8);ctx.fillStyle='#f0c83f';ctx.fillRect(p,y,wide,catH);ctx.fillStyle=textColor('category','#29251f');ctx.font='900 '+catFont+'px Arial';ctx.fillText(cat,p+12*s,y+(catH-catFont)/2);y+=catH+12*s}
+  else if(style==='midnight'){const catFont=15*s*textScale('categorySize');ctx.fillStyle=textColor('category',t.accent);ctx.font='bold '+catFont+'px Arial';ctx.fillText('●  '+cat,p,y+3*s);y+=Math.max(29*s,catFont*1.8)}
+  else if(style==='darkEdition'){const catFont=15*s*textScale('categorySize'),catH=Math.max(31*s,catFont*1.8);ctx.fillStyle='#1b2433';ctx.beginPath();ctx.roundRect(p,y,wide,catH,4*s);ctx.fill();ctx.fillStyle=textColor('category',t.accent);ctx.font='bold '+catFont+'px Arial';ctx.fillText(cat,p+12*s,y+(catH-catFont)/2);y+=catH+12*s}
+  else if(style==='socialFeed'||style==='socialStory'||style==='socialCard'){const catFont=13*s*textScale('categorySize'),pad=11*s;ctx.font='bold '+catFont+'px Arial';const catWidth=Math.min(wide,ctx.measureText(cat).width+pad*2),catH=Math.max(27*s,catFont*1.8);ctx.fillStyle=style==='socialStory'?'#ffffff':t.accent;ctx.globalAlpha=style==='socialStory'?.2:1;ctx.beginPath();ctx.roundRect(p,y,catWidth,catH,catH/2);ctx.fill();ctx.globalAlpha=1;ctx.fillStyle=style==='socialStory'?'#ffffff':(style==='socialFeed'?'#ffffff':'#ffffff');ctx.fillText(cat,p+pad,y+(catH-catFont)/2);y+=catH+10*s}
+  else{const catFont=16*s*textScale('categorySize');ctx.fillStyle=textColor('category',t.accent);ctx.font='bold '+catFont+'px '+serif;ctx.fillText(cat,p,y+3*s);y+=Math.max(29*s,catFont*1.8)}
+  const dateFont=13*s*textScale('dateSize');ctx.fillStyle=textColor('date',t.muted);ctx.font='bold '+dateFont+'px Arial';ctx.fillText((val('date')||'NEWS UPDATE').toUpperCase(),p,y,wide);y+=Math.max(23*s,dateFont*1.8);
+  }
+  let fs=(style==='breaking'?61:style==='classic'?57:style==='modern'?54:(style==='socialFeed'?55:style==='socialStory'?58:style==='socialCard'?53:style==='darkEdition'?56:52))*s*textScale('headlineSize'),headline=val('headline')||'Your headline goes here';
+  y=textBlock(headline,p,y,wide,'900 '+fs+'px '+serif,textColor('headline',t.ink),fs*1.05)+9*s;
+  const subtitle=val('subtitle'),subtitleFont=22*s*textScale('subtitleSize'),subtitleLine=subtitleFont*1.32;if(subtitle)y=textBlock(subtitle,p,y,wide,'600 '+subtitleFont+'px '+serif,textColor('subtitle',t.muted),subtitleLine)+13*s;
+  ctx.fillStyle=t.accent;ctx.fillRect(p,y,70*s,5*s);y+=18*s;
+  const footer=val('byline'),available=Math.max(60*s,H-y-p-48*s);
+  let imageH=Math.min(available*($('postMode').value==='multi'?.30:(isSocialStyle()?.56:.48)),H*($('postMode').value==='multi'?.24:(isSocialStyle()?.42:.34)));imageH=Math.max(Math.min(100*s,available*.3),imageH);
+  if(H<W*.8)imageH=Math.min(available*.43,H*.31);
+  imageH=Math.min(imageH,available*.64);
+  imageH=Math.max(50*s,Math.min(available*.78,imageH*mainImageHeightPct/100));
+  const mainImageW=Math.min(W,wide*mainImageWidthPct/100),mainImageX=(W-mainImageW)/2;
+  drawPhotoLayout(mainImageX,y,mainImageW,imageH);
+  if(style==='conversation'){ctx.fillStyle=t.accent;ctx.font='bold '+12*s+'px Arial';ctx.fillText($('factCheckToggle').checked?'●  EDITOR FACT-CHECK PANEL ENABLED':'●  NEWS UPDATE',p,y+imageH+3*s)}
+  y+=imageH+16*s;const remaining=Math.max(20*s,H-p-48*s-y),bodySize=(style==='classic'?19:18)*s*textScale('bodySize'),lineHeight=bodySize*1.45;
+  if(val('body')){const mainBodyLines=wrap(val('body'),wide,bodySize+'px '+serif).length;y=textBlock(val('body'),p,y,wide,bodySize+'px '+serif,textColor('body',t.ink),lineHeight,mainBodyLines)+8*s;}
+  if(isSocialStyle()){const footerY=Math.min(H-p-18*s,y+8*s);ctx.fillStyle=t.accent;ctx.font='bold '+11*s+'px Arial';ctx.fillText('REALITY OF INDIA 26  ·  SHARE THE STORY',p,footerY)}
+  if($('postMode').value==='multi'&&storyItems.length){const left=Math.max(0,H-p-42*s-y);if(left>70*s){ctx.fillStyle=t.accent;ctx.fillRect(p,y,wide,3*s);y+=10*s;y=drawAdditionalStories(p,y,wide,left,s,t,serif);}}
+  if(footer){const footerFont=12*s*textScale('bylineSize');ctx.fillStyle=textColor('byline',t.muted);ctx.font='bold '+footerFont+'px Arial';ctx.fillText(footer.slice(0,100),p,H-p-Math.max(23*s,footerFont*1.8),wide)}
+  ctx.strokeStyle=t.accent;ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(p,H-p);ctx.lineTo(W-p,H-p);ctx.stroke();
+ }
+ function schedule(){clearTimeout(renderTimer);renderTimer=setTimeout(()=>{try{render(videoRecording?videoExportScale:1)}catch(e){$('message').textContent='Preview error. Try shortening the headline or article.'}},90)}
+ document.querySelectorAll('#paper,#category,#date,#headline,#subtitle,#body,#byline,#ratio,#fit,#customW,#customH,#factCheckToggle').forEach(el=>{el.addEventListener('input',schedule);el.addEventListener('change',schedule)});
+ ['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBackground','posterAccent','posterTextColor','posterPhotoPosition','posterImageLayout','posterPhotoZoom'].forEach(id=>{$(id).addEventListener('input',()=>{if(id==='posterPhotoZoom')$('posterPhotoZoomValue').textContent=val(id)+'%';schedule()});$(id).addEventListener('change',schedule)});
+ ['paperSize','categorySize','dateSize','headlineSize','subtitleSize','bodySize','bylineSize'].forEach(id=>$(id).addEventListener('input',()=>{$(id+'Value').textContent=$(id).value+'%';schedule()}));
+ Object.keys(textColorOverrides).forEach(id=>$(id+'Color').addEventListener('input',e=>{textColorOverrides[id]=e.target.value;schedule()}));
+ $('imageLayout').addEventListener('change',schedule);$('postMode').addEventListener('change',()=>{renderStoryEditors();loadEditorTarget();schedule()});$('storyArrangement').addEventListener('change',schedule);$('factCheckToggle').addEventListener('change',schedule);$('addStory').addEventListener('click',()=>addStory());
+ $('imageTextTarget').addEventListener('change',e=>{activeImageTextTarget=e.target.value;loadImageTextControls()});
+ ['imageOverlayText','imageOverlaySize','imageOverlayAlign','imageOverlayColor','imageOverlayBackgroundColor','imageOverlayX','imageOverlayY','imageOverlayBackground','imageOverlayFont','imageOverlayWeight'].forEach(id=>{$(id).addEventListener('input',updateImageTextSettings);$(id).addEventListener('change',updateImageTextSettings)});
+ document.querySelectorAll('.style').forEach(btn=>btn.addEventListener('click',()=>{style=btn.dataset.style;document.querySelectorAll('.style').forEach(b=>b.classList.toggle('active',b===btn));syncStyleFields();schedule()}));
+ $('photo').addEventListener('change',e=>{const files=Array.from(e.target.files||[]);if(!files.length)return;const valid=files.filter(f=>f.type.startsWith('image/')&&f.size<=15*1024*1024);if(!valid.length){setMessage('Choose image files smaller than 15 MB each.');e.target.value='';return}let loaded=0;valid.forEach(file=>{const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{photos.push({id:++photoCounter,img,name:file.name,url,zoom:100,panX:0,panY:0,imageText:defaultImageText()});loaded++;if(loaded===valid.length){const firstAdded=photos.length-valid.length;if(firstAdded===0&&mainImageText.text.trim()){photos[0].imageText=mainImageText;mainImageText=defaultImageText()}selectPhoto(firstAdded);activeImageTextTarget='photo:'+photos[firstAdded].id;renderGallery();refreshStoryPhotoOptions();refreshImageTextTargets();loadEditorTarget();$('uploadTitle').textContent=photos.length+' photo option(s)';$('uploadSub').textContent='Click a thumbnail to switch photos';setMessage(photos.length+' photo option(s) added.');schedule()}};img.onerror=()=>{loaded++;URL.revokeObjectURL(url);if(loaded===valid.length)setMessage('Some images could not be loaded. Try another file.');};img.src=url});e.target.value=''});
+ function selectPhoto(index){if(index<0||index>=photos.length)return;selectedPhotoIndex=index;photo=photos[index].img;document.querySelectorAll('.thumbimg').forEach((el,i)=>el.classList.toggle('active',i===index));$('photoStatus').textContent='Selected: '+photos[index].name;if(activeEditorTarget==='main')loadEditorTarget()}
+ function renderGallery(){const g=$('gallery');g.innerHTML='';photos.forEach((item,i)=>{const card=document.createElement('div');card.className='gallery-item';const im=document.createElement('img');im.src=item.url;im.className='thumbimg'+(photo===item.img?' active':'');im.title=item.name;im.alt='Select '+item.name;im.addEventListener('click',()=>{selectPhoto(i);schedule()});const remove=document.createElement('button');remove.type='button';remove.className='gallery-remove';remove.textContent='×';remove.setAttribute('aria-label','Delete '+item.name);remove.title='Delete image';remove.addEventListener('click',()=>removePhotoAt(i));card.append(im,remove);g.appendChild(card)});refreshEditorImageOptions()}
+ function removePhotoAt(index){
+   const removed=photos[index];if(!removed)return;
+   URL.revokeObjectURL(removed.url);photos.splice(index,1);
+   storyItems.forEach(item=>{if(item.photoIndex===index)item.photoIndex=-1;else if(item.photoIndex>index)item.photoIndex--});
+   if(!photos.length)selectedPhotoIndex=-1;
+   else if(selectedPhotoIndex>index)selectedPhotoIndex--;
+   else if(selectedPhotoIndex===index)selectedPhotoIndex=Math.min(index,photos.length-1);
+   photo=selectedPhotoIndex>=0?photos[selectedPhotoIndex].img:null;
+   $('photoStatus').textContent=photo?'Selected: '+photos[selectedPhotoIndex].name:'No photo selected — sample placeholder shown.';
+   $('uploadTitle').textContent=photos.length?photos.length+' photo option(s)':'Choose a news photo';
+   $('uploadSub').textContent=photos.length?'Click a thumbnail to switch photos':'JPG, PNG or WebP · up to 15 MB each';
+   renderGallery();refreshStoryPhotoOptions();refreshImageTextTargets();schedule();
+ }
+ function refreshEditorImageOptions(){
+   const sel=$('editorImageSelect'),previous=sel.value;sel.innerHTML='<option value="-1">No uploaded image</option>'+photos.map((p,i)=>'<option value="'+i+'">'+(i+1)+'. '+esc(p.name)+'</option>').join('');
+   const target=activeEditorTarget;
+   if(target==='main')sel.value=photos.length&&selectedPhotoIndex>=0?String(selectedPhotoIndex):'-1';
+   else {const item=storyItems.find(x=>'story:'+x.id===target);sel.value=String(item?item.photoIndex:-1)}
+ }
+ function syncImageSectionControls(){
+   if(activeEditorTarget!=='main'&&!storyItems.some(it=>'story:'+it.id===activeEditorTarget))activeEditorTarget='main';
+   let w=100,h=100,x=0,y=0;
+   if(activeEditorTarget==='main'){
+     w=mainImageWidthPct;h=mainImageHeightPct;x=mainImageOffsetX;y=mainImageOffsetY;
+   }else{
+     const item=storyItems.find(it=>'story:'+it.id===activeEditorTarget);if(item){w=Number(item.imageWidth||100);h=Number(item.imageHeight||100);x=Number(item.offsetX||0);y=Number(item.offsetY||0);}
+   }
+   $('sectionWidth').value=w;$('sectionWidthValue').textContent=w+'%';$('sectionHeight').value=h;$('sectionHeightValue').textContent=h+'%';$('sectionX').value=x;$('sectionXValue').textContent=x;$('sectionY').value=y;$('sectionYValue').textContent=y;
+ }
+ function loadEditorTarget(){
+   const target=$('editorTarget');target.innerHTML='<option value="main">Main story photo</option>'+storyItems.map((it,i)=>'<option value="story:'+it.id+'">Additional section '+(i+1)+' photo</option>').join('');
+   if(activeEditorTarget!=='main'&&!storyItems.some(it=>'story:'+it.id===activeEditorTarget))activeEditorTarget='main';
+   target.value=activeEditorTarget;
+   let z=100,x=0,y=0,fit='cover';
+   if(activeEditorTarget==='main'){
+     const ph=photos[selectedPhotoIndex];if(ph){z=ph.zoom||100;x=ph.panX||0;y=ph.panY||0}fit=val('fit')||'cover';
+   }else{const item=storyItems.find(it=>'story:'+it.id===activeEditorTarget);if(item){z=item.zoom||100;x=item.panX||0;y=item.panY||0;fit='cover'}}
+   $('editorZoom').value=z;$('editorZoomValue').textContent=z+'%';$('editorPanX').value=x;$('editorPanXValue').textContent=x;$('editorPanY').value=y;$('editorPanYValue').textContent=y;$('editorFit').value=fit;
+   $('editorHint').textContent=activeEditorTarget==='main'?'Editing the main story photo. Click another photo in the preview to switch selection.':'Editing an additional story photo. Image position and crop apply only to this section.';
+   refreshEditorImageOptions();
+   syncImageSectionControls();
+ }
+ function applySelectedSectionSettings(){
+   const w=Number($('sectionWidth').value),h=Number($('sectionHeight').value),x=Number($('sectionX').value),y=Number($('sectionY').value);
+   $('sectionWidthValue').textContent=w+'%';$('sectionHeightValue').textContent=h+'%';$('sectionXValue').textContent=x;$('sectionYValue').textContent=y;
+   if(activeEditorTarget==='main'){
+     mainImageWidthPct=w;mainImageHeightPct=h;mainImageOffsetX=x;mainImageOffsetY=y;
+   }else{
+     const item=storyItems.find(it=>'story:'+it.id===activeEditorTarget);if(item){item.imageWidth=w;item.imageHeight=h;item.offsetX=x;item.offsetY=y;}
+   }
+   schedule();
+ }
+ function applyEditorCrop(){
+   const z=Number($('editorZoom').value),x=Number($('editorPanX').value),y=Number($('editorPanY').value);
+   $('editorZoomValue').textContent=z+'%';$('editorPanXValue').textContent=x;$('editorPanYValue').textContent=y;
+   if(activeEditorTarget==='main'){
+     const ph=photos[selectedPhotoIndex];if(ph){ph.zoom=z;ph.panX=x;ph.panY=y}zoom=z/100;panX=x;panY=y;
+   }else{const item=storyItems.find(it=>'story:'+it.id===activeEditorTarget);if(item){item.zoom=z;item.panX=x;item.panY=y}}
+   schedule();
+ }
+ $('editorTarget').addEventListener('change',e=>{activeEditorTarget=e.target.value;loadEditorTarget()});
+ $('editorImageSelect').addEventListener('change',e=>{
+   const index=Number(e.target.value);
+   if(activeEditorTarget==='main'){
+     if(index>=0){selectPhoto(index);loadEditorTarget()}else{selectedPhotoIndex=-1;photo=null;$('photoStatus').textContent='No main photo selected.';schedule()}
+   }else{const item=storyItems.find(it=>'story:'+it.id===activeEditorTarget);if(item){item.photoIndex=index;renderStoryEditors();loadEditorTarget();schedule()}}
+ });
+ ['sectionWidth','sectionHeight','sectionX','sectionY'].forEach(id=>$(id).addEventListener('input',applySelectedSectionSettings));
+ ['editorZoom','editorPanX','editorPanY'].forEach(id=>$(id).addEventListener('input',applyEditorCrop));
+ $('editorFit').addEventListener('change',()=>{if(activeEditorTarget==='main'){$('fit').value=$('editorFit').value;schedule()}else setMessage('Story sections use fill-frame cropping. Use zoom and position to adjust.');});
+ $('editorResetCrop').addEventListener('click',()=>{$('editorZoom').value=100;$('editorPanX').value=0;$('editorPanY').value=0;applyEditorCrop()});
+ $('editorApplyMain').addEventListener('click',()=>{activeEditorTarget='main';loadEditorTarget()});
+ canvas.addEventListener('click',e=>{
+   const rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*canvas.width/rect.width,y=(e.clientY-rect.top)*canvas.height/rect.height;
+   const hit=[...previewImageRegions].reverse().find(r=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h);
+   if(!hit){setMessage('Click directly on a photo in the preview to edit it.');return}
+   if(hit.target==='posterPhoto'){setMessage('Poster photo selected. Adjust its framing in the Poster Style controls.');return}
+   if(hit.target==='video'){activeImageTextTarget='video';$('imageTextTarget').value='video';loadImageTextControls();activeEditorTarget='main';loadEditorTarget();setMessage('Video selected. Adjust framing with the image movement tools and overlay text in Step 6.');return}
+   activeEditorTarget=hit.target;
+   if(hit.target==='main'&&hit.photoIndex>=0){selectedPhotoIndex=hit.photoIndex;photo=photos[selectedPhotoIndex]?.img;renderGallery();$('photoStatus').textContent='Selected: '+(photos[selectedPhotoIndex]?.name||'photo')}
+   loadEditorTarget();schedule();setMessage('Preview image selected. Adjust it in the Preview image editor panel.');
+ });
+ $('removePhoto').addEventListener('click',()=>{photos.forEach(p=>URL.revokeObjectURL(p.url));photos=[];photo=null;selectedPhotoIndex=0;storyItems.forEach(st=>{st.photoIndex=-1;st.offsetX=0;st.offsetY=0;});mainImageOffsetX=0;mainImageOffsetY=0;renderStoryEditors();$('photo').value='';$('gallery').innerHTML='';zoom=1;panX=0;panY=0;$('uploadTitle').textContent='Choose a news photo';$('uploadSub').textContent='JPG, PNG or WebP · up to 15 MB each';$('photoStatus').textContent='No photo selected — sample placeholder shown.';activeEditorTarget='main';loadEditorTarget();refreshEditorImageOptions();schedule()});
+ $('refresh').addEventListener('click',()=>{render();setMessage('Preview refreshed.')});
+ function setMessage(s){$('message').textContent=s}
+ function setPostType(type){
+   if(videoRecording&&type!=='video')return;
+   postType=type;
+   if(type!=='video'&&!sourceVideo.paused)sourceVideo.pause();
+   document.body.classList.toggle('video-mode',type==='video');
+   document.body.classList.toggle('poster-mode',type==='poster');
+   $('imageModeTab').classList.toggle('active',type==='image');$('videoModeTab').classList.toggle('active',type==='video');$('posterModeTab').classList.toggle('active',type==='poster');
+   $('imageModeTab').setAttribute('aria-selected',String(type==='image'));$('videoModeTab').setAttribute('aria-selected',String(type==='video'));$('posterModeTab').setAttribute('aria-selected',String(type==='poster'));
+   $('imageUploadPanel').hidden=type!=='image';$('videoUploadPanel').hidden=type!=='video';$('posterControls').hidden=type!=='poster';
+   $('editorImageSelect').parentElement.hidden=type==='video';
+   $('imageUploadTitle').innerHTML='<span class="step">STEP 02</span>'+(type==='poster'?'Add poster photo':'Upload your photograph');
+   $('uploadTitle').textContent=type==='poster'?'Choose a poster photo':'Choose a news photo';
+   $('editorWorkspaceTitle').innerHTML='<span class="step">STEP 03</span>'+(type==='video'?'VIDEO WORKSPACE · Preview video editor':type==='poster'?'POSTER WORKSPACE · Edit poster image':'IMAGE WORKSPACE · Preview image editor');
+   $('editorHint').textContent=type==='video'?'Use the video player to preview your selected clip. Video framing and zoom follow the image tools.':type==='poster'?'Choose a poster layout and customize the headline, message and photo.':'Click a photo in the live preview to select it for editing.';
+   $('topDownload').textContent=type==='video'?'↓ Download MP4':'↓ Download '+(type==='poster'?'Poster PNG':'PNG');
+   $('previewLabel').textContent=type==='video'?'Live post video preview':type==='poster'?'Live poster preview':'Live newspaper preview';
+   $('step1').querySelector('h2').innerHTML='<span class="step">STEP 01</span>'+(type==='poster'?'Poster details':'Story details');
+   $('downloadPoster').textContent='↓ Download '+(val('posterLayout')||'rally').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';
+   syncStyleFields();
+   if(type==='video'&&videoUrl)activeImageTextTarget='video';
+   refreshImageTextTargets();schedule();
+ }
+ $('imageModeTab').addEventListener('click',()=>setPostType('image'));
+ $('videoModeTab').addEventListener('click',()=>setPostType('video'));
+ $('posterModeTab').addEventListener('click',()=>setPostType('poster'));
+ function refreshPosterGallery(){
+   const gallery=$('posterGallery');gallery.innerHTML='';
+   posterPhotos.forEach((item,index)=>{
+     const card=document.createElement('div');card.className='gallery-item';
+     const image=document.createElement('img');image.src=item.url;image.alt='Poster photo '+(index+1)+': '+item.name;
+     image.className='thumbimg'+(selectedPosterPhotoIds.includes(item.id)?' active':'');
+     image.title=(selectedPosterPhotoIds.includes(item.id)?'Included':'Not included')+' — click to toggle';
+     image.addEventListener('click',()=>{
+       selectedPosterPhotoIds=selectedPosterPhotoIds.includes(item.id)?selectedPosterPhotoIds.filter(id=>id!==item.id):[...selectedPosterPhotoIds,item.id];
+       refreshPosterGallery();schedule();
+     });
+     const remove=document.createElement('button');remove.type='button';remove.className='gallery-remove';remove.textContent='×';
+     remove.setAttribute('aria-label','Remove poster photo '+item.name);remove.title='Remove poster photo';
+     remove.addEventListener('click',()=>{
+       URL.revokeObjectURL(item.url);posterPhotos=posterPhotos.filter(photo=>photo.id!==item.id);
+       selectedPosterPhotoIds=selectedPosterPhotoIds.filter(id=>id!==item.id);
+       refreshPosterGallery();schedule();
+     });
+     card.append(image,remove);gallery.appendChild(card);
+   });
+   const included=selectedPosterPhotoIds.length;
+   $('posterPhotoStatus').textContent=posterPhotos.length
+     ?posterPhotos.length+' poster photo(s) uploaded · '+included+' included. Click thumbnails to include or remove them.'
+     :'No poster photos selected. Select thumbnails to include them in the poster.';
+ }
+ function syncPosterDesignCards(){
+   const select=$('posterLayout'),grid=$('posterDesignGrid');
+   if(!grid.children.length){
+     Array.from(select.options).forEach(option=>{
+       const card=document.createElement('button');card.type='button';card.className='poster-design-card';card.dataset.design=option.value;
+       card.setAttribute('aria-label','Use '+option.text+' poster design');
+       const thumb=document.createElement('span');thumb.className='poster-design-thumb';thumb.dataset.design=option.value;thumb.setAttribute('aria-hidden','true');
+       const portrait=document.createElement('i');portrait.setAttribute('aria-hidden','true');
+       const lines=document.createElement('em');lines.setAttribute('aria-hidden','true');
+       thumb.append(portrait,lines);
+       const name=document.createElement('span');name.textContent=option.text;
+       card.append(thumb,name);card.addEventListener('click',()=>{select.value=option.value;select.dispatchEvent(new Event('change',{bubbles:true}))});
+       grid.appendChild(card);
+     });
+     select.setAttribute('aria-hidden','true');select.tabIndex=-1;
+   }
+   Array.from(grid.children).forEach(card=>{
+     const active=card.dataset.design===select.value;
+     card.classList.toggle('active',active);card.setAttribute('aria-pressed',String(active));
+   });
+ }
+ $('posterLayout').addEventListener('change',()=>{
+   if(val('posterLayout')==='splitCampaign'){
+     if(val('posterBackground')==='#11243a')$('posterBackground').value='#d0d0d0';
+     if(val('posterAccent')==='#f3c64e')$('posterAccent').value='#bf4c49';
+   }
+   syncPosterDesignCards();$('downloadPoster').textContent='↓ Download '+val('posterLayout').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';schedule()
+ });
+ syncPosterDesignCards();
+ $('posterPhotoInput').addEventListener('change',event=>{
+   const files=Array.from(event.target.files||[]);if(!files.length)return;
+   const valid=files.filter(file=>file.type.startsWith('image/')&&file.size<=15*1024*1024);
+   const available=Math.max(0,6-posterPhotos.length),toLoad=valid.slice(0,available);
+   if(!toLoad.length){setMessage(posterPhotos.length>=6?'A poster can use up to 6 photos. Remove a photo before adding another.':'Choose image files smaller than 15 MB each.');event.target.value='';return}
+   if(valid.length>available)setMessage('Only '+available+' additional poster photo(s) were added. The poster supports up to 6.');
+   let loaded=0;
+   toLoad.forEach(file=>{
+     const url=URL.createObjectURL(file),image=new Image();
+     image.onload=()=>{
+       const item={id:++posterPhotoCounter,img:image,name:file.name,url};posterPhotos.push(item);selectedPosterPhotoIds.push(item.id);
+       loaded++;
+       if(loaded===toLoad.length){refreshPosterGallery();schedule()}
+     };
+     image.onerror=()=>{URL.revokeObjectURL(url);loaded++;if(loaded===toLoad.length){refreshPosterGallery();setMessage('Some poster photos could not be loaded. Try another image.')}};
+     image.src=url;
+   });
+   event.target.value='';
+ });
+ $('videoFile').addEventListener('change',e=>{
+   const file=e.target.files&&e.target.files[0];if(!file)return;
+   if(file.type&&!file.type.startsWith('video/')){setMessage('Choose a supported video file.');e.target.value='';return}
+   sourceVideo.pause();if(videoUrl)URL.revokeObjectURL(videoUrl);
+   videoUrl=URL.createObjectURL(file);sourceVideo.src=videoUrl;sourceVideo.hidden=false;sourceVideo.load();
+   $('videoStatus').textContent='Loading '+file.name+'…';
+   activeImageTextTarget='video';setPostType('video');
+ });
+ function getMp4MimeType(){
+   if(!window.MediaRecorder)return '';
+   return [
+     'video/mp4;codecs="avc1.42E028,mp4a.40.2"',
+     'video/mp4;codecs=avc1.42E028,mp4a.40.2',
+     'video/mp4;codecs="avc1.42E01E,mp4a.40.2"',
+     'video/mp4;codecs=avc1.42E01E,mp4a.40.2',
+     'video/mp4;codecs=avc1,mp4a.40.2',
+     'video/mp4;codecs=avc1',
+     'video/mp4'
+   ].find(type=>MediaRecorder.isTypeSupported(type))||'';
+ }
+ function createMp4Recorder(stream,hasAudio,is4k,frameRate){
+   const profile=is4k?(frameRate>=60?'avc1.640034':'avc1.640033'):(frameRate>=60?'avc1.42E02A':'avc1.42E028');
+   const compatibleFallback=is4k?'avc1.640033':frameRate>=60?'avc1.42E02A':'avc1.42E028';
+   const candidates=[
+     hasAudio?'video/mp4;codecs="'+profile+',mp4a.40.2"':'video/mp4;codecs="'+profile+'"',
+     hasAudio?'video/mp4;codecs='+profile+',mp4a.40.2':'video/mp4;codecs='+profile,
+     hasAudio?'video/mp4;codecs="'+compatibleFallback+',mp4a.40.2"':'video/mp4;codecs="'+compatibleFallback+'"',
+     hasAudio?'video/mp4;codecs=avc1,mp4a.40.2':'video/mp4;codecs=avc1',
+     'video/mp4'
+   ];
+   let lastError;
+   for(const mimeType of candidates){
+     if(!MediaRecorder.isTypeSupported(mimeType))continue;
+     try{
+       const recorder=new MediaRecorder(stream,{mimeType});
+       if(recorder.mimeType.toLowerCase().startsWith('video/mp4'))return recorder;
+     }catch(error){lastError=error}
+   }
+   throw lastError||new Error('MP4 video encoding is not supported by this browser.');
+ }
+ function setVideoExportState(state,message=''){
+   const busy=state==='preparing'||state==='rendering';
+   $('videoDownloadSpinner').hidden=!busy;
+   $('downloadVideo').disabled=busy;
+   $('videoFrameRate').disabled=busy;
+   $('downloadVideoLabel').textContent=busy?'Rendering MP4…':'↓ Download Video (MP4)';
+   $('videoRenderProgress').hidden=!busy;
+   $('videoRenderProgress').value=state==='preparing'?0:state==='rendering'?1:100;
+   if(message)$('videoStatus').textContent=message;
+ }
+ function updateVideoExportProgress(){
+   if(!videoRecording)return;
+   const duration=sourceVideo.duration;
+   if(Number.isFinite(duration)&&duration>0){
+     const progress=Math.max(1,Math.min(99,sourceVideo.currentTime/duration*100));
+     $('videoRenderProgress').value=progress;
+     $('videoStatus').textContent='Rendering MP4… '+Math.floor(progress)+'%';
+   }
+ }
+ sourceVideo.addEventListener('loadedmetadata',()=>{
+   const duration=Number.isFinite(sourceVideo.duration)?Math.round(sourceVideo.duration)+' sec':'unknown duration';
+   $('videoStatus').textContent=sourceVideo.videoWidth+' × '+sourceVideo.videoHeight+' px · '+duration+' · '+(getMp4MimeType()?'MP4 export ready.':'This browser cannot encode MP4; try Safari or another browser with MP4 recording support.');
+   render();refreshImageTextTargets();
+ });
+ sourceVideo.addEventListener('loadeddata',()=>{if(postType==='video')render()});
+ sourceVideo.addEventListener('timeupdate',updateVideoExportProgress);
+ sourceVideo.addEventListener('error',()=>{$('videoStatus').textContent='This video could not be loaded. Try a different browser-supported video file.'});
+ sourceVideo.addEventListener('play',startVideoPreview);
+ sourceVideo.addEventListener('pause',stopVideoPreview);
+ sourceVideo.addEventListener('ended',()=>{if(videoRecorder&&videoRecorder.state!=='inactive')videoRecorder.stop()});
+ let videoRecorder=null,videoRecording=false;
+ function startVideoPreview(){
+   if(videoRaf)return;
+   let lastFrame=0;
+   const draw=timestamp=>{
+     if(sourceVideo.paused||sourceVideo.ended){videoRaf=0;return}
+     const frameRate=videoRecording?Number(val('videoFrameRate')):30;
+     if(timestamp-lastFrame>=1000/frameRate){lastFrame=timestamp;try{render(videoRecording?videoExportScale:1)}catch(error){$('message').textContent='Video preview error. Try a smaller video or simpler layout.'}}
+     videoRaf=requestAnimationFrame(draw);
+   };
+   videoRaf=requestAnimationFrame(draw);
+ }
+ function stopVideoPreview(){if(videoRaf){cancelAnimationFrame(videoRaf);videoRaf=0}if(postType==='video'){try{render(videoRecording?videoExportScale:1)}catch(error){console.error('Could not refresh the paused video preview.',error)}}}
+ $('previewLabel').textContent='Live newspaper preview';
+ function download(type){
+   let exportName=postType==='poster'?'reality-of-india-'+val('posterLayout')+'-poster':'newspaper-post';
+   try{
+     render();
+     const quality=val('exportQuality'),targetEdge=quality==='4k'?3840:quality==='fullhd'?1920:0;
+     if(quality==='4k')exportName+='-4k';
+     else if(quality==='fullhd')exportName+='-full-hd';
+     const exportScale=targetEdge?targetEdge/Math.max(canvas.width,canvas.height):1;
+     render(exportScale);
+     const outputWidth=canvas.width,outputHeight=canvas.height;
+     const dataUrl=canvas.toDataURL(type,type==='image/jpeg'?.94:undefined);
+     render();
+     const a=document.createElement('a');a.download=exportName+'.'+(type==='image/jpeg'?'jpg':'png');a.href=dataUrl;document.body.appendChild(a);a.click();a.remove();
+     setMessage('Image exported at '+outputWidth+' × '+outputHeight+' pixels. Check your downloads folder.');
+   }catch(e){
+     try{render()}catch(restoreError){console.error('Could not restore the preview after export failure.',restoreError)}
+     setMessage('Export failed. The image may exceed this browser’s canvas or memory limit. Try Full HD or a smaller custom size.');
+   }
+ }
+ async function downloadVideo(){
+   if(videoRecording)return;
+   if(!videoUrl||sourceVideo.readyState<2){setMessage('Choose a video and wait for it to finish loading before exporting.');return}
+   if(!window.MediaRecorder||!canvas.captureStream){setMessage('Video export is not supported in this browser. Try a current version of Chrome, Edge, or Firefox.');return}
+   const quality=val('exportQuality'),targetEdge=quality==='4k'?3840:quality==='fullhd'?1920:0,frameRate=Number(val('videoFrameRate'));
+   let recorder,canvasStream,audioStream,audioContext;
+   setVideoExportState('preparing','Preparing video canvas and audio…');
+   $('topDownload').disabled=true;$('resetBtn').disabled=true;$('videoFile').disabled=true;$('imageModeTab').disabled=true;$('videoModeTab').disabled=true;$('posterModeTab').disabled=true;
+   try{
+     await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
+     render();
+     const scale=targetEdge?targetEdge/Math.max(canvas.width,canvas.height):1;
+     videoExportScale=scale;
+     render(scale);
+     canvasStream=canvas.captureStream(frameRate);
+     let audioTracks=[];
+     const captureVideoStream=sourceVideo.captureStream||sourceVideo.mozCaptureStream;
+     if(typeof captureVideoStream==='function'){
+       audioStream=captureVideoStream.call(sourceVideo);
+       audioTracks=audioStream.getAudioTracks();
+     }
+     if(audioTracks.length===0){
+       const AudioContextClass=window.AudioContext||window.webkitAudioContext;
+       if(AudioContextClass){
+         videoAudioContext=videoAudioContext||new AudioContextClass();
+         if(!videoAudioSource){videoAudioSource=videoAudioContext.createMediaElementSource(sourceVideo);videoAudioSource.connect(videoAudioContext.destination)}
+         if(!videoAudioDestination){videoAudioDestination=videoAudioContext.createMediaStreamDestination();videoAudioSource.connect(videoAudioDestination)}
+         await videoAudioContext.resume();
+         audioContext=videoAudioContext;audioStream=videoAudioDestination.stream;audioTracks=audioStream.getAudioTracks();
+       }
+     }
+     audioTracks.forEach(track=>canvasStream.addTrack(track));
+     const mimeType=getMp4MimeType();
+     if(!mimeType)throw new Error('MP4 video encoding is not supported by this browser. Try Safari or another browser that supports MP4 recording.');
+     if(sourceVideo.currentTime>0){
+       await new Promise((resolve,reject)=>{
+         const onSeeked=()=>{cleanup();resolve()},onError=()=>{cleanup();reject(new Error('The video could not seek to its beginning.'))};
+         const cleanup=()=>{sourceVideo.removeEventListener('seeked',onSeeked);sourceVideo.removeEventListener('error',onError)};
+         sourceVideo.addEventListener('seeked',onSeeked,{once:true});sourceVideo.addEventListener('error',onError,{once:true});sourceVideo.currentTime=0;
+       });
+     }
+     const chunks=[];
+     recorder=createMp4Recorder(canvasStream,audioTracks.length>0,quality==='4k',frameRate);
+     if(!recorder.mimeType.toLowerCase().startsWith('video/mp4'))throw new Error('The browser did not initialize an MP4 encoder for this recording.');
+     videoRecorder=recorder;videoRecording=true;
+     setVideoExportState('rendering','Rendering MP4… 0% · '+canvas.width+' × '+canvas.height+' · '+frameRate+' fps · keep this tab open.');
+     recorder.ondataavailable=event=>{if(event.data&&event.data.size)chunks.push(event.data)};
+     const complete=new Promise((resolve,reject)=>{
+       recorder.onerror=event=>reject(event.error||new Error('The browser could not record this video.'));
+       recorder.onstop=()=>resolve();
+     });
+     recorder.start();
+     if(audioTracks.length===0)$('videoStatus').textContent+=' Waiting for source audio…';
+     await sourceVideo.play();
+     startVideoPreview();
+     await complete;
+     if(!chunks.length)throw new Error('No video data was recorded.');
+     const blob=new Blob(chunks,{type:'video/mp4'});
+     if(blob.size<1024)throw new Error('The MP4 encoder produced an incomplete video file.');
+     if(Number.isFinite(sourceVideo.duration)&&sourceVideo.duration>0&&sourceVideo.currentTime<sourceVideo.duration*.98)throw new Error('Video recording stopped before the source finished. Please try again.');
+     const url=URL.createObjectURL(blob),a=document.createElement('a');
+     a.href=url;a.download='reality-of-india-post'+(quality==='4k'?'-4k':quality==='fullhd'?'-full-hd':'')+'-'+frameRate+'fps.mp4';
+     document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+     const outputWidth=canvas.width,outputHeight=canvas.height;
+     const isAvc=recorder.mimeType.toLowerCase().includes('avc1'),hasAudio=audioTracks.length>0;
+     setMessage('Video exported as MP4 at '+outputWidth+' × '+outputHeight+' pixels, '+frameRate+' fps. '+(isAvc?'H.264 video':'Browser-selected video codec')+' and '+(hasAudio?'source audio included.':'no audio track detected.'));
+     setVideoExportState('complete','Export complete · '+outputWidth+' × '+outputHeight+' px · '+frameRate+' fps · MP4. For widest device compatibility, use H.264 with AAC audio.');
+   }catch(error){
+     if(recorder&&recorder.state!=='inactive')recorder.stop();
+     const encoderRejected=/encoder configuration.*not supported|configuration is not supported by the encoder/i.test(error.message||'');
+     const message=encoderRejected?'The browser MP4 encoder rejected this output configuration. Try Full HD, or use a browser with native 4K MP4 recording support.':error.message||'The browser may not support the selected video or resolution.';
+     setMessage('Video export failed: '+message);
+     setVideoExportState('failed',encoderRejected?message:error.message&&error.message.includes('MP4 video encoding')?error.message:'MP4 video export failed. Try a lower resolution or another browser-supported video.');
+   }finally{
+     videoRecording=false;videoRecorder=null;videoExportScale=1;
+     if(canvasStream)canvasStream.getTracks().forEach(track=>track.stop());
+     if(audioStream&&audioStream!==canvasStream&&!audioContext)audioStream.getTracks().forEach(track=>track.stop());
+     if(audioContext&&audioContext.state==='suspended')audioContext.resume();
+     setTimeout(()=>{setVideoExportState('idle');$('topDownload').disabled=false;$('resetBtn').disabled=false;$('videoFile').disabled=false;$('imageModeTab').disabled=false;$('videoModeTab').disabled=false;$('posterModeTab').disabled=false},1800);
+     try{render()}catch(error){console.error('Could not restore the preview after video export.',error)}
+   }
+ }
+ $('downloadPng').addEventListener('click',()=>download('image/png'));$('downloadPoster').addEventListener('click',()=>download('image/png'));$('topDownload').addEventListener('click',()=>postType==='video'?downloadVideo():download('image/png'));$('downloadVideo').addEventListener('click',downloadVideo);$('downloadJpg').addEventListener('click',()=>download('image/jpeg'));
+ $('resetBtn').addEventListener('click',()=>{if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl='';sourceVideo.pause();sourceVideo.removeAttribute('src');sourceVideo.load();sourceVideo.hidden=true;$('videoFile').value='';$('videoStatus').textContent='Select a video to preview and create a video post.';setPostType('image')});
+ $('resetBtn').addEventListener('click',()=>{storyItems=[];storyCounter=0;mainImageText=defaultImageText();activeImageTextTarget='main';renderStoryEditors();loadImageTextControls();$('postMode').value='single';$('storyArrangement').value='side';$('factCheckToggle').checked=false;Object.entries(defaults).forEach(([id,v])=>$(id).value=v);['paperSize','categorySize','dateSize','headlineSize','subtitleSize','bodySize','bylineSize'].forEach(id=>{$(id).value=100;$(id+'Value').textContent='100%'});Object.keys(textColorOverrides).forEach(id=>textColorOverrides[id]=null);$('photo').value='';photos.forEach(p=>URL.revokeObjectURL(p.url));photos=[];photo=null;selectedPhotoIndex=0;mainImageWidthPct=100;mainImageHeightPct=100;mainImageOffsetX=0;mainImageOffsetY=0;$('gallery').innerHTML='';zoom=1;panX=0;panY=0;style='breaking';document.querySelectorAll('.style').forEach(b=>b.classList.toggle('active',b.dataset.style===style));syncStyleFields();$('ratio').value='portrait';$('fit').value='cover';$('uploadTitle').textContent='Choose a news photo';$('uploadSub').textContent='JPG, PNG or WebP · up to 15 MB each';$('photoStatus').textContent='No photo selected — sample placeholder shown.';activeEditorTarget='main';loadEditorTarget();refreshEditorImageOptions();render();setMessage('Sample content restored.')});
+ $('resetBtn').addEventListener('click',()=>{posterPhotos.forEach(item=>URL.revokeObjectURL(item.url));posterPhotos=[];selectedPosterPhotoIds=[];$('posterPhotoInput').value='';refreshPosterGallery();[['posterLayout','rally'],['posterCampaign','PEOPLE FIRST CAMPAIGN'],['posterCandidate','YOUR CANDIDATE NAME'],['posterRole',''],['posterConstituency',''],['posterDate',''],['posterSlogan',''],['posterPromises',''],['posterVenue',''],['posterCallToAction','JOIN THE CONVERSATION'],['posterDisclaimer',''],['posterBackground','#11243a'],['posterAccent','#f3c64e'],['posterTextColor','#ffffff'],['posterPhotoPosition','cover'],['posterImageLayout','hero'],['posterPhotoZoom','100']].forEach(([id,value])=>$(id).value=value);$('posterPhotoZoomValue').textContent='100%';$('downloadPoster').textContent='↓ Download Rally Poster PNG';schedule()});
+ refreshImageTextTargets();
+ syncStyleFields();
+ render();
+})();
+</script>
+</body>
+</html>
