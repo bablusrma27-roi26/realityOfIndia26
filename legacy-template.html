@@ -78,8 +78,9 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
   .top-actions .icon-button{width:38px;height:38px;flex-basis:38px}
   .mode-tab{padding:8px 5px;font-size:11px}
 }
-.poster-editor{display:grid;grid-template-columns:1fr;gap:10px;margin:8px 0 14px}.poster-step{min-width:0}.poster-field-editor{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(125px,.34fr);gap:8px;align-items:center;margin-bottom:8px}.poster-field-editor>.field{margin:0}.poster-field-tools{padding:6px 8px}.poster-field-tools .field{margin:0}.poster-field-tools .field label{font-size:10px;margin-bottom:2px}.poster-field-tools input[type=range]{width:100%;height:14px;padding:0}.poster-field-tools .text-color-setting input[type=color]{width:100%;height:24px;padding:1px}.poster-field-editor.is-selected>.field label{color:var(--red)}.poster-field-editor.is-selected>.field input,.poster-field-editor.is-selected>.field textarea{border-color:#dc5963;box-shadow:0 0 0 2px #d82f3d12}.poster-step>.two{gap:8px}.poster-background-picking{cursor:crosshair!important}.poster-text-dragging{cursor:grabbing!important}#posterBackgroundHelp{line-height:1.45;margin:7px 0 0}
-.poster-mode canvas{touch-action:none}
+.poster-editor{display:grid;grid-template-columns:1fr;gap:10px;margin:8px 0 14px}.poster-step{min-width:0}.poster-field-editor{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(125px,.34fr);gap:8px;align-items:center;margin-bottom:8px}.poster-field-editor>.field{margin:0}.poster-field-tools{padding:6px 8px}.poster-field-tools .field{margin:0}.poster-field-tools .field label{font-size:10px;margin-bottom:2px}.poster-field-tools input[type=range]{width:100%;height:14px;padding:0}.poster-field-tools .text-color-setting input[type=color]{width:100%;height:24px;padding:1px}.poster-field-editor.is-selected>.field label{color:var(--red)}.poster-field-editor.is-selected>.field input,.poster-field-editor.is-selected>.field textarea{border-color:#dc5963;box-shadow:0 0 0 2px #d82f3d12}.poster-step>.two{gap:8px}.poster-background-picking{cursor:crosshair!important}.poster-text-dragging,.poster-image-dragging{cursor:grabbing!important}#posterBackgroundHelp{line-height:1.45;margin:7px 0 0}.poster-photo-editor{display:grid;gap:5px;margin:8px 0 10px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#fafbfc}.poster-photo-editor>label{font-size:11px;font-weight:750;color:#424c60}.poster-photo-editor input[type=range]{width:100%;padding:0}.poster-photo-editor strong{font-size:11px}.poster-photo-editor .small{line-height:1.4}.gallery-item.poster-gallery-selected .thumbimg{outline:3px solid #1a5c9a;outline-offset:1px}.gallery-include{position:absolute;left:2px;bottom:2px;max-width:64px;padding:2px 4px;border:0;border-radius:4px;background:#172033dd;color:#fff;font-size:9px;font-weight:800;line-height:1.3;white-space:nowrap}.gallery-include[aria-pressed=true]{background:#18834b}.poster-image-handle{fill:#fff;stroke:#172033;stroke-width:2}
+.poster-mode canvas{touch-action:none}.poster-photo-framing-row.is-single{grid-template-columns:1fr}
+.poster-design-thumb[data-design="tricolorCenter"]{background:linear-gradient(180deg,#ff9933 0 24%,#fff 24% 76%,#138808 76%)}.poster-design-thumb[data-design="chakraCenter"]{background:linear-gradient(90deg,#ff9933 0 24%,#fff 24% 76%,#138808 76%)}.poster-design-thumb[data-design="tricolorCollage"]{background:linear-gradient(180deg,#ff9933 0 28%,#fff 28% 72%,#138808 72%)}.poster-design-thumb[data-design="tricolorCenter"]:before,.poster-design-thumb[data-design="chakraCenter"]:before,.poster-design-thumb[data-design="tricolorCollage"]:before{inset:39% 37%;width:auto;height:22%;background:#000080;border:2px solid #fff;clip-path:none;border-radius:50%}.poster-design-thumb[data-design="tricolorCenter"]:after,.poster-design-thumb[data-design="chakraCenter"]:after,.poster-design-thumb[data-design="tricolorCollage"]:after{left:24%;right:24%;top:43%;height:14%;background:#d7e4f0;box-shadow:none;border:1px solid #173675}
 </style>
 </head>
 <body>
@@ -103,7 +104,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
   <div id="posterControls" class="poster-editor" hidden>
     <div class="tool-block poster-step">
       <h2><span class="step">STEP 01</span>Enter poster text</h2>
-      <p class="step5-intro">All poster copy is optional. Select text in the preview to change its size, color, or position.</p>
+      <p class="step5-intro">All poster copy is optional. Select text in the preview to change its size, color, or position. Move photos directly in the preview; text will move clear of photos automatically.</p>
       <div class="two">
         <div class="field"><label for="posterCampaign">Campaign / organization</label><input id="posterCampaign" maxlength="70"></div>
       </div>
@@ -157,7 +158,13 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
     </div>
     <div class="tool-block poster-step">
       <h2><span class="step">STEP 02</span>Select poster images</h2>
-      <div class="field"><label for="posterPhotoInput">Poster photos (up to 6, separate from news photos)</label><input id="posterPhotoInput" type="file" accept="image/*" multiple style="display:block;width:100%"><div id="posterPhotoStatus" class="small" role="status">No poster photos selected. Select thumbnails to include them in the poster.</div><div id="posterGallery" class="gallery" aria-label="Poster photo options"></div></div>
+      <div class="field"><label for="posterPhotoInput">Poster photos (up to 6, separate from news photos)</label><input id="posterPhotoInput" type="file" accept="image/*" multiple style="display:block;width:100%"><div id="posterPhotoStatus" class="small" role="status">No poster photos selected.</div><div id="posterGallery" class="gallery" aria-label="Poster photo options"></div></div>
+      <div class="poster-photo-editor">
+        <strong id="posterSelectedPhotoLabel">Select a poster photo to edit</strong>
+        <label for="posterPhotoScale">Selected photo size <span id="posterPhotoScaleValue">100%</span></label>
+        <input id="posterPhotoScale" type="range" min="50" max="250" step="5" value="100" disabled>
+        <span class="small">Drag a photo to move it. Drag its bottom-right handle or use this slider to resize. Use “Include” on a thumbnail to add or remove it.</span>
+      </div>
       <div class="two">
         <button type="button" class="btn" id="posterRemoveBackground">Remove photo background</button>
         <button type="button" class="btn" id="posterRestoreBackground">Restore photo background</button>
@@ -167,16 +174,30 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
     </div>
     <div class="tool-block poster-step">
       <h2><span class="step">STEP 03</span>Choose poster design</h2>
-      <div class="field"><label for="posterLayout">Poster design</label><select id="posterLayout"><option value="splitCampaign">Split campaign portrait</option><option value="townhallCampaign">Town hall campaign</option><option value="electionPortrait">Election portrait</option></select><div class="poster-design-grid" id="posterDesignGrid" role="group" aria-label="Choose a poster design"></div></div>
-      <div class="two">
-        <div class="field"><label for="posterBackground">Background color</label><input id="posterBackground" type="color" value="#11243a"></div>
-        <div class="field"><label for="posterAccent">Campaign accent color</label><input id="posterAccent" type="color" value="#f3c64e"></div>
+      <div class="field"><label for="posterLayout">Poster design</label><select id="posterLayout"><option value="modernEditorial">Modern editorial</option><option value="modernMosaic">Modern photo mosaic</option><option value="splitCampaign">Split campaign portrait</option><option value="townhallCampaign">Town hall campaign</option><option value="electionPortrait">Election portrait</option><option value="tricolorCenter">Tiranga center portrait</option><option value="chakraCenter">Ashoka Chakra spotlight</option><option value="tricolorCollage">Tricolor photo collage</option></select><div class="poster-design-grid" id="posterDesignGrid" role="group" aria-label="Choose a poster design"></div></div>
+      <div class="two" id="posterPaletteControls">
+        <div class="field"><label for="posterBackground">Background color</label><input id="posterBackground" type="color" value="#d0d0d0"></div>
+        <div class="field"><label for="posterAccent">Campaign accent color</label><input id="posterAccent" type="color" value="#bf4c49"></div>
       </div>
-      <div class="two">
-        <div class="field"><label for="posterTextColor">Base text color</label><input id="posterTextColor" type="color" value="#ffffff"></div>
+      <div class="field" id="posterPalettePresetControl">
+        <label for="posterPalettePreset">Color palette</label>
+        <select id="posterPalettePreset">
+          <option value="custom">Custom colors</option>
+          <option value="midnight">Midnight editorial</option>
+          <option value="warm">Warm civic</option>
+          <option value="forest">Community green</option>
+          <option value="blue">Classic blue</option>
+        </select>
+      </div>
+      <div class="two poster-photo-framing-row" id="posterPhotoFramingRow">
+        <div class="field" id="posterBaseTextColorControl"><label for="posterTextColor">Base text color</label><input id="posterTextColor" type="color" value="#ffffff"></div>
         <div class="field"><label for="posterPhotoPosition">Photo framing</label><select id="posterPhotoPosition"><option value="cover">Fill frame</option><option value="contain">Fit whole photo</option></select></div>
       </div>
       <div class="field"><label for="posterImageLayout">Photo arrangement</label><select id="posterImageLayout"><option value="hero">Wide hero</option><option value="collage">Overlapping collage</option><option value="grid">Photo grid</option><option value="strip">Horizontal strip</option><option value="portrait">Portrait spotlight</option></select></div>
+      <div class="two">
+        <div class="field"><label for="posterPhotoFrame">Photo frame</label><select id="posterPhotoFrame"><option value="rounded">Soft corners</option><option value="square">Square corners</option><option value="circle">Circle crop</option></select></div>
+        <div class="field"><label for="posterFontFamily">Poster typography</label><select id="posterFontFamily"><option value="Arial">Modern sans</option><option value="Trebuchet MS">Clean geometric</option><option value="Georgia">Editorial serif</option><option value="system-ui">System</option></select></div>
+      </div>
       <div class="field"><label for="posterPhotoZoom">Poster photo zoom <span id="posterPhotoZoomValue">100%</span></label><input id="posterPhotoZoom" type="range" min="100" max="250" step="5" value="100"></div>
     </div>
   </div>
@@ -316,7 +337,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
 <script>
 (() => {
  const $=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d');
- let photo=null,photos=[],selectedPhotoIndex=0,photoCounter=0,posterPhotos=[],selectedPosterPhotoIds=[],posterPhotoCounter=0,posterBackgroundTimer=0,posterTextBlockField='',style='breaking',renderTimer=null,zoom=1,panX=0,panY=0,storyItems=[],storyCounter=0,activeEditorTarget='main',activeImageTextTarget='main',previewImageRegions=[],posterTextRegions=[],posterTextStyles={},posterTextOffsets={},posterTextPointer=null,posterTextPointerHandled=false,posterBackgroundPickMode=false,mainImageWidthPct=100,mainImageHeightPct=100,mainImageOffsetX=0,mainImageOffsetY=0,postType='image',videoUrl='',videoRaf=0,videoFrameCallbackId=0,videoCaptureTrack=null,manualVideoFrameCapture=false,lastCapturedVideoFrameTime=-Infinity,videoAudioContext=null,videoAudioSource=null,videoAudioDestination=null,videoExportScale=1;
+ let photo=null,photos=[],selectedPhotoIndex=0,photoCounter=0,posterPhotos=[],selectedPosterPhotoIds=[],selectedPosterPhotoId=null,posterPhotoCounter=0,posterPhotoTransforms={},posterBackgroundTimer=0,posterTextBlockField='',style='breaking',renderTimer=null,zoom=1,panX=0,panY=0,storyItems=[],storyCounter=0,activeEditorTarget='main',activeImageTextTarget='main',previewImageRegions=[],posterTextRegions=[],posterTextStyles={},posterTextOffsets={},posterAutoTextOffsets={},posterTextPointer=null,posterImagePointer=null,posterTextPointerHandled=false,posterBackgroundPickMode=false,mainImageWidthPct=100,mainImageHeightPct=100,mainImageOffsetX=0,mainImageOffsetY=0,postType='image',videoUrl='',videoRaf=0,videoFrameCallbackId=0,videoCaptureTrack=null,manualVideoFrameCapture=false,lastCapturedVideoFrameTime=-Infinity,videoAudioContext=null,videoAudioSource=null,videoAudioDestination=null,videoExportScale=1;
  const posterTextFieldIds=['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBadgeNumber','posterTownhallDate','posterPriorityOneTitle','posterPriorityOneDescription','posterPriorityTwoTitle','posterPriorityTwoDescription','posterPriorityThreeTitle','posterPriorityThreeDescription','posterElectionDate','posterElectionTopRight','posterElectionSubheading'];
  const posterCutoutImages=new WeakSet();
  function createPosterFieldEditors(){
@@ -401,9 +422,13 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  imageStepPair.append(sectionSizeTools,movementTools);
  imageStepPair.after($('step9'));
  function wrap(text,w,font){ctx.font=font;const lines=[];for(const para of String(text||'').split('\n')){if(!para){lines.push('');continue}let line='';for(const word of para.split(/\s+/)){let test=line?line+' '+word:word;if(ctx.measureText(test).width>w&&line){lines.push(line);line=word}else line=test}if(line)lines.push(line)}return lines}
+ function posterFont(font){
+   const family=({'Arial':'Arial, sans-serif','Trebuchet MS':'Trebuchet MS, Arial, sans-serif','Georgia':'Georgia, serif','system-ui':'system-ui, sans-serif'})[val('posterFontFamily')]||'Arial, sans-serif';
+   return String(font).replace(/^(.*?\d+(?:\.\d+)?px)\s+.*$/,'$1 '+family);
+ }
  function textBlock(text,x,y,w,font,color,lh,max){
    const fieldId=postType==='poster'?findPosterTextField(text):'',style=fieldId?posterTextStyles[fieldId]:null,scale=style?(Number(style.size)||100)/100:1;
-   const drawFont=fieldId?font.replace(/([\d.]+)px/,(_,size)=>(Number(size)*scale)+'px'):font,drawLineHeight=lh*scale;
+   const familyFont=postType==='poster'?posterFont(font):font,drawFont=fieldId?familyFont.replace(/([\d.]+)px/,(_,size)=>(Number(size)*scale)+'px'):familyFont,drawLineHeight=lh*scale;
    ctx.font=drawFont;ctx.fillStyle=color;ctx.textBaseline='top';
    const lines=wrap(text,w,drawFont),count=Math.min(lines.length,max||lines.length),previousField=posterTextBlockField;
    posterTextBlockField=fieldId;
@@ -635,18 +660,27 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    ctx.textAlign='left';ctx.textBaseline='top';
  }
  function getSelectedPosterPhotos(){return posterPhotos.filter(item=>selectedPosterPhotoIds.includes(item.id))}
+ function getPosterPhotoTransform(item){return posterPhotoTransforms[item.id]||(posterPhotoTransforms[item.id]={x:0,y:0,scale:1})}
+ function drawPosterPhoto(item,x,y,w,h,W,H,radius=8,filter='none'){
+   const transform=getPosterPhotoTransform(item),scale=Math.max(.5,Math.min(2.5,Number(transform.scale)||1));
+   const frame={x:x+transform.x*W-(w*scale-w)/2,y:y+transform.y*H-(h*scale-h)/2,w:w*scale,h:h*scale};
+   const shape=val('posterPhotoFrame');
+   ctx.save();ctx.beginPath();
+   if(shape==='circle'){const diameter=Math.min(frame.w,frame.h);ctx.ellipse(frame.x+frame.w/2,frame.y+frame.h/2,diameter/2,diameter/2,0,0,Math.PI*2)}
+   else ctx.roundRect(frame.x,frame.y,frame.w,frame.h,shape==='square'?0:radius);
+   ctx.clip();ctx.filter=filter;
+   imageFit(item.img,frame.x,frame.y,frame.w,frame.h,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);ctx.restore();
+   const hitFrame=shape==='circle'?{...frame,x:frame.x+(frame.w-Math.min(frame.w,frame.h))/2,y:frame.y+(frame.h-Math.min(frame.w,frame.h))/2,w:Math.min(frame.w,frame.h),h:Math.min(frame.w,frame.h)}:frame;
+   previewImageRegions.push({...hitFrame,target:'posterPhoto',photoIndex:posterPhotos.indexOf(item),photoId:item.id});
+   return frame;
+ }
  function drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,date,venue,slogan,cta,disclaimer,badgeNumber,photos){
    ctx.fillStyle=background;ctx.fillRect(0,0,W,H);
    ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(W*.48,0);ctx.lineTo(W*.965,0);ctx.lineTo(W*.965,H*.27);ctx.quadraticCurveTo(W*.965,H*.42,W*.76,H*.43);ctx.lineTo(W*.48,H*.43);ctx.closePath();ctx.fill();
    ctx.beginPath();ctx.ellipse(W*.28,H*.78,W*.29,H*.24,-.12,0,Math.PI*2);ctx.fill();
    const photo=photos[0],photoX=W*.035,photoY=H*.205,photoW=W*.67,photoH=H*.795;
    if(photo){
-     ctx.save();ctx.filter='blur('+Math.max(5,14*s)+'px)';
-     imageFit(photo.img,photoX-12*s,photoY-12*s,photoW+24*s,photoH+24*s,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
-     ctx.restore();
-     ctx.save();ctx.beginPath();ctx.moveTo(photoX,photoY+photoW*.24);ctx.quadraticCurveTo(photoX,photoY,photoX+photoW*.25,photoY);ctx.lineTo(photoX+photoW*.75,photoY);ctx.quadraticCurveTo(photoX+photoW,photoY,photoX+photoW,photoY+photoW*.24);ctx.lineTo(photoX+photoW,photoY+photoH);ctx.lineTo(photoX,photoY+photoH);ctx.closePath();ctx.clip();
-     imageFit(photo.img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);ctx.restore();
-     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(photo)});
+     drawPosterPhotoArrangement(W,H,s,p,photoW,photos,photoH,photoY,photoX,photoW);
    }else{
      ctx.fillStyle='#ffffff25';ctx.beginPath();ctx.ellipse(W*.35,H*.64,W*.2,H*.29,0,0,Math.PI*2);ctx.fill();
    }
@@ -674,35 +708,27 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    if(disclaimer){ctx.fillStyle=background==='#d0d0d0'?'#333333':ink;ctx.font=Math.round(12*s)+'px Arial';ctx.textAlign='right';ctx.fillText(disclaimer,W*.96,H*.97,W*.6);ctx.textAlign='left'}
    ctx.textBaseline='top';
  }
- function drawPosterPhotoArrangement(W,H,s,p,wide,photos,imageHeight,top=p){
-   if(!photos.length||!imageHeight)return p;
-   const layout=val('posterImageLayout'),gap=8*s,baseY=top,regions=[];
-   const draw=(item,index,x,y,w,h,radius=8*s)=>{
-     ctx.save();ctx.filter='blur('+Math.max(5,10*s)+'px)';ctx.beginPath();ctx.roundRect(x-8*s,y-8*s,w+16*s,h+16*s,radius+8*s);ctx.clip();
-     imageFit(item.img,x-8*s,y-8*s,w+16*s,h+16*s,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
-     ctx.restore();
-     ctx.save();ctx.beginPath();ctx.roundRect(x,y,w,h,radius);ctx.clip();
-     imageFit(item.img,x,y,w,h,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
-     ctx.restore();regions.push({x,y,w,h,target:'posterPhoto',photoIndex:posterPhotos.indexOf(item)});
-   };
+ function drawPosterPhotoArrangement(W,H,s,p,wide,photos,imageHeight,top=p,areaX=p,areaW=wide){
+   if(!photos.length||!imageHeight)return top;
+   const selectedLayout=val('posterImageLayout'),layout=selectedLayout==='hero'&&photos.length>1?'collage':selectedLayout==='portrait'&&photos.length>1?'collage':selectedLayout,gap=8*s;
+   const draw=(item,x,y,w,h,radius=8*s)=>drawPosterPhoto(item,x,y,w,h,W,H,radius);
    if(layout==='hero'){
-     draw(photos[0],0,0,top,wide,imageHeight);
+     draw(photos[0],areaX,top,areaW,imageHeight);
    }else if(layout==='strip'){
-     const count=Math.min(photos.length,6),itemW=(wide-gap*(count-1))/count;
-     for(let i=0;i<count;i++)draw(photos[i],i,p+i*(itemW+gap),top,itemW,imageHeight,4*s);
+     const count=Math.min(photos.length,6),itemW=(areaW-gap*(count-1))/count;
+     for(let i=0;i<count;i++)draw(photos[i],areaX+i*(itemW+gap),top,itemW,imageHeight,4*s);
    }else if(layout==='portrait'){
-     const itemW=Math.min(wide*.42,360*s),itemH=imageHeight,itemX=p+(wide-itemW)/2;
-     draw(photos[0],0,itemX,top,itemW,itemH,18*s);
+     const itemW=Math.min(areaW*.42,360*s),itemX=areaX+(areaW-itemW)/2;
+     draw(photos[0],itemX,top,itemW,imageHeight,18*s);
    }else if(layout==='collage'){
-     const count=Math.min(photos.length,5),leadW=wide*.61,smallGap=7*s,smallW=wide-leadW-smallGap,cellH=(imageHeight-smallGap*3)/4;
-     draw(photos[0],0,p,top,leadW,imageHeight,10*s);
-     for(let i=1;i<count;i++)draw(photos[i],i,p+leadW+smallGap,top+(i-1)*(cellH+smallGap),smallW,cellH,8*s);
+     const count=Math.min(photos.length,6),leadW=areaW*.61,smallGap=7*s,smallW=areaW-leadW-smallGap,rows=Math.max(1,count-1),cellH=(imageHeight-smallGap*(rows-1))/rows;
+     draw(photos[0],areaX,top,leadW,imageHeight,10*s);
+     for(let i=1;i<count;i++)draw(photos[i],areaX+leadW+smallGap,top+(i-1)*(cellH+smallGap),smallW,cellH,8*s);
    }else{
-     const count=Math.min(photos.length,6),columns=count>4?3:2,rows=Math.ceil(count/columns),cellW=(wide-gap*(columns-1))/columns,cellH=(imageHeight-gap*(rows-1))/rows;
-     for(let i=0;i<count;i++)draw(photos[i],i,p+(i%columns)*(cellW+gap),top+Math.floor(i/columns)*(cellH+gap),cellW,cellH,8*s);
+     const count=Math.min(photos.length,6),columns=count>4?3:2,rows=Math.ceil(count/columns),cellW=(areaW-gap*(columns-1))/columns,cellH=(imageHeight-gap*(rows-1))/rows;
+     for(let i=0;i<count;i++)draw(photos[i],areaX+(i%columns)*(cellW+gap),top+Math.floor(i/columns)*(cellH+gap),cellW,cellH,8*s);
    }
-   regions.forEach(region=>previewImageRegions.push(region));
-   return baseY+imageHeight+18*s;
+   return top+imageHeight+18*s;
  }
  function drawTownhallCampaignPoster(W,H,s,background,accent,candidate,role,disclaimer,photos){
    const navy='#17264d',red='#df2447',cyan='#37afd0',paper='#faf9f6',textInk='#263450',photo=photos[0];
@@ -717,10 +743,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    ctx.fillStyle=red;ctx.beginPath();ctx.moveTo(W*.06,H*.19);ctx.lineTo(W*.88,H*.115);ctx.lineTo(W*.94,H*.59);ctx.lineTo(W*.15,H*.665);ctx.closePath();ctx.fill();
    ctx.fillStyle=cyan;ctx.beginPath();ctx.moveTo(W*.12,H*.235);ctx.lineTo(W*.81,H*.17);ctx.lineTo(W*.855,H*.545);ctx.lineTo(W*.175,H*.605);ctx.closePath();ctx.fill();
    if(photo){
-     ctx.save();ctx.beginPath();ctx.rect(photoX,photoY,photoW,photoH);ctx.clip();
-     imageFit(photo.img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
-     ctx.restore();
-     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(photo)});
+     drawPosterPhotoArrangement(W,H,s,W*.045,photoW,photos,photoH,photoY,photoX,photoW);
    }else{
      ctx.fillStyle='#e3e7eb';ctx.beginPath();ctx.ellipse(W*.5,H*.39,W*.105,H*.13,0,0,Math.PI*2);ctx.fill();
      ctx.fillStyle='#263450';ctx.beginPath();ctx.ellipse(W*.5,H*.59,W*.22,H*.2,0,Math.PI,Math.PI*2);ctx.fill();
@@ -756,10 +779,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    if(val('posterElectionSubheading')){ctx.font='500 '+Math.round(27*s)+'px Arial';ctx.fillText(val('posterElectionSubheading').toUpperCase(),W*.92,H*.12,W*.38)}
    const photoX=W*.035,photoY=H*.22,photoW=W*.93,photoH=H*.60;
    if(photo){
-     ctx.save();ctx.beginPath();ctx.rect(photoX,photoY,photoW,photoH);ctx.clip();ctx.filter='grayscale(100%) contrast(1.08)';
-     imageFit(photo.img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
-     ctx.restore();
-     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(photo)});
+     drawPosterPhotoArrangement(W,H,s,W*.045,photoW,photos,photoH,photoY,photoX,photoW);
    }else{
      ctx.fillStyle='#cbd0d3';ctx.beginPath();ctx.ellipse(W*.5,H*.48,W*.19,H*.22,0,0,Math.PI*2);ctx.fill();
      ctx.fillStyle='#737a85';ctx.beginPath();ctx.ellipse(W*.5,H*.79,W*.42,H*.29,0,Math.PI,Math.PI*2);ctx.fill();
@@ -772,6 +792,92 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    if(cta){ctx.font='900 '+Math.round(75*s)+'px Arial';ctx.fillText(cta.toUpperCase(),W*.5,H*.865,W*.91)}
    if(slogan){ctx.font='500 '+Math.round(24*s)+'px Arial';ctx.fillText(slogan.toUpperCase(),W*.5,H*.94,W*.88)}
    if(disclaimer){ctx.font='500 '+Math.round(10*s)+'px Arial';ctx.fillText(disclaimer,W*.5,H*.975,W*.9)}
+   ctx.textAlign='left';ctx.textBaseline='top';
+ }
+ function drawAshokaChakra(cx,cy,radius){
+   ctx.save();ctx.strokeStyle='#000080';ctx.fillStyle='#000080';ctx.lineWidth=Math.max(2,radius*.045);
+   ctx.beginPath();ctx.arc(cx,cy,radius,0,Math.PI*2);ctx.stroke();
+   for(let i=0;i<24;i++){const angle=i*Math.PI/12;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(angle)*radius,cy+Math.sin(angle)*radius);ctx.stroke()}
+   ctx.beginPath();ctx.arc(cx,cy,Math.max(2,radius*.09),0,Math.PI*2);ctx.fill();ctx.restore();
+ }
+ function drawTricolorCenterPoster(W,H,s,p,wide,layout,photos,campaign,candidate,role,constituency,date,venue,slogan,details,cta,disclaimer){
+   const saffron='#ff9933',green='#138808',navy='#000080',white='#ffffff';
+   ctx.fillStyle=white;ctx.fillRect(0,0,W,H);
+   if(layout==='chakraCenter'){
+     ctx.fillStyle=saffron;ctx.fillRect(0,0,W*.105,H);
+     ctx.fillStyle=green;ctx.fillRect(W*.895,0,W*.105,H);
+     drawAshokaChakra(W*.5,H*.51,W*.39);
+   }else if(layout==='tricolorCollage'){
+     ctx.fillStyle=saffron;ctx.fillRect(0,0,W,H/3);
+     ctx.fillStyle=green;ctx.fillRect(0,H*2/3,W,H/3);
+     drawAshokaChakra(W*.5,H*.51,W*.31);
+   }else{
+     ctx.fillStyle=saffron;ctx.fillRect(0,0,W,H*.16);
+     ctx.fillStyle=green;ctx.fillRect(0,H*.84,W,H*.16);
+     drawAshokaChakra(W*.5,H*.51,W*.31);
+   }
+   drawAshokaChakra(W*.5,H*.205,W*.052);
+   ctx.textAlign='center';ctx.textBaseline='top';
+   const topInset=layout==='chakraCenter'?H*.035:H*.025;
+   if(campaign){ctx.fillStyle=navy;ctx.font='900 '+Math.round(26*s)+'px Arial';textBlock(campaign.toUpperCase(),W*.08,topInset,W*.84,'900 '+Math.round(26*s)+'px Arial',navy,30*s,2)}
+   if(date){ctx.fillStyle=navy;ctx.font='bold '+Math.round(18*s)+'px Arial';textBlock(date.toUpperCase(),W*.1,H*.075,W*.8,'bold '+Math.round(18*s)+'px Arial',navy,23*s,2)}
+   if(slogan){ctx.fillStyle=navy;ctx.font='900 '+Math.round(24*s)+'px Arial';textBlock(slogan.toUpperCase(),W*.08,H*.13,W*.84,'900 '+Math.round(24*s)+'px Arial',navy,28*s,2)}
+   const photoX=W*.12,photoY=H*.245,photoW=W*.76,photoH=H*.455;
+   if(photos.length){
+     ctx.save();ctx.strokeStyle=white;ctx.lineWidth=7*s;ctx.beginPath();ctx.roundRect(photoX-4*s,photoY-4*s,photoW+8*s,photoH+8*s,layout==='chakraCenter'?photoW*.3:12*s);ctx.stroke();ctx.restore();
+     drawPosterPhotoArrangement(W,H,s,p,wide,photos,photoH,photoY,photoX,photoW);
+   }else{
+     ctx.fillStyle='#ffffffbb';ctx.beginPath();ctx.roundRect(photoX,photoY,photoW,photoH,12*s);ctx.fill();
+     drawAshokaChakra(W*.5,H*.47,W*.16);
+   }
+   let y=H*.72;
+   if(candidate){ctx.fillStyle=navy;ctx.font='900 '+Math.round(37*s)+'px Arial';y=textBlock(candidate.toUpperCase(),W*.08,y,W*.84,'900 '+Math.round(37*s)+'px Arial',navy,42*s,2)}
+   if(role||constituency){
+     const sub=[role,constituency].filter(Boolean).join('  |  ');ctx.fillStyle='#38465a';ctx.font='bold '+Math.round(17*s)+'px Arial';y=textBlock(sub.toUpperCase(),W*.1,y+3*s,W*.8,'bold '+Math.round(17*s)+'px Arial','#38465a',21*s,2);
+   }
+   if(details||venue){
+     const foot=[details,venue].filter(Boolean).join('  ·  ');ctx.fillStyle='#263247';ctx.font='bold '+Math.round(15*s)+'px Arial';textBlock(foot,W*.1,Math.max(y+4*s,H*.805),W*.8,'bold '+Math.round(15*s)+'px Arial','#263247',19*s,3);
+   }
+   if(cta){ctx.fillStyle=green;ctx.font='900 '+Math.round(20*s)+'px Arial';textBlock(cta.toUpperCase(),W*.1,H*.92,W*.8,'900 '+Math.round(20*s)+'px Arial',white,24*s,1)}
+   if(disclaimer){ctx.fillStyle='#263247';ctx.font=Math.round(10*s)+'px Arial';ctx.fillText(disclaimer,W*.5,H*.985,W*.9)}
+   ctx.textAlign='left';ctx.textBaseline='top';
+ }
+ function drawModernPoster(W,H,s,p,wide,layout,photos,campaign,candidate,role,constituency,date,venue,slogan,details,cta,disclaimer){
+   const background=val('posterBackground'),accent=val('posterAccent'),ink=val('posterTextColor'),mosaic=layout==='modernMosaic';
+   const backgroundRgb=background.match(/[a-f\d]{2}/gi)?.map(value=>parseInt(value,16))||[240,240,240];
+   const lightBackground=(backgroundRgb[0]*.299+backgroundRgb[1]*.587+backgroundRgb[2]*.114)>150;
+   const muted=lightBackground?'#536276':'#d1d9e4',panel=lightBackground?'#ffffff':'#ffffff12';
+   ctx.fillStyle=background;ctx.fillRect(0,0,W,H);
+   ctx.fillStyle=accent;ctx.fillRect(0,0,W,Math.max(9*s,14));
+   if(mosaic){
+     ctx.fillStyle=panel;ctx.beginPath();ctx.roundRect(p*.55,H*.027,W-p*1.1,H*.195,16*s);ctx.fill();
+     ctx.fillStyle=accent;ctx.fillRect(p*.55,H*.027,5*s,H*.195);
+   }
+   const headX=p*.82,headY=H*.045,headW=wide*.84;
+   if(campaign){ctx.textAlign='left';ctx.fillStyle=accent;ctx.font='900 '+Math.round(16*s)+'px Arial';textBlock(campaign.toUpperCase(),headX,headY,headW,'900 '+Math.round(16*s)+'px Arial',accent,20*s,2)}
+   if(date){ctx.textAlign='right';ctx.fillStyle=muted;ctx.font='700 '+Math.round(14*s)+'px Arial';ctx.fillText(date.toUpperCase(),W-headX,headY,wide*.42)}
+   let titleY=mosaic?H*.095:H*.09;
+   if(candidate){ctx.textAlign='left';ctx.fillStyle=ink;ctx.font='900 '+Math.round(43*s)+'px Arial';titleY=textBlock(candidate.toUpperCase(),headX,titleY,headW,'900 '+Math.round(43*s)+'px Arial',ink,48*s,2)+4*s}
+   if(slogan){ctx.textAlign='left';ctx.fillStyle=ink;ctx.font='600 '+Math.round(24*s)+'px Arial';textBlock(slogan,headX,titleY,headW,'600 '+Math.round(24*s)+'px Arial',ink,30*s,2)}
+   const photoX=p*.62,photoW=W-photoX*2,photoY=H*.315,photoH=H*.385;
+   ctx.fillStyle=mosaic?accent+'35':'#11182712';ctx.beginPath();ctx.roundRect(photoX-5*s,photoY-5*s,photoW+10*s,photoH+10*s,14*s);ctx.fill();
+   if(photos.length)drawPosterPhotoArrangement(W,H,s,p,wide,photos,photoH,photoY,photoX,photoW);
+   else{
+     ctx.fillStyle=mosaic?'#ffffff10':'#1720330d';ctx.beginPath();ctx.roundRect(photoX,photoY,photoW,photoH,12*s);ctx.fill();
+     ctx.strokeStyle=mosaic?'#ffffff30':'#53627644';ctx.lineWidth=2*s;ctx.strokeRect(photoX+12*s,photoY+12*s,photoW-24*s,photoH-24*s);
+   }
+   let footerY=H*.735;
+   if(role){ctx.textAlign='left';ctx.fillStyle=accent;ctx.font='900 '+Math.round(15*s)+'px Arial';footerY=textBlock(role.toUpperCase(),headX,footerY,headW,'900 '+Math.round(15*s)+'px Arial',accent,19*s,2)+7*s}
+   if(constituency){ctx.textAlign='left';ctx.fillStyle=ink;ctx.font='600 '+Math.round(18*s)+'px Arial';footerY=textBlock(constituency.toUpperCase(),headX,footerY,headW,'600 '+Math.round(18*s)+'px Arial',ink,22*s,2)+5*s}
+   if(details||venue){
+     const detail=[details,venue].filter(Boolean).join('  ·  ');ctx.textAlign='left';ctx.fillStyle=muted;ctx.font='500 '+Math.round(15*s)+'px Arial';
+     footerY=textBlock(detail,headX,footerY,headW,'500 '+Math.round(15*s)+'px Arial',muted,20*s,3)+5*s;
+   }
+   if(cta){
+     const ctaY=Math.min(Math.max(footerY,H*.865),H-p-52*s);ctx.fillStyle=accent;ctx.beginPath();ctx.roundRect(headX,ctaY,headW,42*s,8*s);ctx.fill();
+     ctx.fillStyle=background;ctx.font='900 '+Math.round(16*s)+'px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(cta.toUpperCase(),W/2,ctaY+21*s,headW-20*s);ctx.textAlign='left';ctx.textBaseline='top';
+   }
+   if(disclaimer){ctx.fillStyle=muted;ctx.font=Math.round(10*s)+'px Arial';ctx.textAlign='right';ctx.fillText(disclaimer,W-p*.6,H-p*.32,wide*.68)}
    ctx.textAlign='left';ctx.textBaseline='top';
  }
  function drawPoster(W,H,s,p,wide){
@@ -796,6 +902,14 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    const constituency=val('posterConstituency'),slogan=val('posterSlogan'),details=val('posterPromises'),date=val('posterDate'),venue=val('posterVenue');
    const cta=val('posterCallToAction'),disclaimer=val('posterDisclaimer');
    const selectedPhotos=getSelectedPosterPhotos(),hasPhoto=selectedPhotos.length>0;
+   if(layout==='modernEditorial'||layout==='modernMosaic'){
+     drawModernPoster(W,H,s,p,wide,layout,selectedPhotos,campaign,candidate,role,constituency,date,venue,slogan,details,cta,disclaimer);
+     return;
+   }
+   if(layout==='tricolorCenter'||layout==='chakraCenter'||layout==='tricolorCollage'){
+     drawTricolorCenterPoster(W,H,s,p,wide,layout,selectedPhotos,campaign,candidate,role,constituency,date,venue,slogan,details,cta,disclaimer);
+     return;
+   }
    if(layout==='townhallCampaign'){
      drawTownhallCampaignPoster(W,H,s,background,accent,candidate,role,disclaimer,selectedPhotos);
      return;
@@ -855,11 +969,10 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    const imageHeight=hasPhoto?Math.min(H*(compact?.34:.30),360*s):0;
    if(hasPhoto&&layout==='candidate'){
      const photoW=Math.min(W*.36,330*s),photoX=W-p-photoW,photoY=y+30*s,photoH=imageHeight;
-     imageFit(selectedPhotos[0].img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     drawPosterPhoto(selectedPhotos[0],photoX,photoY,photoW,photoH,W,H,4*s);
      ctx.strokeStyle=accent;ctx.lineWidth=7*s;ctx.strokeRect(photoX,photoY,photoW,photoH);
-     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(selectedPhotos[0])});
    }else if(hasPhoto){
-     y=drawPosterPhotoArrangement(W,H,s,p,wide,selectedPhotos,imageHeight);
+     y=drawPosterPhotoArrangement(W,H,s,p,wide,selectedPhotos,imageHeight,y);
      if(layout==='rally'||layout==='collage'||layout==='community'||layout==='youth'){
        const shade=ctx.createLinearGradient(0,p+imageHeight*.55,0,p+imageHeight);
        shade.addColorStop(0,background+'00');shade.addColorStop(1,background);
@@ -913,22 +1026,39 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    return candidates[0]?.id||'';
  }
  function drawPosterTracked(W,H,s,p,wide){
-   posterTextRegions=[];
+   posterTextRegions=[];posterAutoTextOffsets={};
    const baseFillText=ctx.fillText;
    ctx.fillText=function(text,x,y,maxWidth){
      const fieldId=findPosterTextField(text);
-     if(!fieldId)return Number.isFinite(maxWidth)?baseFillText.call(ctx,text,x,y,maxWidth):baseFillText.call(ctx,text,x,y);
      const originalFont=ctx.font,originalColor=ctx.fillStyle,style=posterTextStyles[fieldId]||{size:100,color:''};
+     ctx.font=posterFont(originalFont);
+     if(!fieldId){
+       try{return Number.isFinite(maxWidth)?baseFillText.call(ctx,text,x,y,maxWidth):baseFillText.call(ctx,text,x,y)}
+       finally{ctx.font=originalFont}
+     }
      const scale=posterTextBlockField===fieldId?1:(Number(style.size)||100)/100;
      ctx.font=ctx.font.replace(/([\d.]+)px/,(_,size)=>(Number(size)*scale)+'px');
      if(style.color)ctx.fillStyle=style.color;
-     const offset=posterTextOffsets[fieldId]||{x:0,y:0};
-     const drawX=x+offset.x*W,drawY=y+offset.y*H,fontSize=Number(ctx.font.match(/([\d.]+)px/)?.[1])||16;
+     const offset=posterTextOffsets[fieldId]||{x:0,y:0},automatic=posterAutoTextOffsets[fieldId];
+     let drawX=x+offset.x*W,drawY=y+offset.y*H,fontSize=Number(ctx.font.match(/([\d.]+)px/)?.[1])||16;
      const drawMaxWidth=Number(style.size)>100?undefined:maxWidth;
      const textWidth=Math.min(ctx.measureText(String(text)).width,Number.isFinite(drawMaxWidth)?drawMaxWidth:Infinity);
      const left=ctx.textAlign==='center'?drawX-textWidth/2:ctx.textAlign==='right'||ctx.textAlign==='end'?drawX-textWidth:drawX;
      const top=ctx.textBaseline==='middle'?drawY-fontSize/2:ctx.textBaseline==='bottom'||ctx.textBaseline==='ideographic'?drawY-fontSize:ctx.textBaseline==='alphabetic'?drawY-fontSize*.8:drawY;
-     posterTextRegions.push({fieldId,x:left-4,y:top-4,w:Math.max(12,textWidth+8),h:fontSize*1.4+8,anchorX:drawX,anchorY:drawY,color:typeof ctx.fillStyle==='string'&&ctx.fillStyle.startsWith('#')?ctx.fillStyle:'#ffffff'});
+     if(!automatic){
+       const blockLines=posterTextBlockField===fieldId?wrap(val(fieldId),Number.isFinite(maxWidth)?maxWidth:W,ctx.font).length:1;
+       const blockHeight=Math.max(fontSize*1.4+8,blockLines*fontSize*1.35);
+       const obstacle=previewImageRegions.find(region=>region.target==='posterPhoto'&&left<region.x+region.w&&left+textWidth>region.x&&top<region.y+region.h&&top+blockHeight>region.y);
+       if(obstacle&&!offset.x&&!offset.y){
+         const down=obstacle.y+obstacle.h+12-top,up=obstacle.y-blockHeight-12-top;
+         const shift=top+down+blockHeight<=H-8?down:top+up>=8?up:Math.max(8-top,Math.min(down,H-8-blockHeight-top));
+         posterAutoTextOffsets[fieldId]={x:0,y:shift/H};
+       }else posterAutoTextOffsets[fieldId]={x:0,y:0};
+     }
+     drawX+=posterAutoTextOffsets[fieldId].x*W;drawY+=posterAutoTextOffsets[fieldId].y*H;
+     const finalLeft=ctx.textAlign==='center'?drawX-textWidth/2:ctx.textAlign==='right'||ctx.textAlign==='end'?drawX-textWidth:drawX;
+     const finalTop=ctx.textBaseline==='middle'?drawY-fontSize/2:ctx.textBaseline==='bottom'||ctx.textBaseline==='ideographic'?drawY-fontSize:ctx.textBaseline==='alphabetic'?drawY-fontSize*.8:drawY;
+     posterTextRegions.push({fieldId,x:finalLeft-4,y:finalTop-4,w:Math.max(12,textWidth+8),h:fontSize*1.4+8,anchorX:drawX,anchorY:drawY,color:typeof ctx.fillStyle==='string'&&ctx.fillStyle.startsWith('#')?ctx.fillStyle:'#ffffff'});
      try{return Number.isFinite(drawMaxWidth)?baseFillText.call(ctx,text,drawX,drawY,drawMaxWidth):baseFillText.call(ctx,text,drawX,drawY)}
      finally{ctx.font=originalFont;ctx.fillStyle=originalColor}
    };
@@ -1081,9 +1211,24 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
   if(footer){const footerFont=12*s*textScale('bylineSize');ctx.fillStyle=textColor('byline',t.muted);ctx.font='bold '+footerFont+'px Arial';ctx.fillText(footer.slice(0,100),p,H-p-Math.max(23*s,footerFont*1.8),wide)}
   ctx.strokeStyle=t.accent;ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(p,H-p);ctx.lineTo(W-p,H-p);ctx.stroke();
  }
- function schedule(){if(videoRecording)return;clearTimeout(renderTimer);renderTimer=setTimeout(()=>{try{render()}catch(e){$('message').textContent='Preview error. Try shortening the headline or article.'}},90)}
+ function schedule(){if(videoRecording)return;clearTimeout(renderTimer);renderTimer=setTimeout(()=>{try{render()}catch(e){console.error('Post preview render failed.',e);$('message').textContent='Preview error: '+(e instanceof Error?e.message:'unexpected rendering error')}},90)}
  document.querySelectorAll('#paper,#category,#date,#headline,#subtitle,#body,#byline,#ratio,#fit,#customW,#customH,#factCheckToggle').forEach(el=>{el.addEventListener('input',schedule);el.addEventListener('change',schedule)});
- ['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBadgeNumber','posterTownhallDate','posterPriorityOneTitle','posterPriorityOneDescription','posterPriorityTwoTitle','posterPriorityTwoDescription','posterPriorityThreeTitle','posterPriorityThreeDescription','posterElectionDate','posterElectionTopRight','posterElectionSubheading','posterBackground','posterAccent','posterTextColor','posterPhotoPosition','posterImageLayout','posterPhotoZoom'].forEach(id=>{$(id).addEventListener('input',()=>{if(id==='posterPhotoZoom')$('posterPhotoZoomValue').textContent=val(id)+'%';schedule()});$(id).addEventListener('change',schedule)});
+ ['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBadgeNumber','posterTownhallDate','posterPriorityOneTitle','posterPriorityOneDescription','posterPriorityTwoTitle','posterPriorityTwoDescription','posterPriorityThreeTitle','posterPriorityThreeDescription','posterElectionDate','posterElectionTopRight','posterElectionSubheading','posterBackground','posterAccent','posterTextColor','posterPhotoPosition','posterImageLayout','posterPhotoZoom','posterPhotoFrame','posterFontFamily'].forEach(id=>{$(id).addEventListener('input',()=>{if(id==='posterPhotoZoom')$('posterPhotoZoomValue').textContent=val(id)+'%';if(['posterBackground','posterAccent','posterTextColor'].includes(id))$('posterPalettePreset').value='custom';schedule()});$(id).addEventListener('change',schedule)});
+ const posterPalettes={
+   midnight:{background:'#152238',accent:'#edbd62',text:'#f5f1e8'},
+   warm:{background:'#f5f1e8',accent:'#b94e3f',text:'#243347'},
+   forest:{background:'#eaf1e9',accent:'#28724d',text:'#20382d'},
+   blue:{background:'#eef4f9',accent:'#2363a3',text:'#1b2f46'}
+ };
+ $('posterPalettePreset').addEventListener('change',()=>{
+   const palette=posterPalettes[val('posterPalettePreset')];
+   if(palette){$('posterBackground').value=palette.background;$('posterAccent').value=palette.accent;$('posterTextColor').value=palette.text}
+   schedule();
+ });
+ $('posterPalettePreset').value='warm';
+ $('posterBackground').value=posterPalettes.warm.background;
+ $('posterAccent').value=posterPalettes.warm.accent;
+ $('posterTextColor').value=posterPalettes.warm.text;
  $('posterTextTarget').addEventListener('change',updatePosterTextControls);
  $('posterBackgroundTolerance').addEventListener('input',()=>{
    const tolerance=Number(val('posterBackgroundTolerance'));$('posterBackgroundToleranceValue').textContent=tolerance;
@@ -1197,12 +1342,30 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  canvas.addEventListener('pointerdown',event=>{
    if(postType!=='poster'||posterBackgroundPickMode)return;
    const point=canvasPoint(event),hit=[...posterTextRegions].reverse().find(region=>point.x>=region.x&&point.x<=region.x+region.w&&point.y>=region.y&&point.y<=region.y+region.h);
-   if(!hit)return;
-   posterTextPointerHandled=true;selectPosterText(hit.fieldId);
-   posterTextPointer={pointerId:event.pointerId,fieldId:hit.fieldId,lastX:event.clientX,lastY:event.clientY};
-   canvas.classList.add('poster-text-dragging');canvas.setPointerCapture(event.pointerId);event.preventDefault();
+   if(hit){
+     posterTextPointerHandled=true;selectPosterText(hit.fieldId);
+     posterTextPointer={pointerId:event.pointerId,fieldId:hit.fieldId,lastX:event.clientX,lastY:event.clientY};
+     canvas.classList.add('poster-text-dragging');canvas.setPointerCapture(event.pointerId);event.preventDefault();return;
+   }
+   const imageHit=[...previewImageRegions].reverse().find(region=>region.target==='posterPhoto'&&point.x>=region.x&&point.x<=region.x+region.w&&point.y>=region.y&&point.y<=region.y+region.h);
+   if(!imageHit)return;
+   const item=posterPhotos.find(photo=>photo.id===imageHit.photoId);
+   if(!item)return;
+   posterTextPointerHandled=true;selectPosterPhoto(item.id);
+   posterImagePointer={pointerId:event.pointerId,photoId:item.id,lastX:event.clientX,lastY:event.clientY};
+   canvas.classList.add('poster-image-dragging');canvas.setPointerCapture(event.pointerId);event.preventDefault();
  });
  canvas.addEventListener('pointermove',event=>{
+   if(posterImagePointer&&posterImagePointer.pointerId===event.pointerId){
+     const rect=canvas.getBoundingClientRect(),region=previewImageRegions.find(entry=>entry.target==='posterPhoto'&&entry.photoId===posterImagePointer.photoId);
+     if(!region)return;
+     const dx=(event.clientX-posterImagePointer.lastX)*canvas.width/rect.width,dy=(event.clientY-posterImagePointer.lastY)*canvas.height/rect.height;
+     const moveX=Math.max(-region.x,Math.min(canvas.width-region.x-region.w,dx)),moveY=Math.max(-region.y,Math.min(canvas.height-region.y-region.h,dy));
+     const selectedItem=posterPhotos.find(item=>item.id===posterImagePointer.photoId);if(!selectedItem)return;
+     const transform=getPosterPhotoTransform(selectedItem);
+     transform.x+=moveX/canvas.width;transform.y+=moveY/canvas.height;
+     posterImagePointer.lastX=event.clientX;posterImagePointer.lastY=event.clientY;render();return;
+   }
    if(!posterTextPointer||posterTextPointer.pointerId!==event.pointerId)return;
    const rect=canvas.getBoundingClientRect(),offset=posterTextOffsets[posterTextPointer.fieldId]||{x:0,y:0};
    offset.x+=(event.clientX-posterTextPointer.lastX)/rect.width;
@@ -1215,6 +1378,12 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
  }
  canvas.addEventListener('pointerup',stopPosterTextDrag);canvas.addEventListener('pointercancel',stopPosterTextDrag);
+ function stopPosterImageDrag(event){
+   if(!posterImagePointer||posterImagePointer.pointerId!==event.pointerId)return;
+   posterImagePointer=null;canvas.classList.remove('poster-image-dragging');if(event.type==='pointercancel')posterTextPointerHandled=false;
+   if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
+ }
+ canvas.addEventListener('pointerup',stopPosterImageDrag);canvas.addEventListener('pointercancel',stopPosterImageDrag);
  canvas.addEventListener('click',e=>{
    const rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*canvas.width/rect.width,y=(e.clientY-rect.top)*canvas.height/rect.height;
    if(postType==='poster'&&posterTextPointerHandled){posterTextPointerHandled=false;return}
@@ -1253,14 +1422,14 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    $('imageUploadTitle').innerHTML='<span class="step">STEP 02</span>'+(type==='poster'?'Add poster photo':'Upload your photograph');
    $('uploadTitle').textContent=type==='poster'?'Choose a poster photo':'Choose a news photo';
    $('editorWorkspaceTitle').innerHTML='<span class="step">STEP 03</span>'+(type==='video'?'VIDEO WORKSPACE · Preview video editor':type==='poster'?'POSTER WORKSPACE · Edit poster image':'IMAGE WORKSPACE · Preview image editor');
-   $('editorHint').textContent=type==='video'?'Use the video player to preview your selected clip. Video framing and zoom follow the image tools.':type==='poster'?'Enter text in Step 1, select images in Step 2, and choose a design in Step 3. Drag poster text in the preview to position it.':'Click a photo in the live preview to select it for editing.';
+   $('editorHint').textContent=type==='video'?'Use the video player to preview your selected clip. Video framing and zoom follow the image tools.':type==='poster'?'Enter text in Step 1, select images in Step 2, and choose a design in Step 3. Drag photos or text in the preview; resize the selected photo in Step 2.':'Click a photo in the live preview to select it for editing.';
    const preferredVideoMime=getVideoMimeType();
    const downloadLabel=type==='video'?(preferredVideoMime?'Download '+getVideoFormat(preferredVideoMime):'Video export unavailable'):'Download '+(type==='poster'?'Poster PNG':'PNG');
    $('topDownload').setAttribute('aria-label',downloadLabel);
    $('topDownload').title=downloadLabel;
    $('previewLabel').textContent=type==='video'?'Live post video preview':type==='poster'?'Live poster preview':'Live newspaper preview';
    $('step1').querySelector('h2').innerHTML=type==='poster'?'Poster builder':'<span class="step">STEP 01</span>Story details';
-   $('downloadPoster').textContent='↓ Download '+(val('posterLayout')||'rally').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';
+   $('downloadPoster').textContent='↓ Download '+($('posterLayout').selectedOptions[0]?.text||'Poster')+' PNG';
    syncStyleFields();
    if(type==='video'&&videoUrl)activeImageTextTarget='video';
    refreshImageTextTargets();schedule();
@@ -1274,9 +1443,14 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      const card=document.createElement('div');card.className='gallery-item';
      const image=document.createElement('img');image.src=item.url;image.alt='Poster photo '+(index+1)+': '+item.name;
      image.className='thumbimg'+(selectedPosterPhotoIds.includes(item.id)?' active':'');
-     image.title=(selectedPosterPhotoIds.includes(item.id)?'Included':'Not included')+' — click to toggle';
-     image.addEventListener('click',()=>{
-       selectedPosterPhotoIds=selectedPosterPhotoIds.includes(item.id)?selectedPosterPhotoIds.filter(id=>id!==item.id):[...selectedPosterPhotoIds,item.id];
+     image.title='Select this photo for positioning and resizing';
+     image.addEventListener('click',()=>selectPosterPhoto(item.id));
+     const include=document.createElement('button');include.type='button';include.className='gallery-include';include.textContent=selectedPosterPhotoIds.includes(item.id)?'Included':'Include';
+     include.setAttribute('aria-pressed',String(selectedPosterPhotoIds.includes(item.id)));include.setAttribute('aria-label',(selectedPosterPhotoIds.includes(item.id)?'Remove ':'Include ')+item.name+' in poster');
+     include.addEventListener('click',()=>{
+       const included=selectedPosterPhotoIds.includes(item.id);
+       selectedPosterPhotoIds=included?selectedPosterPhotoIds.filter(id=>id!==item.id):[...selectedPosterPhotoIds,item.id];
+       if(!included)selectPosterPhoto(item.id);else if(selectedPosterPhotoId===item.id)selectPosterPhoto(selectedPosterPhotoIds[0]??null);
        refreshPosterGallery();schedule();
      });
      const remove=document.createElement('button');remove.type='button';remove.className='gallery-remove';remove.textContent='×';
@@ -1284,14 +1458,38 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      remove.addEventListener('click',()=>{
        URL.revokeObjectURL(item.url);posterPhotos=posterPhotos.filter(photo=>photo.id!==item.id);
        selectedPosterPhotoIds=selectedPosterPhotoIds.filter(id=>id!==item.id);
+       delete posterPhotoTransforms[item.id];if(selectedPosterPhotoId===item.id)selectPosterPhoto(selectedPosterPhotoIds[0]??null);
        refreshPosterGallery();schedule();
      });
-     card.append(image,remove);gallery.appendChild(card);
+     card.classList.toggle('poster-gallery-selected',selectedPosterPhotoId===item.id);
+     card.append(image,include,remove);gallery.appendChild(card);
    });
+   updatePosterPhotoControls();
    const included=selectedPosterPhotoIds.length;
    $('posterPhotoStatus').textContent=posterPhotos.length
-     ?posterPhotos.length+' poster photo(s) uploaded · '+included+' included. Click thumbnails to include or remove them.'
-     :'No poster photos selected. Select thumbnails to include them in the poster.';
+     ?posterPhotos.length+' poster photo(s) uploaded · '+included+' included. Select a thumbnail to edit; use its Include button to toggle it on the poster.'
+     :'No poster photos selected.';
+ }
+ function selectPosterPhoto(photoId){
+   selectedPosterPhotoId=posterPhotos.some(item=>item.id===photoId)?photoId:null;
+   updatePosterPhotoControls();refreshPosterGallerySelection();schedule();
+ }
+ function refreshPosterGallerySelection(){
+   Array.from($('posterGallery').children).forEach((card,index)=>{
+     card.classList.toggle('poster-gallery-selected',posterPhotos[index]?.id===selectedPosterPhotoId);
+   });
+ }
+ function updatePosterPhotoControls(){
+   const item=posterPhotos.find(photo=>photo.id===selectedPosterPhotoId),control=$('posterPhotoScale');
+   $('posterSelectedPhotoLabel').textContent=item?'Selected: '+item.name:'Select a poster photo to edit';
+   control.disabled=!item;
+   const scale=item?Math.round((Number(getPosterPhotoTransform(item).scale)||1)*100):100;
+   control.value=String(scale);$('posterPhotoScaleValue').textContent=scale+'%';
+ }
+ function setPosterPhotoScale(item,value){
+   if(!item)return;
+   getPosterPhotoTransform(item).scale=Math.max(.5,Math.min(2.5,Number(value)/100));
+   updatePosterPhotoControls();schedule();
  }
  function syncPosterDesignCards(){
    const select=$('posterLayout'),grid=$('posterDesignGrid');
@@ -1319,12 +1517,14 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      if(val('posterBackground')==='#11243a')$('posterBackground').value='#d0d0d0';
      if(val('posterAccent')==='#f3c64e')$('posterAccent').value='#bf4c49';
    }
-   syncPosterDesignCards();syncPosterTemplateFields();$('downloadPoster').textContent='↓ Download '+val('posterLayout').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';schedule()
+   syncPosterDesignCards();syncPosterTemplateFields();$('downloadPoster').textContent='↓ Download '+$('posterLayout').selectedOptions[0].text+' PNG';schedule()
  });
  function syncPosterTemplateFields(){
    $('posterSplitCampaignFields').hidden=val('posterLayout')!=='splitCampaign';
    $('posterTownhallFields').hidden=val('posterLayout')!=='townhallCampaign';
    $('posterElectionFields').hidden=val('posterLayout')!=='electionPortrait';
+   const tricolor=['tricolorCenter','chakraCenter','tricolorCollage'].includes(val('posterLayout'));
+   $('posterPaletteControls').hidden=tricolor;$('posterPalettePresetControl').hidden=tricolor;$('posterBaseTextColorControl').hidden=tricolor;$('posterPhotoFramingRow').classList.toggle('is-single',tricolor);
  }
  syncPosterDesignCards();syncPosterTemplateFields();
  $('posterPhotoInput').addEventListener('change',event=>{
@@ -1337,7 +1537,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    toLoad.forEach(file=>{
      const url=URL.createObjectURL(file),image=new Image();
      image.onload=()=>{
-       const item={id:++posterPhotoCounter,img:image,originalImg:image,name:file.name,url,backgroundSample:null};posterPhotos.push(item);selectedPosterPhotoIds.push(item.id);
+       const item={id:++posterPhotoCounter,img:image,originalImg:image,name:file.name,url,backgroundSample:null};posterPhotos.push(item);selectedPosterPhotoIds.push(item.id);selectedPosterPhotoId=item.id;posterPhotoTransforms[item.id]={x:0,y:0,scale:1};
        loaded++;
        if(loaded===toLoad.length){refreshPosterGallery();schedule()}
      };
@@ -1346,6 +1546,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    });
    event.target.value='';
  });
+ $('posterPhotoScale').addEventListener('input',()=>setPosterPhotoScale(posterPhotos.find(item=>item.id===selectedPosterPhotoId),val('posterPhotoScale')));
  $('posterRemoveBackground').addEventListener('click',()=>{
    if(!getSelectedPosterPhotos().length){setMessage('Add and include a poster photo before removing its background.');return}
    if(posterBackgroundPickMode){posterBackgroundPickMode=false;canvas.classList.remove('poster-background-picking');setMessage('Background removal cancelled.');return}
@@ -1592,7 +1793,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  $('downloadPng').addEventListener('click',()=>download('image/png'));$('downloadPoster').addEventListener('click',()=>download('image/png'));$('topDownload').addEventListener('click',()=>postType==='video'?downloadVideo():download('image/png'));$('downloadVideo').addEventListener('click',downloadVideo);$('downloadJpg').addEventListener('click',()=>download('image/jpeg'));
  $('resetBtn').addEventListener('click',()=>{if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl='';sourceVideo.pause();sourceVideo.removeAttribute('src');sourceVideo.load();sourceVideo.hidden=true;$('videoFile').value='';$('videoStatus').textContent='Select a video to preview and create a video post.';setPostType('image')});
  $('resetBtn').addEventListener('click',()=>{storyItems=[];storyCounter=0;mainImageText=defaultImageText();activeImageTextTarget='main';renderStoryEditors();loadImageTextControls();$('postMode').value='single';$('storyArrangement').value='side';$('factCheckToggle').checked=false;Object.entries(defaults).forEach(([id,v])=>$(id).value=v);['paperSize','categorySize','dateSize','headlineSize','subtitleSize','bodySize','bylineSize'].forEach(id=>{$(id).value=100;$(id+'Value').textContent='100%'});Object.keys(textColorOverrides).forEach(id=>textColorOverrides[id]=null);$('photo').value='';photos.forEach(p=>URL.revokeObjectURL(p.url));photos=[];photo=null;selectedPhotoIndex=0;mainImageWidthPct=100;mainImageHeightPct=100;mainImageOffsetX=0;mainImageOffsetY=0;$('gallery').innerHTML='';zoom=1;panX=0;panY=0;style='breaking';document.querySelectorAll('.style').forEach(b=>b.classList.toggle('active',b.dataset.style===style));syncStyleFields();$('ratio').value='portrait';$('fit').value='cover';$('uploadTitle').textContent='Choose a news photo';$('uploadSub').textContent='JPG, PNG or WebP · up to 15 MB each';$('photoStatus').textContent='No photo selected — sample placeholder shown.';activeEditorTarget='main';loadEditorTarget();refreshEditorImageOptions();render();setMessage('Sample content restored.')});
- $('resetBtn').addEventListener('click',()=>{posterPhotos.forEach(item=>URL.revokeObjectURL(item.url));posterPhotos=[];selectedPosterPhotoIds=[];posterTextStyles={};posterTextOffsets={};posterTextRegions=[];posterBackgroundPickMode=false;canvas.classList.remove('poster-background-picking','poster-text-dragging');posterTextPointer=null;$('posterPhotoInput').value='';refreshPosterGallery();[['posterLayout','rally'],['posterCampaign',''],['posterCandidate',''],['posterRole',''],['posterConstituency',''],['posterDate',''],['posterSlogan',''],['posterPromises',''],['posterVenue',''],['posterCallToAction',''],['posterDisclaimer',''],['posterBadgeNumber',''],['posterTownhallDate',''],['posterPriorityOneTitle',''],['posterPriorityOneDescription',''],['posterPriorityTwoTitle',''],['posterPriorityTwoDescription',''],['posterPriorityThreeTitle',''],['posterPriorityThreeDescription',''],['posterElectionDate',''],['posterElectionTopRight',''],['posterElectionSubheading',''],['posterBackground','#11243a'],['posterAccent','#f3c64e'],['posterTextColor','#ffffff'],['posterTextTarget','posterCampaign'],['posterBackgroundTolerance','45'],['posterPhotoPosition','cover'],['posterImageLayout','hero'],['posterPhotoZoom','100']].forEach(([id,value])=>$(id).value=value);$('posterPhotoZoomValue').textContent='100%';$('posterBackgroundToleranceValue').textContent='45';syncPosterTemplateFields();syncPosterDesignCards();updatePosterTextControls();$('downloadPoster').textContent='↓ Download Rally Poster PNG';schedule()});
+ $('resetBtn').addEventListener('click',()=>{posterPhotos.forEach(item=>URL.revokeObjectURL(item.url));posterPhotos=[];selectedPosterPhotoIds=[];selectedPosterPhotoId=null;posterPhotoTransforms={};posterTextStyles={};posterTextOffsets={};posterTextRegions=[];posterAutoTextOffsets={};posterBackgroundPickMode=false;canvas.classList.remove('poster-background-picking','poster-text-dragging','poster-image-dragging');posterTextPointer=null;posterImagePointer=null;$('posterPhotoInput').value='';refreshPosterGallery();[['posterLayout','modernEditorial'],['posterCampaign',''],['posterCandidate',''],['posterRole',''],['posterConstituency',''],['posterDate',''],['posterSlogan',''],['posterPromises',''],['posterVenue',''],['posterCallToAction',''],['posterDisclaimer',''],['posterBadgeNumber',''],['posterTownhallDate',''],['posterPriorityOneTitle',''],['posterPriorityOneDescription',''],['posterPriorityTwoTitle',''],['posterPriorityTwoDescription',''],['posterPriorityThreeTitle',''],['posterPriorityThreeDescription',''],['posterElectionDate',''],['posterElectionTopRight',''],['posterElectionSubheading',''],['posterTextTarget','posterCampaign'],['posterBackgroundTolerance','45'],['posterPhotoPosition','cover'],['posterImageLayout','hero'],['posterPhotoZoom','100'],['posterPhotoFrame','rounded'],['posterFontFamily','Arial'],['posterPalettePreset','warm']].forEach(([id,value])=>$(id).value=value);$('posterPalettePreset').dispatchEvent(new Event('change'));$('posterPhotoZoomValue').textContent='100%';$('posterBackgroundToleranceValue').textContent='45';syncPosterTemplateFields();syncPosterDesignCards();updatePosterPhotoControls();updatePosterTextControls();$('downloadPoster').textContent='↓ Download Modern editorial PNG';schedule()});
  setVideoExportState('idle');
  refreshImageTextTargets();
  syncStyleFields();
