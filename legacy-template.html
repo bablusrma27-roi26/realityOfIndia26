@@ -9,8 +9,8 @@
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
 button,input,textarea,select{font:inherit}button{cursor:pointer}
 .topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.topinner{max-width:1440px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-size:22px;font-weight:900;letter-spacing:-.8px}.brand span{color:var(--red)}.tagline{font-size:12px;color:var(--muted);margin-top:2px}
+.topinner{max-width:1440px;margin:auto;padding:8px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand-lockup{display:flex;align-items:center;gap:10px;min-width:0}.brand-icon{display:block;width:48px;height:48px;flex:0 0 48px;object-fit:contain}.tagline{max-width:300px;font-size:12px;color:var(--muted);margin:0}
 .top-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:10px 14px;font-weight:700;font-size:13px}.btn:hover{filter:brightness(.97)}.btn.primary{background:var(--red);border-color:var(--red);color:#fff}.btn.primary:hover{background:var(--red-dark)}
 main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template-columns:minmax(620px,1.7fr) minmax(280px,.85fr);gap:12px;align-items:start}
 .panel{background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:12px;min-width:0}.panel h2{font-size:14px;margin:0 0 11px;letter-spacing:-.2px}.tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}.tool-block{background:#fafbfc;border:1px solid var(--line);border-radius:10px;padding:12px}.tool-block h2{margin-top:0}.step{color:var(--red);font-size:11px;font-weight:850;letter-spacing:1px;display:block;margin-bottom:5px}
@@ -46,19 +46,47 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
 @media(max-width:700px){.image-step-pair{grid-template-columns:1fr}}
 @media(max-width:600px){.step6-controls{grid-template-columns:1fr}}
 @media(max-width:600px){.image-text-position{grid-template-columns:1fr}}
-@media(max-width:900px){main{grid-template-columns:1fr;padding:14px}.topinner{padding:12px 15px}.top-actions .btn{padding:9px 10px}.panel{padding:13px}main>section.panel,main>section:not(.panel){position:static;max-height:none;overflow:visible}.tool-grid{grid-template-columns:1fr}.previewarea{padding:10px}.canvas-holder{width:min(100%,600px);max-height:none}canvas{max-height:none}}
-@media(max-width:460px){.brand{font-size:19px}.tagline{max-width:180px}.top-actions .btn{font-size:11px}.two{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr}.styles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:900px){main{grid-template-columns:1fr;padding:14px}.topinner{padding:6px 15px;gap:12px}.top-actions .btn{padding:9px 10px}.panel{padding:13px}main>section.panel,main>section:not(.panel){position:static;max-height:none;overflow:visible}.tool-grid{grid-template-columns:1fr}.previewarea{padding:10px}.canvas-holder{width:min(100%,600px);max-height:none}canvas{max-height:none}}
+@media(max-width:460px){.brand-icon{width:32px;height:32px;flex-basis:32px}.brand-lockup{gap:7px}.tagline{max-width:220px}.top-actions .btn{font-size:11px}.two{grid-template-columns:1fr}.tool-grid{grid-template-columns:1fr}.styles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .text-color-setting{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:3px}.text-color-setting label{font-size:10px;font-weight:700;color:#424c60}.text-color-setting input[type=color]{width:32px;height:23px;padding:2px;border:1px solid #cfd6e1;border-radius:5px;background:#fff;cursor:pointer}
 .mode-tabs{display:flex;gap:6px;align-items:center}.mode-tab{border:1px solid var(--line);background:#f5f6f8;color:var(--ink);border-radius:9px;padding:8px 13px;font-size:12px;font-weight:800}.mode-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}.video-preview{width:100%;max-height:320px;background:#07111c;border-radius:8px;margin-top:10px}.video-status{font-size:11px;color:var(--muted);margin-top:6px}.video-mode #downloadPng,.video-mode #downloadJpg,.video-mode #downloadPoster,.poster-mode #downloadVideo,.poster-mode #downloadPng,.poster-mode #downloadJpg{display:none!important}.video-mode #downloadVideo{display:inline-flex!important}.poster-mode #downloadPoster{display:inline-flex!important}.poster-mode .style-group,.poster-mode #step5,.poster-mode #chooseStyleHeading,.poster-mode #storyDetailsGrid,.poster-mode #editorWorkspacePanel,.poster-mode .image-step-pair,.poster-mode #step9,.poster-mode #step1>.rule,.poster-mode #step1>.tool-grid{display:none!important}.poster-mode #posterControls:not([hidden]){display:grid!important}#posterControls[hidden],#downloadPoster{display:none}.poster-editor{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:8px 0 14px}.poster-editor>.tool-block{min-width:0}.poster-editor .field{margin-bottom:8px}.poster-editor .field input[type=color]{width:100%;height:34px;padding:2px;border:1px solid #dce1e9;border-radius:7px;background:#fff}.poster-editor textarea{min-height:64px}.poster-mode #posterLayout{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.poster-design-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin:8px 0 12px}.poster-design-card{min-width:0;padding:7px;border:1px solid var(--line);border-radius:9px;background:#fff;text-align:left;color:var(--ink)}.poster-design-card.active{border:2px solid var(--red);padding:6px;box-shadow:0 0 0 2px #d82f3d18}.poster-design-card:focus-visible{outline:3px solid #d82f3d66;outline-offset:2px}.poster-design-card>span:last-child{display:block;margin-top:5px;font-size:10px;font-weight:800;line-height:1.2}.poster-design-thumb{display:block;width:100%;box-sizing:border-box;height:70px;position:relative;overflow:hidden;border-radius:5px;padding:8px;background:linear-gradient(145deg,#142844,#273e5c)}.poster-design-thumb:before{content:"";position:absolute;inset:0 auto 0 0;width:27%;background:#f4c95d;clip-path:polygon(0 0,100% 0,0 55%)}.poster-design-thumb:after{content:"";position:absolute;left:10%;right:10%;top:31%;height:11%;border-radius:3px;background:#ffffffdd;box-shadow:0 15px 0 -2px #ffffff80,0 29px 0 -3px #f4c95d}.poster-design-thumb i{position:absolute;right:10%;top:13%;width:33%;height:48%;border-radius:45% 45% 35% 35%;background:linear-gradient(140deg,#d8e3ed,#73859b);border:2px solid #ffffffaa}.poster-design-thumb em{position:absolute;left:10%;right:10%;bottom:9%;height:9%;border-radius:8px;background:#e64b4b}.poster-design-thumb[data-design="candidate"]{background:linear-gradient(90deg,#142844 0 55%,#364862 55%)}.poster-design-thumb[data-design="manifesto"],.poster-design-thumb[data-design="vintage"],.poster-design-thumb[data-design="bulletin"]{background:linear-gradient(135deg,#f7f0df,#d9c8a5)}.poster-design-thumb[data-design="manifesto"]:before,.poster-design-thumb[data-design="vintage"]:before,.poster-design-thumb[data-design="bulletin"]:before{width:auto;inset:6px;border:2px solid #a63d2e;background:transparent;clip-path:none}.poster-design-thumb[data-design="meeting"],.poster-design-thumb[data-design="townhall"]{background:linear-gradient(0deg,#c83832 0 28%,#182540 28%)}.poster-design-thumb[data-design="community"],.poster-design-thumb[data-design="grassroots"]{background:linear-gradient(135deg,#174f46,#66a58a)}.poster-design-thumb[data-design="election"]{background:linear-gradient(0deg,#fff 0 20%,#1562a0 20% 76%,#ed9c2f 76%)}.poster-design-thumb[data-design="geometric"]{background:linear-gradient(135deg,#241744 0 48%,#e94b70 48% 73%,#ffc94f 73%)}.poster-design-thumb[data-design="youth"]{background:linear-gradient(135deg,#512aa1,#db40b2 56%,#ff9a3d)}.poster-design-thumb[data-design="collage"]{background:linear-gradient(135deg,#15374e,#287e91)}.poster-design-thumb[data-design="collage"] i{width:30%;height:32%;right:9%;top:12%;border-radius:3px;box-shadow:-22px 25px 0 #d2a25d,0 26px 0 #6895b1}.poster-design-thumb[data-design="grassroots"]:after{background:#fff;box-shadow:0 15px 0 -2px #fff,0 29px 0 -3px #f4c95d}.poster-design-thumb[data-design="splitCampaign"]{background:linear-gradient(90deg,#d0d0d0 0 47%,#bf4c49 47%)}.poster-design-thumb[data-design="splitCampaign"]:before{inset:48% auto 0 0;width:48%;clip-path:none;border-radius:50% 50% 0 0;background:#bf4c49}.poster-design-thumb[data-design="splitCampaign"]:after{left:58%;right:8%;top:24%;height:7%;background:#fff;box-shadow:0 12px 0 1px #ffffffaa,0 25px 0 2px #fff}.poster-design-thumb[data-design="splitCampaign"] i{left:16%;right:auto;top:35%;width:42%;height:65%;border-radius:48% 48% 8% 8%;background:linear-gradient(110deg,#263653,#71809a)}
+.poster-design-thumb[data-design="townhallCampaign"]{background:linear-gradient(155deg,#fbfaf7 0 48%,#17264d 48% 70%,#df2447 70%)}.poster-design-thumb[data-design="townhallCampaign"]:before{inset:24% 11% 35%;width:auto;background:#37afd0;clip-path:polygon(0 18%,100% 0,100% 100%,5% 86%)}.poster-design-thumb[data-design="townhallCampaign"] i{z-index:1;width:35%;height:47%;right:33%;top:22%;border-radius:45% 45% 5% 5%;background:linear-gradient(140deg,#d7dde4,#647185)}.poster-design-thumb[data-design="townhallCampaign"]:after{z-index:2;left:7%;right:7%;top:68%;height:13%;background:#17264d;box-shadow:0 12px 0 -3px #fbfaf7}.poster-design-thumb[data-design="electionPortrait"]{background:linear-gradient(145deg,#173675 0 62%,#102a63)}.poster-design-thumb[data-design="electionPortrait"]:before{inset:-15% -5% auto auto;width:55%;height:64%;border-radius:50%;background:#fa3047;clip-path:none}.poster-design-thumb[data-design="electionPortrait"] i{z-index:1;width:56%;height:69%;right:22%;top:20%;border-radius:45% 45% 5% 5%;background:linear-gradient(100deg,#818894,#d2d3d1);filter:grayscale(1)}.poster-design-thumb[data-design="electionPortrait"]:after{z-index:2;left:5%;right:5%;top:74%;height:9%;background:#fffdf4;box-shadow:0 12px 0 -2px #fffdf4}
 .video-export-spinner{width:15px;height:15px;border:2px solid #ffffff70;border-top-color:#fff;border-radius:50%;display:inline-block;animation:video-spin .75s linear infinite;vertical-align:-3px;margin-right:7px}@keyframes video-spin{to{transform:rotate(360deg)}}#videoRenderProgress{display:block;width:100%;height:7px;margin-top:8px;accent-color:var(--red)}#videoRenderProgress[hidden],#videoDownloadSpinner[hidden]{display:none!important}#downloadVideo:disabled{cursor:progress;opacity:.8}
 @media(max-width:720px){.topinner{flex-wrap:wrap}.mode-tabs{order:3;width:100%;justify-content:center}}
+.topinner{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px}
+.topinner>div:first-child,.top-actions,.mode-tabs{min-width:0}
+.topinner>div:first-child{grid-column:1}
+.topinner>.mode-tabs{grid-column:2}
+.topinner>.top-actions{grid-column:3;flex-wrap:nowrap;justify-content:flex-end}
+.mode-tab{white-space:nowrap}
+.top-actions .icon-button{width:42px;height:42px;flex:0 0 42px;padding:0;display:inline-grid;place-items:center}
+.icon-button svg{display:block;width:20px;height:20px}
+.icon-button:focus-visible{outline:3px solid #d82f3d66;outline-offset:2px}
+@media(max-width:720px){
+  .topinner{grid-template-columns:minmax(0,1fr) auto;gap:5px 12px;padding-top:5px;padding-bottom:5px}
+  .topinner>div:first-child{grid-column:1;grid-row:1}
+  .topinner>.top-actions{grid-column:2;grid-row:1}
+  .topinner>.mode-tabs{grid-column:1/-1;grid-row:2;width:100%;justify-content:center;order:initial}
+  .mode-tab{flex:1;max-width:160px;padding:8px 10px}
+  .brand-icon{width:40px;height:40px;flex-basis:40px}
+}
+@media(max-width:460px){
+  .topinner{padding:4px 10px}
+  .brand-lockup{gap:6px}
+  .brand-icon{width:32px;height:32px;flex-basis:32px}
+  .tagline{max-width:100%;font-size:11px;line-height:1.3}
+  .top-actions .icon-button{width:38px;height:38px;flex-basis:38px}
+  .mode-tab{padding:8px 5px;font-size:11px}
+}
+.poster-editor{display:grid;grid-template-columns:1fr;gap:10px;margin:8px 0 14px}.poster-step{min-width:0}.poster-field-editor{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(125px,.34fr);gap:8px;align-items:center;margin-bottom:8px}.poster-field-editor>.field{margin:0}.poster-field-tools{padding:6px 8px}.poster-field-tools .field{margin:0}.poster-field-tools .field label{font-size:10px;margin-bottom:2px}.poster-field-tools input[type=range]{width:100%;height:14px;padding:0}.poster-field-tools .text-color-setting input[type=color]{width:100%;height:24px;padding:1px}.poster-field-editor.is-selected>.field label{color:var(--red)}.poster-field-editor.is-selected>.field input,.poster-field-editor.is-selected>.field textarea{border-color:#dc5963;box-shadow:0 0 0 2px #d82f3d12}.poster-step>.two{gap:8px}.poster-background-picking{cursor:crosshair!important}.poster-text-dragging{cursor:grabbing!important}#posterBackgroundHelp{line-height:1.45;margin:7px 0 0}
+.poster-mode canvas{touch-action:none}
 </style>
 </head>
 <body>
 <header class="topbar"><div class="topinner">
-  <div><div class="brand">Reality <span>of India</span> 26</div><div class="tagline">Stories from across India. Voices from every community.</div></div>
+  <div class="brand-lockup"><img class="brand-icon" src="/reality-of-india-26.png" alt="Reality of India 26 logo"><div class="tagline">Stories from across India. Voices from every community.</div></div>
   <div class="mode-tabs" role="tablist" aria-label="Post type"><button type="button" id="imageModeTab" class="mode-tab active" role="tab" aria-selected="true">POST IMAGE</button><button type="button" id="videoModeTab" class="mode-tab" role="tab" aria-selected="false">POST VIDEO</button><button type="button" id="posterModeTab" class="mode-tab" role="tab" aria-selected="false">POSTER</button></div>
-  <div class="top-actions"><button class="btn" id="resetBtn">Reset sample</button><button class="btn primary" id="topDownload">↓ Download PNG</button></div>
+  <div class="top-actions"><button type="button" class="btn icon-button" id="resetBtn" aria-label="Reset sample" title="Reset sample"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36L3 8"/><path d="M3 3v5h5"/></svg></button><button type="button" class="btn primary icon-button" id="topDownload" aria-label="Download PNG" title="Download PNG"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 19v2h14v-2"/></svg></button></div>
 </div></header>
 <main>
 <section class="panel" id="step1">
@@ -73,38 +101,79 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
     <div class="step1-pair"><div class="field"><label for="byline">Reporter / footer (optional)</label><input id="byline" maxlength="100" placeholder="By [Reporter Name] | Reality of India 26"></div><div class="step1-tool"><div class="field"><label for="bylineSize">Reporter / footer size <span id="bylineSizeValue">100%</span></label><input id="bylineSize" type="range" min="70" max="250" step="5" value="100"></div><div class="text-color-setting"><label for="bylineColor">Text color</label><input id="bylineColor" type="color" value="#656565"></div></div></div>
   </div>
   <div id="posterControls" class="poster-editor" hidden>
-    <div class="tool-block">
-      <h2><span class="step">POSTER CONTENT</span>Political campaign poster</h2>
-      <p class="step5-intro">Create a campaign, candidate, rally, or public-meeting poster. These fields and designs are independent of the newspaper editor.</p>
-      <div class="field"><label for="posterLayout">Poster design</label><select id="posterLayout"><option value="rally">Campaign rally</option><option value="candidate">Candidate spotlight</option><option value="splitCampaign">Split campaign portrait</option><option value="manifesto">People-first manifesto</option><option value="meeting">Public meeting</option><option value="community">Community connection</option><option value="election">Election day</option><option value="geometric">Geometric campaign</option><option value="vintage">Vintage civic poster</option><option value="youth">Youth movement</option><option value="collage">Community photo collage</option><option value="townhall">Town hall invitation</option><option value="grassroots">Grassroots movement</option><option value="bulletin">Civic bulletin</option></select><div class="poster-design-grid" id="posterDesignGrid" role="group" aria-label="Choose a poster design"></div></div>
+    <div class="tool-block poster-step">
+      <h2><span class="step">STEP 01</span>Enter poster text</h2>
+      <p class="step5-intro">All poster copy is optional. Select text in the preview to change its size, color, or position.</p>
       <div class="two">
-        <div class="field"><label for="posterCampaign">Campaign / organization</label><input id="posterCampaign" maxlength="70" value="PEOPLE FIRST CAMPAIGN"></div>
+        <div class="field"><label for="posterCampaign">Campaign / organization</label><input id="posterCampaign" maxlength="70"></div>
       </div>
       <div class="two">
-        <div class="field"><label for="posterCandidate">Candidate / speaker name</label><input id="posterCandidate" maxlength="70" value="YOUR CANDIDATE NAME"></div>
-        <div class="field"><label for="posterRole">Role / designation</label><input id="posterRole" maxlength="70" placeholder="Candidate for local council"></div>
+        <div class="field"><label for="posterCandidate">Candidate / speaker name</label><input id="posterCandidate" maxlength="70"></div>
+        <div class="field"><label for="posterRole">Role / designation</label><input id="posterRole" maxlength="70"></div>
       </div>
       <div class="two">
-        <div class="field"><label for="posterConstituency">Constituency / community</label><input id="posterConstituency" maxlength="80" placeholder="Constituency or community"></div>
-        <div class="field"><label for="posterDate">Date and time</label><input id="posterDate" maxlength="80" placeholder="Sunday · 4:00 PM"></div>
+        <div class="field"><label for="posterConstituency">Constituency / community</label><input id="posterConstituency" maxlength="80"></div>
+        <div class="field"><label for="posterDate">Date and time</label><input id="posterDate" maxlength="80"></div>
       </div>
-      <div class="field"><label for="posterSlogan">Campaign slogan / main message</label><textarea id="posterSlogan" maxlength="220" rows="3" placeholder="A stronger future, built together"></textarea></div>
-      <div class="field"><label for="posterPromises">Priorities / event details</label><textarea id="posterPromises" maxlength="500" rows="3" placeholder="Share the key priorities, agenda or event information"></textarea></div>
+      <div class="field"><label for="posterSlogan">Campaign slogan / main message</label><textarea id="posterSlogan" maxlength="220" rows="3"></textarea></div>
+      <div class="field"><label for="posterPromises">Priorities / event details</label><textarea id="posterPromises" maxlength="500" rows="3"></textarea></div>
       <div class="two">
-        <div class="field"><label for="posterVenue">Venue / contact details</label><input id="posterVenue" maxlength="110" placeholder="Venue, website or contact"></div>
-        <div class="field"><label for="posterCallToAction">Call to action</label><input id="posterCallToAction" maxlength="80" value="JOIN THE CONVERSATION"></div>
+        <div class="field"><label for="posterVenue">Venue / contact details</label><input id="posterVenue" maxlength="110"></div>
+        <div class="field"><label for="posterCallToAction">Call to action</label><input id="posterCallToAction" maxlength="80"></div>
       </div>
-      <div class="field"><label for="posterDisclaimer">Paid-for / publisher disclosure</label><input id="posterDisclaimer" maxlength="120" placeholder="Published by [name/address] · Add required local disclosures"></div>
+      <div class="field"><label for="posterDisclaimer">Paid-for / publisher disclosure</label><input id="posterDisclaimer" maxlength="120"></div>
+      <div class="poster-template-fields" id="posterSplitCampaignFields" hidden>
+        <h3 class="editor-subhead">Split campaign poster text</h3>
+        <div class="field"><label for="posterBadgeNumber">Optional badge number</label><input id="posterBadgeNumber" maxlength="8"></div>
+      </div>
+      <div class="poster-template-fields" id="posterTownhallFields" hidden>
+        <h3 class="editor-subhead">Town hall poster text</h3>
+        <div class="field"><label for="posterTownhallDate">Large date / event heading</label><input id="posterTownhallDate" maxlength="50"></div>
+        <div class="two">
+          <div class="field"><label for="posterPriorityOneTitle">Priority 1 heading</label><input id="posterPriorityOneTitle" maxlength="36"></div>
+          <div class="field"><label for="posterPriorityOneDescription">Priority 1 description</label><input id="posterPriorityOneDescription" maxlength="100"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="posterPriorityTwoTitle">Priority 2 heading</label><input id="posterPriorityTwoTitle" maxlength="36"></div>
+          <div class="field"><label for="posterPriorityTwoDescription">Priority 2 description</label><input id="posterPriorityTwoDescription" maxlength="100"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="posterPriorityThreeTitle">Priority 3 heading</label><input id="posterPriorityThreeTitle" maxlength="36"></div>
+          <div class="field"><label for="posterPriorityThreeDescription">Priority 3 description</label><input id="posterPriorityThreeDescription" maxlength="100"></div>
+        </div>
+      </div>
+      <div class="poster-template-fields" id="posterElectionFields" hidden>
+        <h3 class="editor-subhead">Election portrait poster text</h3>
+        <div class="field"><label for="posterElectionDate">Top-left date / year</label><input id="posterElectionDate" maxlength="60"></div>
+        <div class="two">
+          <div class="field"><label for="posterElectionTopRight">Top-right heading</label><input id="posterElectionTopRight" maxlength="50"></div>
+          <div class="field"><label for="posterElectionSubheading">Top-right subheading</label><input id="posterElectionSubheading" maxlength="60"></div>
+        </div>
+      </div>
+      <div hidden><select id="posterTextTarget">
+          <option value="posterCampaign">Campaign / organization</option><option value="posterCandidate">Candidate / speaker name</option><option value="posterRole">Role / designation</option><option value="posterConstituency">Constituency / community</option><option value="posterDate">Date and time</option><option value="posterSlogan">Campaign slogan / main message</option><option value="posterPromises">Priorities / event details</option><option value="posterVenue">Venue / contact details</option><option value="posterCallToAction">Call to action</option><option value="posterDisclaimer">Paid-for / publisher disclosure</option><option value="posterBadgeNumber">Optional badge number</option><option value="posterTownhallDate">Large date / event heading</option><option value="posterPriorityOneTitle">Priority 1 heading</option><option value="posterPriorityOneDescription">Priority 1 description</option><option value="posterPriorityTwoTitle">Priority 2 heading</option><option value="posterPriorityTwoDescription">Priority 2 description</option><option value="posterPriorityThreeTitle">Priority 3 heading</option><option value="posterPriorityThreeDescription">Priority 3 description</option><option value="posterElectionDate">Election date / year</option><option value="posterElectionTopRight">Election top-right heading</option><option value="posterElectionSubheading">Election top-right subheading</option>
+        </select></div>
+      <p class="small">Drag text in the preview to position it. If text overlaps a photo, choose its field below before dragging.</p>
     </div>
-    <div class="tool-block">
-      <h2><span class="step">POSTER STYLE</span>Photo and colors</h2>
+    <div class="tool-block poster-step">
+      <h2><span class="step">STEP 02</span>Select poster images</h2>
       <div class="field"><label for="posterPhotoInput">Poster photos (up to 6, separate from news photos)</label><input id="posterPhotoInput" type="file" accept="image/*" multiple style="display:block;width:100%"><div id="posterPhotoStatus" class="small" role="status">No poster photos selected. Select thumbnails to include them in the poster.</div><div id="posterGallery" class="gallery" aria-label="Poster photo options"></div></div>
+      <div class="two">
+        <button type="button" class="btn" id="posterRemoveBackground">Remove photo background</button>
+        <button type="button" class="btn" id="posterRestoreBackground">Restore photo background</button>
+      </div>
+      <div class="field"><label for="posterBackgroundTolerance">Background removal strength <span id="posterBackgroundToleranceValue">45</span></label><input id="posterBackgroundTolerance" type="range" min="10" max="120" step="5" value="45"></div>
+      <p class="small" id="posterBackgroundHelp">Browser-only color removal: click “Remove photo background,” then click the background area in the preview. Best with plain or evenly colored backgrounds.</p>
+    </div>
+    <div class="tool-block poster-step">
+      <h2><span class="step">STEP 03</span>Choose poster design</h2>
+      <div class="field"><label for="posterLayout">Poster design</label><select id="posterLayout"><option value="splitCampaign">Split campaign portrait</option><option value="townhallCampaign">Town hall campaign</option><option value="electionPortrait">Election portrait</option></select><div class="poster-design-grid" id="posterDesignGrid" role="group" aria-label="Choose a poster design"></div></div>
       <div class="two">
         <div class="field"><label for="posterBackground">Background color</label><input id="posterBackground" type="color" value="#11243a"></div>
         <div class="field"><label for="posterAccent">Campaign accent color</label><input id="posterAccent" type="color" value="#f3c64e"></div>
       </div>
       <div class="two">
-        <div class="field"><label for="posterTextColor">Poster text color</label><input id="posterTextColor" type="color" value="#ffffff"></div>
+        <div class="field"><label for="posterTextColor">Base text color</label><input id="posterTextColor" type="color" value="#ffffff"></div>
         <div class="field"><label for="posterPhotoPosition">Photo framing</label><select id="posterPhotoPosition"><option value="cover">Fill frame</option><option value="contain">Fit whole photo</option></select></div>
       </div>
       <div class="field"><label for="posterImageLayout">Photo arrangement</label><select id="posterImageLayout"><option value="hero">Wide hero</option><option value="collage">Overlapping collage</option><option value="grid">Photo grid</option><option value="strip">Horizontal strip</option><option value="portrait">Portrait spotlight</option></select></div>
@@ -238,7 +307,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
 <section>
   <div class="previewhead"><div><h2 id="previewLabel">Live newspaper preview</h2><div class="status">Edit the content or style — the design updates automatically.</div></div><span class="status">High-resolution export</span></div>
   <div class="previewarea"><div class="canvas-holder"><canvas id="canvas" width="1000" height="1250" aria-label="Newspaper post preview" title="Click an image to edit it" style="cursor:crosshair"></canvas></div></div>
-  <div class="downloads"><button class="btn primary" id="downloadPng">↓ Download PNG</button><button class="btn" id="downloadJpg">↓ Download JPG</button><button class="btn primary" id="downloadPoster">↓ Download Poster PNG</button><button class="btn primary" id="downloadVideo" style="display:none"><span id="videoDownloadSpinner" class="video-export-spinner" aria-hidden="true" hidden></span><span id="downloadVideoLabel">↓ Download Video (MP4)</span></button></div>
+  <div class="downloads"><button class="btn primary" id="downloadPng">↓ Download PNG</button><button class="btn" id="downloadJpg">↓ Download JPG</button><button class="btn primary" id="downloadPoster">↓ Download Poster PNG</button><button class="btn primary" id="downloadVideo" style="display:none"><span id="videoDownloadSpinner" class="video-export-spinner" aria-hidden="true" hidden></span><span id="downloadVideoLabel">↓ Download Video</span></button></div>
   <div class="notice" id="message" role="status">Ready to customize. Your images stay on your device.</div>
   <div class="panel tips"><strong style="color:var(--ink)">Publishing tips</strong><br>• Keep headlines short and easy to read.<br>• Use clear, high-resolution photos you have permission to publish.<br>• Verify names, dates, locations and facts before sharing.<br>• Use your own publication name, and identify illustrative mockups clearly.</div>
 </section>
@@ -247,7 +316,35 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
 <script>
 (() => {
  const $=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d');
- let photo=null,photos=[],selectedPhotoIndex=0,photoCounter=0,posterPhotos=[],selectedPosterPhotoIds=[],posterPhotoCounter=0,style='breaking',renderTimer=null,zoom=1,panX=0,panY=0,storyItems=[],storyCounter=0,activeEditorTarget='main',activeImageTextTarget='main',previewImageRegions=[],mainImageWidthPct=100,mainImageHeightPct=100,mainImageOffsetX=0,mainImageOffsetY=0,postType='image',videoUrl='',videoRaf=0,videoAudioContext=null,videoAudioSource=null,videoAudioDestination=null,videoExportScale=1;
+ let photo=null,photos=[],selectedPhotoIndex=0,photoCounter=0,posterPhotos=[],selectedPosterPhotoIds=[],posterPhotoCounter=0,posterBackgroundTimer=0,posterTextBlockField='',style='breaking',renderTimer=null,zoom=1,panX=0,panY=0,storyItems=[],storyCounter=0,activeEditorTarget='main',activeImageTextTarget='main',previewImageRegions=[],posterTextRegions=[],posterTextStyles={},posterTextOffsets={},posterTextPointer=null,posterTextPointerHandled=false,posterBackgroundPickMode=false,mainImageWidthPct=100,mainImageHeightPct=100,mainImageOffsetX=0,mainImageOffsetY=0,postType='image',videoUrl='',videoRaf=0,videoFrameCallbackId=0,videoCaptureTrack=null,manualVideoFrameCapture=false,lastCapturedVideoFrameTime=-Infinity,videoAudioContext=null,videoAudioSource=null,videoAudioDestination=null,videoExportScale=1;
+ const posterTextFieldIds=['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBadgeNumber','posterTownhallDate','posterPriorityOneTitle','posterPriorityOneDescription','posterPriorityTwoTitle','posterPriorityTwoDescription','posterPriorityThreeTitle','posterPriorityThreeDescription','posterElectionDate','posterElectionTopRight','posterElectionSubheading'];
+ const posterCutoutImages=new WeakSet();
+ function createPosterFieldEditors(){
+   posterTextFieldIds.forEach(fieldId=>{
+     const field=$(fieldId)?.closest('.field'),label=field?.querySelector('label')?.textContent.trim();
+     if(!field||!label)return;
+     const pair=document.createElement('div');pair.className='poster-field-editor';
+     field.parentNode.replaceChild(pair,field);pair.appendChild(field);
+     const tools=document.createElement('div');tools.className='step1-tool poster-field-tools';
+     const size=document.createElement('div');size.className='field';
+     const sizeLabel=document.createElement('label');sizeLabel.htmlFor=fieldId+'TextSize';sizeLabel.textContent='Text size ';
+     const sizeValue=document.createElement('span');sizeValue.id=fieldId+'TextSizeValue';sizeValue.textContent='100%';sizeLabel.appendChild(sizeValue);
+     const sizeInput=document.createElement('input');sizeInput.id=fieldId+'TextSize';sizeInput.type='range';sizeInput.min='50';sizeInput.max='250';sizeInput.step='5';sizeInput.value='100';
+     size.append(sizeLabel,sizeInput);
+     const color=document.createElement('div');color.className='text-color-setting';
+     const colorLabel=document.createElement('label');colorLabel.htmlFor=fieldId+'TextColor';colorLabel.textContent='Text color';
+     const colorInput=document.createElement('input');colorInput.id=fieldId+'TextColor';colorInput.type='color';colorInput.value='#ffffff';
+     color.append(colorLabel,colorInput);tools.append(size,color);pair.appendChild(tools);
+     sizeInput.addEventListener('input',()=>{
+       const settings=posterTextStyles[fieldId]||{size:100,color:''};settings.size=Number(sizeInput.value);posterTextStyles[fieldId]=settings;
+       sizeValue.textContent=settings.size+'%';schedule();
+     });
+     colorInput.addEventListener('input',()=>{
+       const settings=posterTextStyles[fieldId]||{size:100,color:''};settings.color=colorInput.value;posterTextStyles[fieldId]=settings;schedule();
+     });
+   });
+ }
+ createPosterFieldEditors();
  const sourceVideo=$('sourceVideo');
  const defaultImageText=()=>({text:'',size:10,align:'center',color:'#ffffff',backgroundColor:'#111827',x:50,y:80,background:'none',fontFamily:'Arial, Helvetica, sans-serif',weight:'bold'});
  let mainImageText=defaultImageText();
@@ -304,8 +401,22 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  imageStepPair.append(sectionSizeTools,movementTools);
  imageStepPair.after($('step9'));
  function wrap(text,w,font){ctx.font=font;const lines=[];for(const para of String(text||'').split('\n')){if(!para){lines.push('');continue}let line='';for(const word of para.split(/\s+/)){let test=line?line+' '+word:word;if(ctx.measureText(test).width>w&&line){lines.push(line);line=word}else line=test}if(line)lines.push(line)}return lines}
- function textBlock(text,x,y,w,font,color,lh,max){ctx.font=font;ctx.fillStyle=color;ctx.textBaseline='top';let lines=wrap(text,w,font);const n=Math.min(lines.length,max||lines.length);for(let i=0;i<n;i++){let line=lines[i];if(i===n-1&&lines.length>n){while(line&&ctx.measureText(line+'…').width>w)line=line.slice(0,-1);line+='…'}ctx.fillText(line,x,y+i*lh)}return y+n*lh}
- function imageFit(img,x,y,w,h,fit,px=panX,py=panY,z=zoom){if(!img)return;const sourceW=img.videoWidth||img.naturalWidth||img.width,sourceH=img.videoHeight||img.naturalHeight||img.height;if(!sourceW||!sourceH)return;ctx.save();ctx.fillStyle='#e8e8e8';ctx.fillRect(x,y,w,h);const base=(fit==='contain'?Math.min(w/sourceW,h/sourceH):Math.max(w/sourceW,h/sourceH));const scale=base*z,dw=sourceW*scale,dh=sourceH*scale;const ox=(w-dw)/2+(w-dw)*px/100,oy=(h-dh)/2+(h-dh)*py/100;ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();ctx.drawImage(img,x+ox,y+oy,dw,dh);ctx.restore()}
+ function textBlock(text,x,y,w,font,color,lh,max){
+   const fieldId=postType==='poster'?findPosterTextField(text):'',style=fieldId?posterTextStyles[fieldId]:null,scale=style?(Number(style.size)||100)/100:1;
+   const drawFont=fieldId?font.replace(/([\d.]+)px/,(_,size)=>(Number(size)*scale)+'px'):font,drawLineHeight=lh*scale;
+   ctx.font=drawFont;ctx.fillStyle=color;ctx.textBaseline='top';
+   const lines=wrap(text,w,drawFont),count=Math.min(lines.length,max||lines.length),previousField=posterTextBlockField;
+   posterTextBlockField=fieldId;
+   try{
+     for(let i=0;i<count;i++){
+       let line=lines[i];
+       if(i===count-1&&lines.length>count){while(line&&ctx.measureText(line+'…').width>w)line=line.slice(0,-1);line+='…'}
+       ctx.fillText(line,x,y+i*drawLineHeight);
+     }
+   }finally{posterTextBlockField=previousField}
+   return y+count*drawLineHeight;
+ }
+ function imageFit(img,x,y,w,h,fit,px=panX,py=panY,z=zoom){if(!img)return;const sourceW=img.videoWidth||img.naturalWidth||img.width,sourceH=img.naturalHeight||img.videoHeight||img.height;if(!sourceW||!sourceH)return;ctx.save();if(!(postType==='poster'&&posterCutoutImages.has(img))){ctx.fillStyle='#e8e8e8';ctx.fillRect(x,y,w,h)}const base=(fit==='contain'?Math.min(w/sourceW,h/sourceH):Math.max(w/sourceW,h/sourceH));const scale=base*z,dw=sourceW*scale,dh=sourceH*scale;const ox=(w-dw)/2+(w-dw)*px/100,oy=(h-dh)/2+(h-dh)*py/100;ctx.beginPath();ctx.rect(x,y,w,h);ctx.clip();ctx.drawImage(img,x+ox,y+oy,dw,dh);ctx.restore()}
  function drawPhotoLayout(x,y,w,h){
    const fit=val('fit'),layout=val('imageLayout')||'single',items=photos.length&&selectedPhotoIndex>=0?[photos[selectedPhotoIndex],...photos.filter((o,i)=>i!==selectedPhotoIndex)]:[];
    x += mainImageOffsetX; y += mainImageOffsetY;
@@ -524,7 +635,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    ctx.textAlign='left';ctx.textBaseline='top';
  }
  function getSelectedPosterPhotos(){return posterPhotos.filter(item=>selectedPosterPhotoIds.includes(item.id))}
- function drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,eventLine,slogan,cta,disclaimer,photos){
+ function drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,date,venue,slogan,cta,disclaimer,badgeNumber,photos){
    ctx.fillStyle=background;ctx.fillRect(0,0,W,H);
    ctx.fillStyle=accent;ctx.beginPath();ctx.moveTo(W*.48,0);ctx.lineTo(W*.965,0);ctx.lineTo(W*.965,H*.27);ctx.quadraticCurveTo(W*.965,H*.42,W*.76,H*.43);ctx.lineTo(W*.48,H*.43);ctx.closePath();ctx.fill();
    ctx.beginPath();ctx.ellipse(W*.28,H*.78,W*.29,H*.24,-.12,0,Math.PI*2);ctx.fill();
@@ -544,22 +655,22 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    if(campaign){ctx.fillStyle=background==='#d0d0d0'?'#292929':ink;ctx.font='500 '+Math.round(17*s)+'px Arial';textBlock(campaign,left*.07,H*.045,W*.29,'500 '+Math.round(17*s)+'px Arial',background==='#d0d0d0'?'#292929':ink,Math.round(21*s),2)}
    let y=H*.075;
    ctx.fillStyle=ink;ctx.font='500 '+Math.round(22*s)+'px Arial';
-   y=textBlock(role||'Vote for a Better Future',left,y,textWidth,'500 '+Math.round(22*s)+'px Arial',ink,Math.round(28*s),2)+Math.round(8*s);
-   ctx.font='900 '+Math.round(58*s)+'px Arial';
-   y=textBlock(candidate||'YOUR CANDIDATE NAME',left,y,textWidth,'900 '+Math.round(58*s)+'px Arial',ink,Math.round(59*s),3)+Math.round(8*s);
-   if(eventLine){ctx.font='500 '+Math.round(26*s)+'px Arial';y=textBlock(eventLine,left,y,textWidth,'500 '+Math.round(26*s)+'px Arial',ink,Math.round(31*s),2)+Math.round(15*s)}
+   if(role){ctx.font='500 '+Math.round(22*s)+'px Arial';y=textBlock(role,left,y,textWidth,'500 '+Math.round(22*s)+'px Arial',ink,Math.round(28*s),2)+Math.round(8*s)}
+   if(candidate){ctx.font='900 '+Math.round(58*s)+'px Arial';y=textBlock(candidate,left,y,textWidth,'900 '+Math.round(58*s)+'px Arial',ink,Math.round(59*s),3)+Math.round(8*s)}
+   if(date){ctx.font='500 '+Math.round(26*s)+'px Arial';y=textBlock(date,left,y,textWidth,'500 '+Math.round(26*s)+'px Arial',ink,Math.round(31*s),2)+Math.round(8*s)}
+   if(venue){ctx.font='500 '+Math.round(22*s)+'px Arial';y=textBlock(venue,left,y,textWidth,'500 '+Math.round(22*s)+'px Arial',ink,Math.round(27*s),2)+Math.round(8*s)}
    const numberY=Math.max(y+Math.round(10*s),H*.245);
-   ctx.fillStyle=ink;ctx.font='900 '+Math.round(126*s)+'px Arial';ctx.fillText('01',left,numberY,textWidth*.43);
-   const badgeText=constituency||cta||'Progress And Develop';
+   if(badgeNumber){ctx.fillStyle=ink;ctx.font='900 '+Math.round(126*s)+'px Arial';ctx.fillText(badgeNumber,left,numberY,textWidth*.43)}
+   const badgeText=constituency;
    const badgeX=left+textWidth*.47,badgeY=numberY+Math.round(22*s),badgeW=textWidth*.52;
-   textBlock(badgeText,badgeX,badgeY,badgeW,'900 '+Math.round(24*s)+'px Arial',ink,Math.round(27*s),3);
-   const message=slogan||cta;
-   if(message){
+   if(badgeText)textBlock(badgeText,badgeX,badgeY,badgeW,'900 '+Math.round(24*s)+'px Arial',ink,Math.round(27*s),3);
+   if(slogan){
      const messageX=W*.06,messageY=H*.81,messageW=W*.54,font=Math.round(27*s);
-     const lines=wrap(message,messageW,'900 '+font+'px Arial').slice(0,3),lineHeight=Math.round(32*s);
+     const lines=wrap(slogan,messageW,'900 '+font+'px Arial').slice(0,3),lineHeight=Math.round(32*s);
      ctx.fillStyle='#111827a8';ctx.beginPath();ctx.roundRect(messageX-10*s,messageY-8*s,messageW+18*s,lines.length*lineHeight+16*s,8*s);ctx.fill();
-     textBlock(message,messageX,messageY,messageW,'900 '+font+'px Arial','#fff',lineHeight,3);
+     textBlock(slogan,messageX,messageY,messageW,'900 '+font+'px Arial','#fff',lineHeight,3);
    }
+   if(cta){ctx.fillStyle=accent;ctx.beginPath();ctx.roundRect(W*.06,H*.91,W*.54,42*s,8*s);ctx.fill();ctx.fillStyle=background;ctx.font='900 '+Math.round(20*s)+'px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(cta.toUpperCase(),W*.33,H*.91+21*s,W*.50);ctx.textAlign='left';ctx.textBaseline='top'}
    if(disclaimer){ctx.fillStyle=background==='#d0d0d0'?'#333333':ink;ctx.font=Math.round(12*s)+'px Arial';ctx.textAlign='right';ctx.fillText(disclaimer,W*.96,H*.97,W*.6);ctx.textAlign='left'}
    ctx.textBaseline='top';
  }
@@ -572,7 +683,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      ctx.restore();
      ctx.save();ctx.beginPath();ctx.roundRect(x,y,w,h,radius);ctx.clip();
      imageFit(item.img,x,y,w,h,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
-     ctx.restore();regions.push({x,y,w,h,target:'posterPhoto',photoIndex:index});
+     ctx.restore();regions.push({x,y,w,h,target:'posterPhoto',photoIndex:posterPhotos.indexOf(item)});
    };
    if(layout==='hero'){
      draw(photos[0],0,0,top,wide,imageHeight);
@@ -593,6 +704,76 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    regions.forEach(region=>previewImageRegions.push(region));
    return baseY+imageHeight+18*s;
  }
+ function drawTownhallCampaignPoster(W,H,s,background,accent,candidate,role,disclaimer,photos){
+   const navy='#17264d',red='#df2447',cyan='#37afd0',paper='#faf9f6',textInk='#263450',photo=photos[0];
+   ctx.fillStyle=paper;ctx.fillRect(0,0,W,H);
+   ctx.fillStyle=navy;ctx.font='900 '+Math.round(17*s)+'px Arial';ctx.textBaseline='top';ctx.textAlign='left';
+   if(val('posterCampaign'))textBlock(val('posterCampaign').toUpperCase(),W*.045,H*.035,W*.38,'900 '+Math.round(17*s)+'px Arial',navy,20*s,2);
+   ctx.textAlign='right';
+   if(val('posterDate')){ctx.font='900 '+Math.round(16*s)+'px Arial';ctx.fillText(val('posterDate').toUpperCase(),W*.955,H*.035,W*.36)}
+   if(val('posterVenue')){ctx.font='bold '+Math.round(14*s)+'px Arial';ctx.fillText(val('posterVenue').toUpperCase(),W*.955,H*.067,W*.36)}
+   if(val('posterTownhallDate')){ctx.textAlign='left';ctx.font='900 '+Math.round(36*s)+'px Arial';textBlock(val('posterTownhallDate').toUpperCase(),W*.045,H*.092,W*.46,'900 '+Math.round(36*s)+'px Arial',navy,40*s,2)}
+   const photoX=W*.115,photoY=H*.205,photoW=W*.77,photoH=H*.37;
+   ctx.fillStyle=red;ctx.beginPath();ctx.moveTo(W*.06,H*.19);ctx.lineTo(W*.88,H*.115);ctx.lineTo(W*.94,H*.59);ctx.lineTo(W*.15,H*.665);ctx.closePath();ctx.fill();
+   ctx.fillStyle=cyan;ctx.beginPath();ctx.moveTo(W*.12,H*.235);ctx.lineTo(W*.81,H*.17);ctx.lineTo(W*.855,H*.545);ctx.lineTo(W*.175,H*.605);ctx.closePath();ctx.fill();
+   if(photo){
+     ctx.save();ctx.beginPath();ctx.rect(photoX,photoY,photoW,photoH);ctx.clip();
+     imageFit(photo.img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     ctx.restore();
+     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(photo)});
+   }else{
+     ctx.fillStyle='#e3e7eb';ctx.beginPath();ctx.ellipse(W*.5,H*.39,W*.105,H*.13,0,0,Math.PI*2);ctx.fill();
+     ctx.fillStyle='#263450';ctx.beginPath();ctx.ellipse(W*.5,H*.59,W*.22,H*.2,0,Math.PI,Math.PI*2);ctx.fill();
+   }
+   const bannerY=H*.545,bannerH=H*.165;
+   ctx.fillStyle=navy;ctx.beginPath();ctx.moveTo(W*.055,bannerY+H*.045);ctx.lineTo(W*.945,bannerY);ctx.lineTo(W*.945,bannerY+bannerH*.82);ctx.lineTo(W*.055,bannerY+bannerH);ctx.closePath();ctx.fill();
+   ctx.fillStyle='#ffffff';ctx.textAlign='center';ctx.textBaseline='middle';
+   if(candidate){const nameFont=Math.min(94*s,(W*.84)/Math.max(4,candidate.length*.59));ctx.font='900 '+Math.round(nameFont)+'px Arial';ctx.fillText(candidate.toUpperCase(),W*.5,bannerY+bannerH*.43,W*.84)}
+   if(role){ctx.font='900 '+Math.round(28*s)+'px Arial';ctx.fillText(role.toUpperCase(),W*.5,bannerY+bannerH*.79,W*.78)}
+   const priorities=[
+     [val('posterPriorityOneTitle'),val('posterPriorityOneDescription')],
+     [val('posterPriorityTwoTitle'),val('posterPriorityTwoDescription')],
+     [val('posterPriorityThreeTitle'),val('posterPriorityThreeDescription')]
+   ];
+   const columnW=W*.29,columns=[W*.19,W*.5,W*.81],sectionTop=H*.765;
+   priorities.forEach(([heading,description],index)=>{
+     const x=columns[index];
+     if(heading){ctx.fillStyle=navy;ctx.font='900 '+Math.round(24*s)+'px Arial';ctx.textAlign='center';ctx.fillText(heading.toUpperCase(),x,sectionTop,columnW)}
+     if(description)textBlock(description,x-columnW/2,sectionTop+30*s,columnW,'500 '+Math.round(14*s)+'px Arial',textInk,19*s,4);
+   });
+   if(disclaimer){ctx.fillStyle=navy;ctx.font='500 '+Math.round(10*s)+'px Arial';ctx.textAlign='center';ctx.fillText(disclaimer,W*.5,H*.965,W*.88)}
+   ctx.fillStyle=red;ctx.fillRect(0,H*.985,W,H*.015);ctx.textAlign='left';ctx.textBaseline='top';
+ }
+ function drawElectionPortraitPoster(W,H,s,candidate,role,slogan,cta,disclaimer,photos){
+   const navy='#173675',red='#fa3047',white='#fffdf4',photo=photos[0];
+   ctx.fillStyle=navy;ctx.fillRect(0,0,W,H);
+   ctx.fillStyle=red;ctx.beginPath();ctx.arc(W*.79,H*.105,W*.27,0,Math.PI*2);ctx.fill();
+   ctx.beginPath();ctx.arc(W*.48,H*.49,W*.35,0,Math.PI*2);ctx.fill();
+   ctx.fillStyle=white;ctx.textBaseline='top';ctx.textAlign='left';
+   if(val('posterElectionDate')){ctx.font='900 '+Math.round(39*s)+'px Arial';textBlock(val('posterElectionDate').toUpperCase(),W*.085,H*.075,W*.38,'900 '+Math.round(39*s)+'px Arial',white,43*s,2)}
+   ctx.textAlign='right';
+   if(val('posterElectionTopRight')){ctx.font='900 '+Math.round(38*s)+'px Arial';ctx.fillText(val('posterElectionTopRight').toUpperCase(),W*.92,H*.07,W*.38)}
+   if(val('posterElectionSubheading')){ctx.font='500 '+Math.round(27*s)+'px Arial';ctx.fillText(val('posterElectionSubheading').toUpperCase(),W*.92,H*.12,W*.38)}
+   const photoX=W*.035,photoY=H*.22,photoW=W*.93,photoH=H*.60;
+   if(photo){
+     ctx.save();ctx.beginPath();ctx.rect(photoX,photoY,photoW,photoH);ctx.clip();ctx.filter='grayscale(100%) contrast(1.08)';
+     imageFit(photo.img,photoX,photoY,photoW,photoH,val('posterPhotoPosition'),0,0,Number(val('posterPhotoZoom'))/100);
+     ctx.restore();
+     previewImageRegions.push({x:photoX,y:photoY,w:photoW,h:photoH,target:'posterPhoto',photoIndex:posterPhotos.indexOf(photo)});
+   }else{
+     ctx.fillStyle='#cbd0d3';ctx.beginPath();ctx.ellipse(W*.5,H*.48,W*.19,H*.22,0,0,Math.PI*2);ctx.fill();
+     ctx.fillStyle='#737a85';ctx.beginPath();ctx.ellipse(W*.5,H*.79,W*.42,H*.29,0,Math.PI,Math.PI*2);ctx.fill();
+   }
+   const shade=ctx.createLinearGradient(0,H*.57,0,H*.91);shade.addColorStop(0,'#17367500');shade.addColorStop(1,navy);
+   ctx.fillStyle=shade;ctx.fillRect(0,H*.55,W,H*.38);
+   ctx.fillStyle=white;ctx.textAlign='center';ctx.textBaseline='middle';
+   if(candidate){const nameFont=Math.min(91*s,(W*.9)/Math.max(4,candidate.length*.58));ctx.font='500 '+Math.round(nameFont)+'px Arial';ctx.fillText(candidate.toUpperCase(),W*.5,H*.72,W*.92)}
+   if(role){ctx.font='500 '+Math.round(46*s)+'px Arial';ctx.fillText(role.toUpperCase(),W*.5,H*.79,W*.82)}
+   if(cta){ctx.font='900 '+Math.round(75*s)+'px Arial';ctx.fillText(cta.toUpperCase(),W*.5,H*.865,W*.91)}
+   if(slogan){ctx.font='500 '+Math.round(24*s)+'px Arial';ctx.fillText(slogan.toUpperCase(),W*.5,H*.94,W*.88)}
+   if(disclaimer){ctx.font='500 '+Math.round(10*s)+'px Arial';ctx.fillText(disclaimer,W*.5,H*.975,W*.9)}
+   ctx.textAlign='left';ctx.textBaseline='top';
+ }
  function drawPoster(W,H,s,p,wide){
    const layout=val('posterLayout'),palette={
      rally:{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff20'},
@@ -612,12 +793,19 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    }[layout]||{ink:'#fff',muted:'#d9e1eb',shape:'#ffffff20'};
    const background=val('posterBackground'),accent=val('posterAccent'),ink=val('posterTextColor');
    const campaign=val('posterCampaign'),candidate=val('posterCandidate'),role=val('posterRole');
-   const constituency=val('posterConstituency'),slogan=val('posterSlogan'),details=val('posterPromises');
-   const eventLine=[val('posterDate'),val('posterVenue')].filter(Boolean).join('  ·  ');
+   const constituency=val('posterConstituency'),slogan=val('posterSlogan'),details=val('posterPromises'),date=val('posterDate'),venue=val('posterVenue');
    const cta=val('posterCallToAction'),disclaimer=val('posterDisclaimer');
    const selectedPhotos=getSelectedPosterPhotos(),hasPhoto=selectedPhotos.length>0;
+   if(layout==='townhallCampaign'){
+     drawTownhallCampaignPoster(W,H,s,background,accent,candidate,role,disclaimer,selectedPhotos);
+     return;
+   }
+   if(layout==='electionPortrait'){
+     drawElectionPortraitPoster(W,H,s,candidate,role,slogan,cta,disclaimer,selectedPhotos);
+     return;
+   }
    if(layout==='splitCampaign'){
-     drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,eventLine,slogan,cta,disclaimer,selectedPhotos);
+     drawSplitCampaignPoster(W,H,s,background,accent,ink,campaign,candidate,role,constituency,date,venue,slogan,cta,disclaimer,val('posterBadgeNumber'),selectedPhotos);
      return;
    }
    const fontFamily=layout==='manifesto'||layout==='vintage'?'Georgia, serif':'Arial, sans-serif';
@@ -707,10 +895,8 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      ctx.font='bold '+18*s+'px Arial';
      y=textBlock(details,p+16*s,y+14*s,wide-32*s,'bold '+18*s+'px Arial',layout==='meeting'?'#ffffff':palette.muted,25*s,5)+22*s;
    }
-   if(eventLine){
-     ctx.fillStyle=layout==='meeting'?'#ffffff':ink;ctx.font='bold '+16*s+'px Arial';
-     y=textBlock(eventLine,p,y,wide,'bold '+16*s+'px Arial',layout==='meeting'?'#ffffff':ink,23*s,2)+17*s;
-   }
+   if(date){ctx.fillStyle=layout==='meeting'?'#ffffff':ink;ctx.font='bold '+16*s+'px Arial';y=textBlock(date,p,y,wide,'bold '+16*s+'px Arial',layout==='meeting'?'#ffffff':ink,23*s,2)+8*s}
+   if(venue){ctx.fillStyle=layout==='meeting'?'#ffffff':ink;ctx.font='bold '+16*s+'px Arial';y=textBlock(venue,p,y,wide,'bold '+16*s+'px Arial',layout==='meeting'?'#ffffff':ink,23*s,2)+9*s}
    const footerY=H-p-(disclaimer?38*s:16*s);
    if(cta){
      const ctaH=50*s,ctaY=Math.min(y,footerY-ctaH-14*s);
@@ -718,6 +904,68 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      ctx.fillStyle=background;ctx.font='900 '+17*s+'px Arial';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(cta.toUpperCase(),W/2,ctaY+ctaH/2,wide-24*s);ctx.textAlign='left';ctx.textBaseline='top';
    }
    if(disclaimer){ctx.fillStyle=layout==='meeting'?'#ffffff':palette.muted;ctx.font='10px Arial';ctx.textAlign='center';ctx.fillText(disclaimer,W/2,H-p-12*s,wide);ctx.textAlign='left'}
+ }
+ function findPosterTextField(text){
+   const value=String(text||'').trim().toUpperCase().replace(/\s+/g,' ');
+   if(value.length<2)return '';
+   const candidates=posterTextFieldIds.map(id=>({id,value:val(id).toUpperCase().replace(/\s+/g,' ')})).filter(item=>item.value&&(item.value===value||value.length>=2&&item.value.length>=2&&(item.value.includes(value)||value.includes(item.value))));
+   candidates.sort((a,b)=>Math.abs(a.value.length-value.length)-Math.abs(b.value.length-value.length));
+   return candidates[0]?.id||'';
+ }
+ function drawPosterTracked(W,H,s,p,wide){
+   posterTextRegions=[];
+   const baseFillText=ctx.fillText;
+   ctx.fillText=function(text,x,y,maxWidth){
+     const fieldId=findPosterTextField(text);
+     if(!fieldId)return Number.isFinite(maxWidth)?baseFillText.call(ctx,text,x,y,maxWidth):baseFillText.call(ctx,text,x,y);
+     const originalFont=ctx.font,originalColor=ctx.fillStyle,style=posterTextStyles[fieldId]||{size:100,color:''};
+     const scale=posterTextBlockField===fieldId?1:(Number(style.size)||100)/100;
+     ctx.font=ctx.font.replace(/([\d.]+)px/,(_,size)=>(Number(size)*scale)+'px');
+     if(style.color)ctx.fillStyle=style.color;
+     const offset=posterTextOffsets[fieldId]||{x:0,y:0};
+     const drawX=x+offset.x*W,drawY=y+offset.y*H,fontSize=Number(ctx.font.match(/([\d.]+)px/)?.[1])||16;
+     const drawMaxWidth=Number(style.size)>100?undefined:maxWidth;
+     const textWidth=Math.min(ctx.measureText(String(text)).width,Number.isFinite(drawMaxWidth)?drawMaxWidth:Infinity);
+     const left=ctx.textAlign==='center'?drawX-textWidth/2:ctx.textAlign==='right'||ctx.textAlign==='end'?drawX-textWidth:drawX;
+     const top=ctx.textBaseline==='middle'?drawY-fontSize/2:ctx.textBaseline==='bottom'||ctx.textBaseline==='ideographic'?drawY-fontSize:ctx.textBaseline==='alphabetic'?drawY-fontSize*.8:drawY;
+     posterTextRegions.push({fieldId,x:left-4,y:top-4,w:Math.max(12,textWidth+8),h:fontSize*1.4+8,anchorX:drawX,anchorY:drawY,color:typeof ctx.fillStyle==='string'&&ctx.fillStyle.startsWith('#')?ctx.fillStyle:'#ffffff'});
+     try{return Number.isFinite(drawMaxWidth)?baseFillText.call(ctx,text,drawX,drawY,drawMaxWidth):baseFillText.call(ctx,text,drawX,drawY)}
+     finally{ctx.font=originalFont;ctx.fillStyle=originalColor}
+   };
+   try{drawPoster(W,H,s,p,wide)}
+   finally{ctx.fillText=baseFillText}
+ }
+ function posterImageDimensions(img){return {width:img.naturalWidth||img.videoWidth||img.width,height:img.naturalHeight||img.videoHeight||img.height}}
+ function getPosterSamplePosition(item,region,x,y){
+   const img=item.originalImg||item.img,{width,height}=posterImageDimensions(img);
+   const fit=val('posterPhotoPosition'),zoomValue=Number(val('posterPhotoZoom'))/100;
+   const base=fit==='contain'?Math.min(region.w/width,region.h/height):Math.max(region.w/width,region.h/height),scale=base*zoomValue;
+   const offsetX=(region.w-width*scale)/2,offsetY=(region.h-height*scale)/2;
+   return {x:Math.max(0,Math.min(1,(x-region.x-offsetX)/scale/width)),y:Math.max(0,Math.min(1,(y-region.y-offsetY)/scale/height))};
+ }
+ function processPosterBackground(item,sample,tolerance){
+   const source=item.originalImg||item.img,{width:sourceWidth,height:sourceHeight}=posterImageDimensions(source);
+   if(!sourceWidth||!sourceHeight)throw new Error('The selected poster image has no readable dimensions.');
+   const scale=Math.min(1,1600/Math.max(sourceWidth,sourceHeight)),output=document.createElement('canvas');
+   output.width=Math.max(1,Math.round(sourceWidth*scale));output.height=Math.max(1,Math.round(sourceHeight*scale));
+   const outputContext=output.getContext('2d',{willReadFrequently:true});
+   outputContext.drawImage(source,0,0,output.width,output.height);
+   const image=outputContext.getImageData(0,0,output.width,output.height),pixels=image.data,w=output.width,h=output.height,count=w*h;
+   const visited=new Uint8Array(count),queue=new Int32Array(count),threshold=Math.max(10,Math.min(120,Number(tolerance)||45)),thresholdSquared=threshold*threshold;
+   const sampleX=Math.max(0,Math.min(w-1,Math.round(sample.x*(w-1)))),sampleY=Math.max(0,Math.min(h-1,Math.round(sample.y*(h-1)))),sampleIndex=(sampleY*w+sampleX)*4;
+   const red=pixels[sampleIndex],green=pixels[sampleIndex+1],blue=pixels[sampleIndex+2];
+   const matches=index=>{const offset=index*4,dr=pixels[offset]-red,dg=pixels[offset+1]-green,db=pixels[offset+2]-blue;return dr*dr+dg*dg+db*db<=thresholdSquared};
+   let head=0,tail=0;
+   const enqueue=index=>{if(index<0||index>=count||visited[index]||!matches(index))return;visited[index]=1;queue[tail++]=index};
+   for(let x=0;x<w;x++){enqueue(x);enqueue((h-1)*w+x)}
+   for(let y=1;y<h-1;y++){enqueue(y*w);enqueue(y*w+w-1)}
+   while(head<tail){
+     const index=queue[head++],x=index%w,y=(index-x)/w,offset=index*4;
+     pixels[offset+3]=0;
+     if(x>0)enqueue(index-1);if(x<w-1)enqueue(index+1);if(y>0)enqueue(index-w);if(y<h-1)enqueue(index+w);
+   }
+   outputContext.putImageData(image,0,0);
+   posterCutoutImages.add(output);item.img=output;item.backgroundSample=sample;item.backgroundTolerance=threshold;
  }
  function render(exportScale=1){
   previewImageRegions=[];
@@ -763,7 +1011,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
   const W=Math.round(baseW*exportScale),H=Math.round(contentHeight*exportScale);
   $('customDimensions').style.display=val('ratio')==='custom'?'grid':'none';
   if(canvas.width!==W)canvas.width=W;if(canvas.height!==H)canvas.height=H;const t=themes[style],s=Math.min(W/1000,H/1250),p=54*s,wide=W-2*p,serif=t.serif?'Georgia, serif':'Arial, Helvetica, sans-serif';
-  if(postType==='poster'){drawPoster(W,H,s,p,wide);return}
+  if(postType==='poster'){drawPosterTracked(W,H,s,p,wide);return}
   if(style==='socialInfographic'){drawSocialInfographic(W,H,s,p,wide,t,serif);return}
   if(style==='socialStory'||style==='socialMosaic'){const gradient=ctx.createLinearGradient(0,0,W,H);gradient.addColorStop(0,style==='socialMosaic'?'#344c9b':'#271447');gradient.addColorStop(.52,style==='socialMosaic'?'#8265c9':'#682e83');gradient.addColorStop(1,style==='socialMosaic'?'#e4a3c3':'#d84d6f');ctx.fillStyle=gradient}else ctx.fillStyle=t.bg;
   ctx.fillRect(0,0,W,H);ctx.fillStyle=t.ink;ctx.textBaseline='top';ctx.fillStyle=t.accent;ctx.fillRect(p,p,wide,7*s);
@@ -833,9 +1081,20 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
   if(footer){const footerFont=12*s*textScale('bylineSize');ctx.fillStyle=textColor('byline',t.muted);ctx.font='bold '+footerFont+'px Arial';ctx.fillText(footer.slice(0,100),p,H-p-Math.max(23*s,footerFont*1.8),wide)}
   ctx.strokeStyle=t.accent;ctx.lineWidth=4*s;ctx.beginPath();ctx.moveTo(p,H-p);ctx.lineTo(W-p,H-p);ctx.stroke();
  }
- function schedule(){clearTimeout(renderTimer);renderTimer=setTimeout(()=>{try{render(videoRecording?videoExportScale:1)}catch(e){$('message').textContent='Preview error. Try shortening the headline or article.'}},90)}
+ function schedule(){if(videoRecording)return;clearTimeout(renderTimer);renderTimer=setTimeout(()=>{try{render()}catch(e){$('message').textContent='Preview error. Try shortening the headline or article.'}},90)}
  document.querySelectorAll('#paper,#category,#date,#headline,#subtitle,#body,#byline,#ratio,#fit,#customW,#customH,#factCheckToggle').forEach(el=>{el.addEventListener('input',schedule);el.addEventListener('change',schedule)});
- ['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBackground','posterAccent','posterTextColor','posterPhotoPosition','posterImageLayout','posterPhotoZoom'].forEach(id=>{$(id).addEventListener('input',()=>{if(id==='posterPhotoZoom')$('posterPhotoZoomValue').textContent=val(id)+'%';schedule()});$(id).addEventListener('change',schedule)});
+ ['posterCampaign','posterCandidate','posterRole','posterConstituency','posterDate','posterSlogan','posterPromises','posterVenue','posterCallToAction','posterDisclaimer','posterBadgeNumber','posterTownhallDate','posterPriorityOneTitle','posterPriorityOneDescription','posterPriorityTwoTitle','posterPriorityTwoDescription','posterPriorityThreeTitle','posterPriorityThreeDescription','posterElectionDate','posterElectionTopRight','posterElectionSubheading','posterBackground','posterAccent','posterTextColor','posterPhotoPosition','posterImageLayout','posterPhotoZoom'].forEach(id=>{$(id).addEventListener('input',()=>{if(id==='posterPhotoZoom')$('posterPhotoZoomValue').textContent=val(id)+'%';schedule()});$(id).addEventListener('change',schedule)});
+ $('posterTextTarget').addEventListener('change',updatePosterTextControls);
+ $('posterBackgroundTolerance').addEventListener('input',()=>{
+   const tolerance=Number(val('posterBackgroundTolerance'));$('posterBackgroundToleranceValue').textContent=tolerance;
+   clearTimeout(posterBackgroundTimer);
+   posterBackgroundTimer=setTimeout(()=>{
+     try{
+       getSelectedPosterPhotos().filter(item=>item.backgroundSample).forEach(item=>processPosterBackground(item,item.backgroundSample,tolerance));
+       render();
+     }catch(error){console.error('Could not update poster background removal strength.',error);setMessage('Could not update background removal. Restore the original photo and try again.')}
+   },180);
+ });
  ['paperSize','categorySize','dateSize','headlineSize','subtitleSize','bodySize','bylineSize'].forEach(id=>$(id).addEventListener('input',()=>{$(id+'Value').textContent=$(id).value+'%';schedule()}));
  Object.keys(textColorOverrides).forEach(id=>$(id+'Color').addEventListener('input',e=>{textColorOverrides[id]=e.target.value;schedule()}));
  $('imageLayout').addEventListener('change',schedule);$('postMode').addEventListener('change',()=>{renderStoryEditors();loadEditorTarget();schedule()});$('storyArrangement').addEventListener('change',schedule);$('factCheckToggle').addEventListener('change',schedule);$('addStory').addEventListener('click',()=>addStory());
@@ -917,8 +1176,59 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  $('editorFit').addEventListener('change',()=>{if(activeEditorTarget==='main'){$('fit').value=$('editorFit').value;schedule()}else setMessage('Story sections use fill-frame cropping. Use zoom and position to adjust.');});
  $('editorResetCrop').addEventListener('click',()=>{$('editorZoom').value=100;$('editorPanX').value=0;$('editorPanY').value=0;applyEditorCrop()});
  $('editorApplyMain').addEventListener('click',()=>{activeEditorTarget='main';loadEditorTarget()});
+ function updatePosterTextControls(){
+   const fieldId=$('posterTextTarget').value;
+   posterTextFieldIds.forEach(id=>{
+     const settings=posterTextStyles[id]||{size:100,color:''},region=[...posterTextRegions].reverse().find(item=>item.fieldId===id);
+     const size=$(id+'TextSize'),sizeValue=$(id+'TextSizeValue'),color=$(id+'TextColor');
+     if(size){size.value=settings.size||100;sizeValue.textContent=(settings.size||100)+'%'}
+     if(color)color.value=settings.color||region?.color||$('posterTextColor').value;
+     $(id).closest('.poster-field-editor')?.classList.toggle('is-selected',id===fieldId);
+   });
+ }
+ function selectPosterText(fieldId){
+   if(!fieldId)return;
+   $('posterTextTarget').value=fieldId;updatePosterTextControls();
+ }
+ function canvasPoint(event){
+   const rect=canvas.getBoundingClientRect();
+   return {x:(event.clientX-rect.left)*canvas.width/rect.width,y:(event.clientY-rect.top)*canvas.height/rect.height};
+ }
+ canvas.addEventListener('pointerdown',event=>{
+   if(postType!=='poster'||posterBackgroundPickMode)return;
+   const point=canvasPoint(event),hit=[...posterTextRegions].reverse().find(region=>point.x>=region.x&&point.x<=region.x+region.w&&point.y>=region.y&&point.y<=region.y+region.h);
+   if(!hit)return;
+   posterTextPointerHandled=true;selectPosterText(hit.fieldId);
+   posterTextPointer={pointerId:event.pointerId,fieldId:hit.fieldId,lastX:event.clientX,lastY:event.clientY};
+   canvas.classList.add('poster-text-dragging');canvas.setPointerCapture(event.pointerId);event.preventDefault();
+ });
+ canvas.addEventListener('pointermove',event=>{
+   if(!posterTextPointer||posterTextPointer.pointerId!==event.pointerId)return;
+   const rect=canvas.getBoundingClientRect(),offset=posterTextOffsets[posterTextPointer.fieldId]||{x:0,y:0};
+   offset.x+=(event.clientX-posterTextPointer.lastX)/rect.width;
+   offset.y+=(event.clientY-posterTextPointer.lastY)/rect.height;
+   posterTextOffsets[posterTextPointer.fieldId]=offset;posterTextPointer.lastX=event.clientX;posterTextPointer.lastY=event.clientY;render();
+ });
+ function stopPosterTextDrag(event){
+   if(!posterTextPointer||posterTextPointer.pointerId!==event.pointerId)return;
+   posterTextPointer=null;canvas.classList.remove('poster-text-dragging');if(event.type==='pointercancel')posterTextPointerHandled=false;
+   if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
+ }
+ canvas.addEventListener('pointerup',stopPosterTextDrag);canvas.addEventListener('pointercancel',stopPosterTextDrag);
  canvas.addEventListener('click',e=>{
    const rect=canvas.getBoundingClientRect(),x=(e.clientX-rect.left)*canvas.width/rect.width,y=(e.clientY-rect.top)*canvas.height/rect.height;
+   if(postType==='poster'&&posterTextPointerHandled){posterTextPointerHandled=false;return}
+   if(postType==='poster'&&posterBackgroundPickMode){
+     posterBackgroundPickMode=false;canvas.classList.remove('poster-background-picking');
+     const imageHit=[...previewImageRegions].reverse().find(region=>region.target==='posterPhoto'&&x>=region.x&&x<=region.x+region.w&&y>=region.y&&y<=region.y+region.h);
+     if(!imageHit){posterBackgroundPickMode=true;canvas.classList.add('poster-background-picking');setMessage('Click inside a poster photo to sample its background.');return}
+     const item=posterPhotos[imageHit.photoIndex];
+     if(!item){posterBackgroundPickMode=true;canvas.classList.add('poster-background-picking');setMessage('The selected poster photo could not be found. Try another photo.');return}
+     const sample=getPosterSamplePosition(item,imageHit,x,y);
+     setMessage('Removing the sampled background locally…');
+     setTimeout(()=>{try{processPosterBackground(item,sample,val('posterBackgroundTolerance'));refreshPosterGallery();render();setMessage('Background removed on this device. Adjust the strength or restore the original if needed.')}catch(error){console.error('Poster background removal failed.',error);setMessage('Could not remove this photo background. Try another image or lower the removal strength.')}},20);
+     return;
+   }
    const hit=[...previewImageRegions].reverse().find(r=>x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h);
    if(!hit){setMessage('Click directly on a photo in the preview to edit it.');return}
    if(hit.target==='posterPhoto'){setMessage('Poster photo selected. Adjust its framing in the Poster Style controls.');return}
@@ -943,10 +1253,13 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    $('imageUploadTitle').innerHTML='<span class="step">STEP 02</span>'+(type==='poster'?'Add poster photo':'Upload your photograph');
    $('uploadTitle').textContent=type==='poster'?'Choose a poster photo':'Choose a news photo';
    $('editorWorkspaceTitle').innerHTML='<span class="step">STEP 03</span>'+(type==='video'?'VIDEO WORKSPACE · Preview video editor':type==='poster'?'POSTER WORKSPACE · Edit poster image':'IMAGE WORKSPACE · Preview image editor');
-   $('editorHint').textContent=type==='video'?'Use the video player to preview your selected clip. Video framing and zoom follow the image tools.':type==='poster'?'Choose a poster layout and customize the headline, message and photo.':'Click a photo in the live preview to select it for editing.';
-   $('topDownload').textContent=type==='video'?'↓ Download MP4':'↓ Download '+(type==='poster'?'Poster PNG':'PNG');
+   $('editorHint').textContent=type==='video'?'Use the video player to preview your selected clip. Video framing and zoom follow the image tools.':type==='poster'?'Enter text in Step 1, select images in Step 2, and choose a design in Step 3. Drag poster text in the preview to position it.':'Click a photo in the live preview to select it for editing.';
+   const preferredVideoMime=getVideoMimeType();
+   const downloadLabel=type==='video'?(preferredVideoMime?'Download '+getVideoFormat(preferredVideoMime):'Video export unavailable'):'Download '+(type==='poster'?'Poster PNG':'PNG');
+   $('topDownload').setAttribute('aria-label',downloadLabel);
+   $('topDownload').title=downloadLabel;
    $('previewLabel').textContent=type==='video'?'Live post video preview':type==='poster'?'Live poster preview':'Live newspaper preview';
-   $('step1').querySelector('h2').innerHTML='<span class="step">STEP 01</span>'+(type==='poster'?'Poster details':'Story details');
+   $('step1').querySelector('h2').innerHTML=type==='poster'?'Poster builder':'<span class="step">STEP 01</span>Story details';
    $('downloadPoster').textContent='↓ Download '+(val('posterLayout')||'rally').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';
    syncStyleFields();
    if(type==='video'&&videoUrl)activeImageTextTarget='video';
@@ -1006,9 +1319,14 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      if(val('posterBackground')==='#11243a')$('posterBackground').value='#d0d0d0';
      if(val('posterAccent')==='#f3c64e')$('posterAccent').value='#bf4c49';
    }
-   syncPosterDesignCards();$('downloadPoster').textContent='↓ Download '+val('posterLayout').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';schedule()
+   syncPosterDesignCards();syncPosterTemplateFields();$('downloadPoster').textContent='↓ Download '+val('posterLayout').replace(/^./,letter=>letter.toUpperCase())+' Poster PNG';schedule()
  });
- syncPosterDesignCards();
+ function syncPosterTemplateFields(){
+   $('posterSplitCampaignFields').hidden=val('posterLayout')!=='splitCampaign';
+   $('posterTownhallFields').hidden=val('posterLayout')!=='townhallCampaign';
+   $('posterElectionFields').hidden=val('posterLayout')!=='electionPortrait';
+ }
+ syncPosterDesignCards();syncPosterTemplateFields();
  $('posterPhotoInput').addEventListener('change',event=>{
    const files=Array.from(event.target.files||[]);if(!files.length)return;
    const valid=files.filter(file=>file.type.startsWith('image/')&&file.size<=15*1024*1024);
@@ -1019,7 +1337,7 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    toLoad.forEach(file=>{
      const url=URL.createObjectURL(file),image=new Image();
      image.onload=()=>{
-       const item={id:++posterPhotoCounter,img:image,name:file.name,url};posterPhotos.push(item);selectedPosterPhotoIds.push(item.id);
+       const item={id:++posterPhotoCounter,img:image,originalImg:image,name:file.name,url,backgroundSample:null};posterPhotos.push(item);selectedPosterPhotoIds.push(item.id);
        loaded++;
        if(loaded===toLoad.length){refreshPosterGallery();schedule()}
      };
@@ -1027,6 +1345,18 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      image.src=url;
    });
    event.target.value='';
+ });
+ $('posterRemoveBackground').addEventListener('click',()=>{
+   if(!getSelectedPosterPhotos().length){setMessage('Add and include a poster photo before removing its background.');return}
+   if(posterBackgroundPickMode){posterBackgroundPickMode=false;canvas.classList.remove('poster-background-picking');setMessage('Background removal cancelled.');return}
+   posterBackgroundPickMode=true;canvas.classList.add('poster-background-picking');
+   setMessage('Click the background area of a poster photo in the preview. Image processing stays on this device.');
+ });
+ $('posterRestoreBackground').addEventListener('click',()=>{
+   const selected=getSelectedPosterPhotos();
+   if(!selected.length){setMessage('Select a poster photo to restore.');return}
+   selected.forEach(item=>{item.img=item.originalImg||item.img;item.backgroundSample=null;item.backgroundTolerance=null});
+   refreshPosterGallery();render();setMessage('Original background restored for selected poster photo(s).');
  });
  $('videoFile').addEventListener('change',e=>{
    const file=e.target.files&&e.target.files[0];if(!file)return;
@@ -1036,8 +1366,8 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    $('videoStatus').textContent='Loading '+file.name+'…';
    activeImageTextTarget='video';setPostType('video');
  });
- function getMp4MimeType(){
-   if(!window.MediaRecorder)return '';
+ function getVideoMimeTypes(){
+   if(!window.MediaRecorder)return [];
    return [
      'video/mp4;codecs="avc1.42E028,mp4a.40.2"',
      'video/mp4;codecs=avc1.42E028,mp4a.40.2',
@@ -1045,10 +1375,17 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      'video/mp4;codecs=avc1.42E01E,mp4a.40.2',
      'video/mp4;codecs=avc1,mp4a.40.2',
      'video/mp4;codecs=avc1',
-     'video/mp4'
-   ].find(type=>MediaRecorder.isTypeSupported(type))||'';
+     'video/mp4',
+     'video/webm;codecs=vp9,opus',
+     'video/webm;codecs=vp8,opus',
+     'video/webm;codecs=vp9',
+     'video/webm;codecs=vp8',
+     'video/webm'
+   ].filter((type,index,types)=>types.indexOf(type)===index&&MediaRecorder.isTypeSupported(type));
  }
- function createMp4Recorder(stream,hasAudio,is4k,frameRate){
+ function getVideoMimeType(){return getVideoMimeTypes()[0]||''}
+ function getVideoFormat(mimeType){return mimeType.toLowerCase().startsWith('video/mp4')?'MP4':'WebM'}
+ function createVideoRecorder(stream,hasAudio,is4k,frameRate){
    const profile=is4k?(frameRate>=60?'avc1.640034':'avc1.640033'):(frameRate>=60?'avc1.42E02A':'avc1.42E028');
    const compatibleFallback=is4k?'avc1.640033':frameRate>=60?'avc1.42E02A':'avc1.42E028';
    const candidates=[
@@ -1056,24 +1393,28 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      hasAudio?'video/mp4;codecs='+profile+',mp4a.40.2':'video/mp4;codecs='+profile,
      hasAudio?'video/mp4;codecs="'+compatibleFallback+',mp4a.40.2"':'video/mp4;codecs="'+compatibleFallback+'"',
      hasAudio?'video/mp4;codecs=avc1,mp4a.40.2':'video/mp4;codecs=avc1',
-     'video/mp4'
+     'video/mp4',
+     hasAudio?'video/webm;codecs=vp9,opus':'video/webm;codecs=vp9',
+     hasAudio?'video/webm;codecs=vp8,opus':'video/webm;codecs=vp8',
+     'video/webm'
    ];
    let lastError;
    for(const mimeType of candidates){
      if(!MediaRecorder.isTypeSupported(mimeType))continue;
      try{
        const recorder=new MediaRecorder(stream,{mimeType});
-       if(recorder.mimeType.toLowerCase().startsWith('video/mp4'))return recorder;
+       if(recorder.mimeType.toLowerCase().startsWith('video/mp4')||recorder.mimeType.toLowerCase().startsWith('video/webm'))return recorder;
      }catch(error){lastError=error}
    }
-   throw lastError||new Error('MP4 video encoding is not supported by this browser.');
+   throw lastError||new Error('Video recording is not supported by this browser.');
  }
  function setVideoExportState(state,message=''){
    const busy=state==='preparing'||state==='rendering';
    $('videoDownloadSpinner').hidden=!busy;
    $('downloadVideo').disabled=busy;
    $('videoFrameRate').disabled=busy;
-   $('downloadVideoLabel').textContent=busy?'Rendering MP4…':'↓ Download Video (MP4)';
+   const format=getVideoFormat(videoRecorder?.mimeType||getVideoMimeType());
+   $('downloadVideoLabel').textContent=busy?'Rendering '+format+'…':'↓ Download Video ('+format+')';
    $('videoRenderProgress').hidden=!busy;
    $('videoRenderProgress').value=state==='preparing'?0:state==='rendering'?1:100;
    if(message)$('videoStatus').textContent=message;
@@ -1084,12 +1425,13 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
    if(Number.isFinite(duration)&&duration>0){
      const progress=Math.max(1,Math.min(99,sourceVideo.currentTime/duration*100));
      $('videoRenderProgress').value=progress;
-     $('videoStatus').textContent='Rendering MP4… '+Math.floor(progress)+'%';
+     $('videoStatus').textContent='Rendering video… '+Math.floor(progress)+'%';
    }
  }
  sourceVideo.addEventListener('loadedmetadata',()=>{
    const duration=Number.isFinite(sourceVideo.duration)?Math.round(sourceVideo.duration)+' sec':'unknown duration';
-   $('videoStatus').textContent=sourceVideo.videoWidth+' × '+sourceVideo.videoHeight+' px · '+duration+' · '+(getMp4MimeType()?'MP4 export ready.':'This browser cannot encode MP4; try Safari or another browser with MP4 recording support.');
+   const videoMime=getVideoMimeType(),videoFormat=videoMime?getVideoFormat(videoMime):'video';
+   $('videoStatus').textContent=sourceVideo.videoWidth+' × '+sourceVideo.videoHeight+' px · '+duration+' · '+(videoMime?videoFormat+' export ready.':'This browser does not support video export.');
    render();refreshImageTextTargets();
  });
  sourceVideo.addEventListener('loadeddata',()=>{if(postType==='video')render()});
@@ -1100,17 +1442,43 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  sourceVideo.addEventListener('ended',()=>{if(videoRecorder&&videoRecorder.state!=='inactive')videoRecorder.stop()});
  let videoRecorder=null,videoRecording=false;
  function startVideoPreview(){
+   if(videoRecording&&manualVideoFrameCapture&&typeof sourceVideo.requestVideoFrameCallback==='function'){
+     if(videoFrameCallbackId)return;
+     const draw=(_now,metadata)=>{
+       videoFrameCallbackId=0;
+       if(sourceVideo.paused||sourceVideo.ended)return;
+       const frameTime=metadata.mediaTime,minimumInterval=1/Number(val('videoFrameRate'));
+       if(frameTime-lastCapturedVideoFrameTime>=minimumInterval-.002){
+         try{
+           render(videoExportScale);
+           videoCaptureTrack.requestFrame();
+           lastCapturedVideoFrameTime=frameTime;
+         }catch(error){
+           console.error('Could not render a video frame.',error);
+           setMessage('Video frame error. Try a smaller output resolution.');
+           sourceVideo.pause();
+         }
+       }
+       if(!sourceVideo.paused&&!sourceVideo.ended)videoFrameCallbackId=sourceVideo.requestVideoFrameCallback(draw);
+     };
+     videoFrameCallbackId=sourceVideo.requestVideoFrameCallback(draw);
+     return;
+   }
    if(videoRaf)return;
    let lastFrame=0;
    const draw=timestamp=>{
      if(sourceVideo.paused||sourceVideo.ended){videoRaf=0;return}
      const frameRate=videoRecording?Number(val('videoFrameRate')):30;
-     if(timestamp-lastFrame>=1000/frameRate){lastFrame=timestamp;try{render(videoRecording?videoExportScale:1)}catch(error){$('message').textContent='Video preview error. Try a smaller video or simpler layout.'}}
+     if(timestamp-lastFrame>=1000/frameRate){lastFrame=timestamp;try{render(videoRecording?videoExportScale:1)}catch(error){$('message').textContent='Video preview error. Try a smaller video or simpler layout.';sourceVideo.pause()}}
      videoRaf=requestAnimationFrame(draw);
    };
    videoRaf=requestAnimationFrame(draw);
  }
- function stopVideoPreview(){if(videoRaf){cancelAnimationFrame(videoRaf);videoRaf=0}if(postType==='video'){try{render(videoRecording?videoExportScale:1)}catch(error){console.error('Could not refresh the paused video preview.',error)}}}
+ function stopVideoPreview(){
+   if(videoRaf){cancelAnimationFrame(videoRaf);videoRaf=0}
+   if(videoFrameCallbackId&&typeof sourceVideo.cancelVideoFrameCallback==='function'){sourceVideo.cancelVideoFrameCallback(videoFrameCallbackId);videoFrameCallbackId=0}
+   if(postType==='video'){try{render(videoRecording?videoExportScale:1)}catch(error){console.error('Could not refresh the paused video preview.',error)}}
+ }
  $('previewLabel').textContent='Live newspaper preview';
  function download(type){
    let exportName=postType==='poster'?'reality-of-india-'+val('posterLayout')+'-poster':'newspaper-post';
@@ -1134,18 +1502,26 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  async function downloadVideo(){
    if(videoRecording)return;
    if(!videoUrl||sourceVideo.readyState<2){setMessage('Choose a video and wait for it to finish loading before exporting.');return}
-   if(!window.MediaRecorder||!canvas.captureStream){setMessage('Video export is not supported in this browser. Try a current version of Chrome, Edge, or Firefox.');return}
+   if(!window.MediaRecorder||!canvas.captureStream||!getVideoMimeType()){setMessage('Video export is not supported in this browser. Try a current version of Chrome, Edge, or Firefox.');return}
    const quality=val('exportQuality'),targetEdge=quality==='4k'?3840:quality==='fullhd'?1920:0,frameRate=Number(val('videoFrameRate'));
    let recorder,canvasStream,audioStream,audioContext;
    setVideoExportState('preparing','Preparing video canvas and audio…');
    $('topDownload').disabled=true;$('resetBtn').disabled=true;$('videoFile').disabled=true;$('imageModeTab').disabled=true;$('videoModeTab').disabled=true;$('posterModeTab').disabled=true;
+   sourceVideo.controls=false;
    try{
      await new Promise(resolve=>requestAnimationFrame(()=>resolve()));
      render();
      const scale=targetEdge?targetEdge/Math.max(canvas.width,canvas.height):1;
      videoExportScale=scale;
      render(scale);
-     canvasStream=canvas.captureStream(frameRate);
+     canvasStream=canvas.captureStream(0);
+     videoCaptureTrack=canvasStream.getVideoTracks()[0];
+     manualVideoFrameCapture=typeof videoCaptureTrack?.requestFrame==='function'&&typeof sourceVideo.requestVideoFrameCallback==='function';
+     if(!manualVideoFrameCapture){
+       canvasStream.getTracks().forEach(track=>track.stop());
+       videoCaptureTrack=null;
+       canvasStream=canvas.captureStream(frameRate);
+     }
      let audioTracks=[];
      const captureVideoStream=sourceVideo.captureStream||sourceVideo.mozCaptureStream;
      if(typeof captureVideoStream==='function'){
@@ -1163,8 +1539,6 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
        }
      }
      audioTracks.forEach(track=>canvasStream.addTrack(track));
-     const mimeType=getMp4MimeType();
-     if(!mimeType)throw new Error('MP4 video encoding is not supported by this browser. Try Safari or another browser that supports MP4 recording.');
      if(sourceVideo.currentTime>0){
        await new Promise((resolve,reject)=>{
          const onSeeked=()=>{cleanup();resolve()},onError=()=>{cleanup();reject(new Error('The video could not seek to its beginning.'))};
@@ -1173,10 +1547,10 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
        });
      }
      const chunks=[];
-     recorder=createMp4Recorder(canvasStream,audioTracks.length>0,quality==='4k',frameRate);
-     if(!recorder.mimeType.toLowerCase().startsWith('video/mp4'))throw new Error('The browser did not initialize an MP4 encoder for this recording.');
+     recorder=createVideoRecorder(canvasStream,audioTracks.length>0,quality==='4k',frameRate);
      videoRecorder=recorder;videoRecording=true;
-     setVideoExportState('rendering','Rendering MP4… 0% · '+canvas.width+' × '+canvas.height+' · '+frameRate+' fps · keep this tab open.');
+     lastCapturedVideoFrameTime=-Infinity;
+     setVideoExportState('rendering','Rendering '+getVideoFormat(recorder.mimeType)+'… 0% · '+canvas.width+' × '+canvas.height+' · '+frameRate+' fps · keep this tab open.');
      recorder.ondataavailable=event=>{if(event.data&&event.data.size)chunks.push(event.data)};
      const complete=new Promise((resolve,reject)=>{
        recorder.onerror=event=>reject(event.error||new Error('The browser could not record this video.'));
@@ -1188,24 +1562,26 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
      startVideoPreview();
      await complete;
      if(!chunks.length)throw new Error('No video data was recorded.');
-     const blob=new Blob(chunks,{type:'video/mp4'});
-     if(blob.size<1024)throw new Error('The MP4 encoder produced an incomplete video file.');
+     const exportFormat=getVideoFormat(recorder.mimeType),extension=exportFormat==='MP4'?'mp4':'webm';
+     const blob=new Blob(chunks,{type:recorder.mimeType});
+     if(blob.size<1024)throw new Error('The video encoder produced an incomplete file.');
      if(Number.isFinite(sourceVideo.duration)&&sourceVideo.duration>0&&sourceVideo.currentTime<sourceVideo.duration*.98)throw new Error('Video recording stopped before the source finished. Please try again.');
      const url=URL.createObjectURL(blob),a=document.createElement('a');
-     a.href=url;a.download='reality-of-india-post'+(quality==='4k'?'-4k':quality==='fullhd'?'-full-hd':'')+'-'+frameRate+'fps.mp4';
+     a.href=url;a.download='reality-of-india-post'+(quality==='4k'?'-4k':quality==='fullhd'?'-full-hd':'')+'-'+frameRate+'fps.'+extension;
      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
      const outputWidth=canvas.width,outputHeight=canvas.height;
      const isAvc=recorder.mimeType.toLowerCase().includes('avc1'),hasAudio=audioTracks.length>0;
-     setMessage('Video exported as MP4 at '+outputWidth+' × '+outputHeight+' pixels, '+frameRate+' fps. '+(isAvc?'H.264 video':'Browser-selected video codec')+' and '+(hasAudio?'source audio included.':'no audio track detected.'));
-     setVideoExportState('complete','Export complete · '+outputWidth+' × '+outputHeight+' px · '+frameRate+' fps · MP4. For widest device compatibility, use H.264 with AAC audio.');
+     setMessage('Video exported as '+exportFormat+' at '+outputWidth+' × '+outputHeight+' pixels, '+frameRate+' fps. '+(isAvc?'H.264 video':'Browser-selected video codec')+' and '+(hasAudio?'source audio included.':'no audio track detected.'));
+     setVideoExportState('complete','Export complete · '+outputWidth+' × '+outputHeight+' px · '+frameRate+' fps · '+exportFormat+(exportFormat==='MP4'?'. For widest device compatibility, use H.264 with AAC audio.':'.'));
    }catch(error){
      if(recorder&&recorder.state!=='inactive')recorder.stop();
      const encoderRejected=/encoder configuration.*not supported|configuration is not supported by the encoder/i.test(error.message||'');
-     const message=encoderRejected?'The browser MP4 encoder rejected this output configuration. Try Full HD, or use a browser with native 4K MP4 recording support.':error.message||'The browser may not support the selected video or resolution.';
+     const message=encoderRejected?'The browser video encoder rejected this output configuration. Try Full HD or 30 fps.':error.message||'The browser may not support the selected video or resolution.';
      setMessage('Video export failed: '+message);
-     setVideoExportState('failed',encoderRejected?message:error.message&&error.message.includes('MP4 video encoding')?error.message:'MP4 video export failed. Try a lower resolution or another browser-supported video.');
+     setVideoExportState('failed',message);
    }finally{
      videoRecording=false;videoRecorder=null;videoExportScale=1;
+     videoCaptureTrack=null;manualVideoFrameCapture=false;sourceVideo.controls=true;
      if(canvasStream)canvasStream.getTracks().forEach(track=>track.stop());
      if(audioStream&&audioStream!==canvasStream&&!audioContext)audioStream.getTracks().forEach(track=>track.stop());
      if(audioContext&&audioContext.state==='suspended')audioContext.resume();
@@ -1216,7 +1592,8 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
  $('downloadPng').addEventListener('click',()=>download('image/png'));$('downloadPoster').addEventListener('click',()=>download('image/png'));$('topDownload').addEventListener('click',()=>postType==='video'?downloadVideo():download('image/png'));$('downloadVideo').addEventListener('click',downloadVideo);$('downloadJpg').addEventListener('click',()=>download('image/jpeg'));
  $('resetBtn').addEventListener('click',()=>{if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl='';sourceVideo.pause();sourceVideo.removeAttribute('src');sourceVideo.load();sourceVideo.hidden=true;$('videoFile').value='';$('videoStatus').textContent='Select a video to preview and create a video post.';setPostType('image')});
  $('resetBtn').addEventListener('click',()=>{storyItems=[];storyCounter=0;mainImageText=defaultImageText();activeImageTextTarget='main';renderStoryEditors();loadImageTextControls();$('postMode').value='single';$('storyArrangement').value='side';$('factCheckToggle').checked=false;Object.entries(defaults).forEach(([id,v])=>$(id).value=v);['paperSize','categorySize','dateSize','headlineSize','subtitleSize','bodySize','bylineSize'].forEach(id=>{$(id).value=100;$(id+'Value').textContent='100%'});Object.keys(textColorOverrides).forEach(id=>textColorOverrides[id]=null);$('photo').value='';photos.forEach(p=>URL.revokeObjectURL(p.url));photos=[];photo=null;selectedPhotoIndex=0;mainImageWidthPct=100;mainImageHeightPct=100;mainImageOffsetX=0;mainImageOffsetY=0;$('gallery').innerHTML='';zoom=1;panX=0;panY=0;style='breaking';document.querySelectorAll('.style').forEach(b=>b.classList.toggle('active',b.dataset.style===style));syncStyleFields();$('ratio').value='portrait';$('fit').value='cover';$('uploadTitle').textContent='Choose a news photo';$('uploadSub').textContent='JPG, PNG or WebP · up to 15 MB each';$('photoStatus').textContent='No photo selected — sample placeholder shown.';activeEditorTarget='main';loadEditorTarget();refreshEditorImageOptions();render();setMessage('Sample content restored.')});
- $('resetBtn').addEventListener('click',()=>{posterPhotos.forEach(item=>URL.revokeObjectURL(item.url));posterPhotos=[];selectedPosterPhotoIds=[];$('posterPhotoInput').value='';refreshPosterGallery();[['posterLayout','rally'],['posterCampaign','PEOPLE FIRST CAMPAIGN'],['posterCandidate','YOUR CANDIDATE NAME'],['posterRole',''],['posterConstituency',''],['posterDate',''],['posterSlogan',''],['posterPromises',''],['posterVenue',''],['posterCallToAction','JOIN THE CONVERSATION'],['posterDisclaimer',''],['posterBackground','#11243a'],['posterAccent','#f3c64e'],['posterTextColor','#ffffff'],['posterPhotoPosition','cover'],['posterImageLayout','hero'],['posterPhotoZoom','100']].forEach(([id,value])=>$(id).value=value);$('posterPhotoZoomValue').textContent='100%';$('downloadPoster').textContent='↓ Download Rally Poster PNG';schedule()});
+ $('resetBtn').addEventListener('click',()=>{posterPhotos.forEach(item=>URL.revokeObjectURL(item.url));posterPhotos=[];selectedPosterPhotoIds=[];posterTextStyles={};posterTextOffsets={};posterTextRegions=[];posterBackgroundPickMode=false;canvas.classList.remove('poster-background-picking','poster-text-dragging');posterTextPointer=null;$('posterPhotoInput').value='';refreshPosterGallery();[['posterLayout','rally'],['posterCampaign',''],['posterCandidate',''],['posterRole',''],['posterConstituency',''],['posterDate',''],['posterSlogan',''],['posterPromises',''],['posterVenue',''],['posterCallToAction',''],['posterDisclaimer',''],['posterBadgeNumber',''],['posterTownhallDate',''],['posterPriorityOneTitle',''],['posterPriorityOneDescription',''],['posterPriorityTwoTitle',''],['posterPriorityTwoDescription',''],['posterPriorityThreeTitle',''],['posterPriorityThreeDescription',''],['posterElectionDate',''],['posterElectionTopRight',''],['posterElectionSubheading',''],['posterBackground','#11243a'],['posterAccent','#f3c64e'],['posterTextColor','#ffffff'],['posterTextTarget','posterCampaign'],['posterBackgroundTolerance','45'],['posterPhotoPosition','cover'],['posterImageLayout','hero'],['posterPhotoZoom','100']].forEach(([id,value])=>$(id).value=value);$('posterPhotoZoomValue').textContent='100%';$('posterBackgroundToleranceValue').textContent='45';syncPosterTemplateFields();syncPosterDesignCards();updatePosterTextControls();$('downloadPoster').textContent='↓ Download Rally Poster PNG';schedule()});
+ setVideoExportState('idle');
  refreshImageTextTargets();
  syncStyleFields();
  render();
