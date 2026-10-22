@@ -110,6 +110,63 @@ main{max-width:1900px;margin:0 auto;padding:10px 12px;display:grid;grid-template
 .poster-editor{display:grid;grid-template-columns:1fr;gap:10px;margin:8px 0 14px}.poster-step{min-width:0}.poster-field-editor{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(125px,.34fr);gap:8px;align-items:center;margin-bottom:8px}.poster-field-editor>.field{margin:0}.poster-field-tools{padding:6px 8px}.poster-field-tools .field{margin:0}.poster-field-tools .field label{font-size:10px;margin-bottom:2px}.poster-field-tools input[type=range]{width:100%;height:14px;padding:0}.poster-field-tools .text-color-setting input[type=color]{width:100%;height:24px;padding:1px}.poster-field-editor.is-selected>.field label{color:var(--red)}.poster-field-editor.is-selected>.field input,.poster-field-editor.is-selected>.field textarea{border-color:#dc5963;box-shadow:0 0 0 2px #d82f3d12}.poster-step>.two{gap:8px}.poster-background-picking{cursor:crosshair!important}.poster-text-dragging,.poster-image-dragging{cursor:grabbing!important}#posterBackgroundHelp{line-height:1.45;margin:7px 0 0}.poster-photo-editor{display:grid;gap:5px;margin:8px 0 10px;padding:9px;border:1px solid var(--line);border-radius:8px;background:#fafbfc}.poster-photo-editor>label{font-size:11px;font-weight:750;color:#424c60}.poster-photo-editor input[type=range]{width:100%;padding:0}.poster-photo-editor strong{font-size:11px}.poster-photo-editor .small{line-height:1.4}.gallery-item.poster-gallery-selected .thumbimg{outline:3px solid #1a5c9a;outline-offset:1px}.gallery-include{position:absolute;left:2px;bottom:2px;max-width:64px;padding:2px 4px;border:0;border-radius:4px;background:#172033dd;color:#fff;font-size:9px;font-weight:800;line-height:1.3;white-space:nowrap}.gallery-include[aria-pressed=true]{background:#18834b}.poster-image-handle{fill:#fff;stroke:#172033;stroke-width:2}
 .poster-mode canvas{touch-action:none}.poster-photo-framing-row.is-single{grid-template-columns:1fr}
 .poster-design-thumb[data-design="tricolorCenter"]{background:linear-gradient(180deg,#ff9933 0 24%,#fff 24% 76%,#138808 76%)}.poster-design-thumb[data-design="chakraCenter"]{background:linear-gradient(90deg,#ff9933 0 24%,#fff 24% 76%,#138808 76%)}.poster-design-thumb[data-design="tricolorCollage"]{background:linear-gradient(180deg,#ff9933 0 28%,#fff 28% 72%,#138808 72%)}.poster-design-thumb[data-design="tricolorCenter"]:before,.poster-design-thumb[data-design="chakraCenter"]:before,.poster-design-thumb[data-design="tricolorCollage"]:before{inset:39% 37%;width:auto;height:22%;background:#000080;border:2px solid #fff;clip-path:none;border-radius:50%}.poster-design-thumb[data-design="tricolorCenter"]:after,.poster-design-thumb[data-design="chakraCenter"]:after,.poster-design-thumb[data-design="tricolorCollage"]:after{left:24%;right:24%;top:43%;height:14%;background:#d7e4f0;box-shadow:none;border:1px solid #173675}
+.poster-mode{--bg:#eef0f2;--card:#fff;--ink:#202a32;--muted:#69757d;--line:#d9dfe2;--red:#d84235;--red-dark:#b82e27;--shadow:0 10px 28px #26333b0a;background:#eef0f2;color:var(--ink);font-family:"Avenir Next","Segoe UI",sans-serif}
+.poster-mode .topbar{background:#fbfbf8;border-color:#d9dfe2}
+.poster-mode .topinner{max-width:1880px;min-height:68px;padding:9px 26px;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)}
+.poster-mode .brand-icon{width:42px;height:42px;flex-basis:42px}
+.poster-mode .tagline{max-width:340px;font-size:12px;line-height:1.4}
+.poster-mode .mode-tabs{padding:4px;border:1px solid #e0e3e4;border-radius:9px;background:#f2f3f2}
+.poster-mode .mode-tab{min-height:34px;padding:8px 14px;border:0;border-radius:6px;background:transparent;color:#667179;font-size:11px;letter-spacing:.04em}
+.poster-mode .mode-tab.active{background:#fff;color:#202a32;box-shadow:0 1px 4px #1f2b3318}
+.poster-mode main{max-width:1880px;grid-template-columns:minmax(340px,430px) minmax(0,1fr);gap:22px;padding:22px 26px 30px}
+.poster-mode main>section.panel{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.poster-mode #step1>h2{margin:0 0 13px;font-size:20px;font-weight:750;letter-spacing:0}
+.poster-mode #step1>h2:first-child::before{content:"POSTER STUDIO";display:block;margin-bottom:5px;color:#cb493b;font-size:10px;font-weight:850;letter-spacing:.14em}
+.poster-mode .poster-editor{display:grid;grid-template-columns:1fr;gap:12px;margin:0}
+.poster-mode .poster-step{padding:16px 17px;border:1px solid #dce1e2;border-radius:8px;background:#fff;box-shadow:0 3px 12px #26333b06}
+.poster-mode .poster-step h2{display:flex;align-items:center;gap:9px;margin:0 0 12px;font-size:13px;font-weight:750;letter-spacing:0}
+.poster-mode .step{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:23px;margin:0;padding:0 6px;border-radius:5px;background:#f9e9e5;color:#c84335;font-size:9px;letter-spacing:.06em}
+.poster-mode .step5-intro{margin:0 0 12px;color:#68757d;font-size:11px;line-height:1.55}
+.poster-mode .field label{margin-bottom:5px;color:#47535a;font-size:11px;font-weight:700}
+.poster-mode .field input:not([type=range]),.poster-mode .field textarea,.poster-mode .field select{min-height:35px;padding:8px 9px;border-color:#dce1e2;border-radius:5px;font-size:12px}
+.poster-mode .field textarea{min-height:62px;line-height:1.5}
+.poster-mode .field input:focus,.poster-mode .field textarea:focus,.poster-mode .field select:focus{border-color:#d75b4e;box-shadow:0 0 0 3px #d8423514}
+.poster-mode .poster-field-tools{padding:6px 8px;border:1px solid #e3e6e6;border-radius:5px;background:#f7f8f6}
+.poster-mode .poster-field-editor{grid-template-columns:minmax(0,1fr) minmax(88px,.28fr);gap:7px}
+.poster-mode .poster-design-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:9px 0 13px}
+.poster-mode .poster-design-card{padding:8px;border-color:#e0e4e4;border-radius:6px;font-size:11px;font-weight:650}
+.poster-mode .poster-design-card.active{border:1px solid #d84235;background:#fff8f6;box-shadow:0 0 0 2px #d8423515}
+.poster-mode .poster-design-thumb{height:75px;margin-bottom:7px;border-radius:4px}
+.poster-mode .poster-photo-editor{padding:10px;border-color:#e1e5e5;border-radius:6px;background:#f8f9f7}
+.poster-mode .upload{border-radius:6px;background:#f8f9f7}
+.poster-mode .gallery{gap:9px}
+.poster-mode .thumbimg{border-radius:5px}
+.poster-mode .poster-step .btn{min-height:34px;border-radius:5px;font-size:11px}
+.poster-mode .poster-step .btn.primary{background:#202a32;border-color:#202a32}
+.poster-mode #step1>h2+.step1-grid{display:none}
+.poster-mode #step1>.rule,.poster-mode #step1>.tool-grid,.poster-mode #step5,.poster-mode #chooseStyleHeading,.poster-mode .style-group,.poster-mode #storyDetailsGrid,.poster-mode #editorWorkspacePanel,.poster-mode .image-step-pair,.poster-mode #step9{display:none!important}
+.poster-mode #posterControls:not([hidden]){display:grid!important}
+.poster-mode #ratio,.poster-mode #exportQuality{min-height:36px;border-radius:5px}
+.poster-mode #customDimensions{gap:8px}
+.poster-mode #refresh{margin-top:10px;border-radius:5px;font-size:11px}
+.poster-mode main>section:not(.panel){position:sticky;top:88px;align-self:start;min-width:0;padding:18px;border:1px solid #d9dfe2;border-radius:8px;background:#f8f9f7;box-shadow:0 5px 22px #26333b08}
+.poster-mode .previewhead{margin-bottom:14px}
+.poster-mode .previewhead h2{font-size:15px;font-weight:750;letter-spacing:0}
+.poster-mode .previewhead .status{font-size:11px}
+.poster-mode .previewarea{min-height:calc(100vh - 235px);padding:22px;border:1px solid #e0e4e3;border-radius:6px;background-color:#e9ece9;background-image:radial-gradient(#c5ccca 0.7px,transparent 0.7px);background-size:18px 18px}
+.poster-mode .canvas-holder{width:min(100%,650px);max-height:calc(100vh - 300px)}
+.poster-mode canvas{max-height:calc(100vh - 300px);box-shadow:0 14px 38px #1721262b}
+.poster-mode .downloads{grid-template-columns:1fr 1fr;max-width:420px;margin:13px auto 0}
+.poster-mode .downloads .btn{min-height:40px;border-radius:5px;font-size:12px}
+.poster-mode #downloadPoster{background:#d84235;border-color:#d84235}
+.poster-mode #downloadJpg{display:inline-flex!important;align-items:center;justify-content:center}
+.poster-mode #downloadPng{display:none!important}
+.poster-mode .notice{max-width:420px;margin:9px auto 0;font-size:11px}
+.poster-mode .tips,.poster-mode .footer{display:none}
+@media(max-width:1100px){.poster-mode main{grid-template-columns:minmax(310px,390px) minmax(0,1fr);gap:14px;padding:16px}.poster-mode main>section:not(.panel){padding:13px}}
+@media(max-width:900px){.poster-mode main{grid-template-columns:1fr;padding:12px}.poster-mode main>section.panel,.poster-mode main>section:not(.panel){position:static;max-height:none;overflow:visible}.poster-mode main>section:not(.panel){grid-row:1;min-height:58vh}.poster-mode main>section.panel{grid-row:2}.poster-mode .previewarea{min-height:55vh}.poster-mode .canvas-holder,.poster-mode canvas{max-height:52vh}}
+@media(max-width:720px){body.poster-mode{height:auto;min-height:100%;overflow:auto}.poster-mode main{height:auto;min-height:0;grid-template-rows:auto auto;gap:10px;overflow:visible;padding:10px}.poster-mode main>section:not(.panel){min-height:54vh;padding:10px}.poster-mode main>section.panel{max-height:none;overflow:visible}.poster-mode .previewhead .status,.poster-mode .previewhead>span{display:block}.poster-mode .previewarea{min-height:50vh;padding:10px}.poster-mode .canvas-holder,.poster-mode canvas{max-height:46vh}.poster-mode .poster-step{padding:13px}.poster-mode .topinner{padding:5px 12px}}
+@media(max-width:460px){.poster-mode .tagline{display:none}.poster-mode .topinner{grid-template-columns:minmax(0,1fr) auto}.poster-mode .topinner>.mode-tabs{grid-column:1/-1;grid-row:2}.poster-mode .topinner>.top-actions{grid-column:2;grid-row:1}.poster-mode .poster-field-editor{grid-template-columns:minmax(0,1fr) 80px}.poster-mode .downloads{max-width:none}}
 </style>
 </head>
 <body>
